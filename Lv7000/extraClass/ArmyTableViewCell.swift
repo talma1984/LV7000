@@ -10,7 +10,9 @@ import UIKit
 
 //returns information and functions to base view controller
 protocol ArmyTableViewCProtocol {
-    func onClickArmyCell(index: Int, alert: String, massage: String)
+    func onClickArmyCell(index: Int, title: String, massage: String, image: String)
+    
+    func onClickBiuld(index: Int,title: String, image: String, price: Int, hitPoints: Int)
 }
 
 class ArmyTableViewCell: UITableViewCell {
@@ -27,9 +29,13 @@ class ArmyTableViewCell: UITableViewCell {
     func updateUi(){
         bg.image = UIImage(named: data.image)
         tt.text = "\(data.title)"
-        alertArmyTitle = "\(data.title)"
+        armyTitle = "\(data.title)"
         alertArmyMassege = "\(data.explenation)"
         tp.text = "\(data.price)"
+        armyImage = "\(data.image)"
+        armyPrice = data.price
+        Hitpoints = data.hitPoints
+        
     }
     //get the biulding image and place it in the tableview
     fileprivate let bg: UIImageView = {
@@ -62,11 +68,15 @@ class ArmyTableViewCell: UITableViewCell {
         return moneyTextField
     }()
     
+    var armyImage: String?
+    var armyPrice: Int?
+    var Hitpoints: Int?
     let moneyImage = UIImageView()
     let backImage = UIImageView()
     let InformationButton = UIButton()
-    var alertArmyTitle: String?
+    var armyTitle: String?
     var alertArmyMassege: String?
+     let biuldButton = UIButton()
     
     lazy var backView: UIView = {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 100 ))
@@ -91,7 +101,7 @@ class ArmyTableViewCell: UITableViewCell {
         
         setImage()
         addSubview(bg)
-        bg.frame = CGRect(x: 17, y: 30, width: 260, height: 70)
+        bg.frame = CGRect(x: 22, y: 40, width: 220, height: 50)
         addSubview(tt)
         tt.frame = CGRect(x: 0, y: 0, width: 220, height: 30)
         setButtons()
@@ -116,17 +126,33 @@ class ArmyTableViewCell: UITableViewCell {
     
     //set the information button in every biulding
     func setButtons(){
-        addSubview(InformationButton)
+        
         InformationButton.setImage(UIImage(named:"Information"), for: .normal)
         InformationButton.contentMode = .scaleToFill
-        InformationButton.frame = CGRect(x:260, y:70, width:20, height: 20)
+        InformationButton.frame = CGRect(x:260, y:80, width:20, height: 20)
         bringSubviewToFront(InformationButton)
         InformationButton.addTarget(self, action: #selector(armyAlert), for: .touchUpInside)
+        addSubview(InformationButton)
+        
+        biuldButton.setBackgroundImage(UIImage(named:"buttenready"), for: .normal)
+        biuldButton.contentMode = .scaleToFill
+        biuldButton.frame = CGRect(x:230, y:27, width:68, height: 24)
+        bringSubviewToFront(biuldButton)
+        biuldButton.addTarget(self, action: #selector(biuld), for: .touchUpInside)
+
+        
+        biuldButton.setTitle("Build", for: .normal)
+        biuldButton.setTitleColor(.systemGray, for: UIControl.State.normal)
+        biuldButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic" , size: 9)
+        addSubview(biuldButton)
     }
     
     //triger the information button in the tableview
     @IBAction func armyAlert(){
-        ArmyCellDelegate?.onClickArmyCell(index: (index?.row)!,alert: (alertArmyTitle!),massage: (alertArmyMassege!))
+        ArmyCellDelegate?.onClickArmyCell(index: (index?.row)!,title: (armyTitle!),massage: (alertArmyMassege!), image: armyImage!)
     }
-    
+    @IBAction func biuld(){
+       
+        ArmyCellDelegate?.onClickBiuld(index: index!.row,title: armyTitle!, image: armyImage!, price: armyPrice!, hitPoints: Hitpoints!)
+    }
 }

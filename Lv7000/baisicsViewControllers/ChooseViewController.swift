@@ -10,14 +10,15 @@ import UIKit
 //set base view of  , choose army, select platers, select map
 class ChooseViewController: UIViewController  {
     
-    var backgroundImageView = UIImageView()
-    var backButton = UIButton()
-    var frame = UIImageView()
-    var texture = UIImageView()
+    let backgroundImageView = UIImageView()
+    
+    let backButton = UIButton()
+    let frame = UIImageView()
+    let texture = UIImageView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        AppUtility.lockOrientation(.landscapeLeft)
         setBackground()
         setbuttons()
     }
@@ -25,6 +26,7 @@ class ChooseViewController: UIViewController  {
     @objc func buttonClicked(_ sender: UIButton) {
         self.performSegue(withIdentifier: "MakeGameSegue", sender: self)
     }
+    
     
     //set the background image
     func setBackground() {
@@ -47,4 +49,6 @@ class ChooseViewController: UIViewController  {
         backButton.frame = CGRect(x: 80, y: 550, width: 230, height: 70)
         backButton.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
     }
+    
+    
 }

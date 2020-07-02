@@ -15,7 +15,7 @@ class SelectPlayersViewController: ChooseViewController {
     var selectPlayersImage = UIImageView()
     var playersTabelView = UITableView()
     var backStarsImage = UIImageView()
-    var numberofPlayers = 8
+    var numberofPlayers = 2
     @IBOutlet weak var NumberOfPlayersText: UITextField!
     
     override func viewDidLoad() {
@@ -36,7 +36,7 @@ class SelectPlayersViewController: ChooseViewController {
         playersTabelView.dataSource = self
         self.view.addSubview(playersTabelView)
         playersTabelView.translatesAutoresizingMaskIntoConstraints = false
-        playersTabelView.backgroundColor = UIColor.brown
+        playersTabelView.backgroundColor = UIColor.clear
         playersTabelView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 40.0).isActive = true
         playersTabelView.topAnchor.constraint(equalTo: view.topAnchor, constant: 168.0).isActive = true
         playersTabelView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -40.0).isActive = true
@@ -64,24 +64,31 @@ class SelectPlayersViewController: ChooseViewController {
         case 0: NumberOfPlayersText.text = "Players: 2"
         createPlayersArray(players: 2)
         numberofPlayers = 2
+            setTableView()
         case 1: NumberOfPlayersText.text = "Players: 3"
         createPlayersArray(players: 3)
         numberofPlayers = 3
+            setTableView()
         case 2: NumberOfPlayersText.text = "Players: 4"
         createPlayersArray(players: 4)
         numberofPlayers = 4
+            setTableView()
         case 3: NumberOfPlayersText.text = "Players: 5"
         createPlayersArray(players: 5)
         numberofPlayers = 5
+            setTableView()
         case 4: NumberOfPlayersText.text = "Players: 6"
         createPlayersArray(players: 6)
         numberofPlayers = 6
+            setTableView()
         case 5: NumberOfPlayersText.text = "Players: 7"
         createPlayersArray(players: 7)
         numberofPlayers = 7
+            setTableView()
         case 6: NumberOfPlayersText.text = "Players: 8"
         createPlayersArray(players: 8)
-        numberofPlayers = 2
+        numberofPlayers = 8
+            setTableView()
         default:
             createPlayersArray(players: 2)
         }
@@ -160,7 +167,11 @@ extension SelectPlayersViewController: UITableViewDelegate, UITableViewDataSourc
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return NumberOfPlayers.count
+        
+        
+            return numberofPlayers
+        
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

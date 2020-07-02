@@ -11,10 +11,11 @@ import UIKit
 //set base view of  join game, CreatGame
 class MakeGameViewController: UIViewController {
     
-    var backgroundImageView = UIImageView()
-    var frame = UIImageView()
-    var texture = UIImageView()
-    var backButton = UIButton()
+    let backgroundImageView = UIImageView()
+    let frame = UIImageView()
+    let texture = UIImageView()
+    let backButton = UIButton()
+    let logo = UIImageView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,8 @@ class MakeGameViewController: UIViewController {
         setTexture()
         setBackground()
         setbuttons()
+        setlogo()
+        
     }
     
     //returns to main view
@@ -83,6 +86,14 @@ class MakeGameViewController: UIViewController {
         backButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -210).isActive = true
         backButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
         backButton.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
+    }
+    
+    func setlogo(){
+        
+        logo.image = UIImage(named: "LV7000Logo")
+        logo.contentMode = .scaleToFill
+        view.addSubview(logo)
+        logo.frame = CGRect(x: 55, y: 0, width: 250, height: 120)
     }
 }
 

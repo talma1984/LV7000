@@ -18,10 +18,10 @@ class CreatGameViewController: MakeGameViewController {
     var imageViews = UIImageView()
     var selectedMaps: UIImageView!
     
-    var sendArmyInfo = "Usa"
-    var sendMapInfo = "Island"
+    var sendArmyInfo = "United States"
+    var sendMapInfo = "Strangerson Island"
     var sendNumberOfPlayersInfo = 6
-    var gameInfo = ["Usa","Island", 6] as [Any]
+    var gameInfo = ["United States","Strangerson Island", 6] as [Any]
     var mapLabel = UILabel()
     
     override func viewDidLoad() {
@@ -32,6 +32,7 @@ class CreatGameViewController: MakeGameViewController {
         choosenArmyLabel()
         mapLabelText()
         NumOfPlayersLabe()
+        AppUtility.lockOrientation(.landscapeLeft)
     }
     
     //get the information from all 3 view and put them together
@@ -58,7 +59,7 @@ class CreatGameViewController: MakeGameViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "gameInformationSegue" {
             let GameVC = segue.destination as! GameViewControler
-            GameVC.scrollImageView = UIImageView(image: self.selectedImage)
+           // GameVC.scrollImageView = UIImageView(image: self.selectedImage)
             GameVC.sendArmyInfo = (gameInfo[0]) as? String
             GameVC.sendMapInfo = (gameInfo[1]) as? String
             
@@ -79,7 +80,7 @@ class CreatGameViewController: MakeGameViewController {
         whatMapSelectd.text = "\(gameInfo[1])"
         whatMapSelectd.textColor = .blue
         whatMapSelectd.textAlignment = .center
-        whatMapSelectd.font = UIFont(name: "Charter-Italic", size: 27)
+        whatMapSelectd.font = UIFont(name: "Charter-Italic", size: 20)
     }
     
     //number of players lable

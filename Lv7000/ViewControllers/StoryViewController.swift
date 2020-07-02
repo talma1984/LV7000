@@ -19,6 +19,8 @@ class StoryViewController: UIViewController {
         setBackground()
         setTextView()
         setbuttons()
+        AppUtility.lockOrientation(.portrait)
+        
     }
     
     //returns to main view

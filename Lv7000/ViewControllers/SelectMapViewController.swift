@@ -14,17 +14,17 @@ class SelectMapViewController: ChooseViewController {
     
     var mapImage = UIImageView()
     
-    let maps = ["Island", "Sahara", "Amazonas", "Gobi", "Islands",]
+    let maps = ["Strangerson Island", "Siberian Tiger", "Welcome to the Jungle", "Lawrence of Arabia"]
     var selectedImage: UIImage!
     var mapSends: String?
-    var selectedMaps: String?
+    var selectedMaps = "Strangerson Island"
     var sendMaps: String?
     override func viewDidLoad() {
         super.viewDidLoad()
         
         mapsPicker()
         createToolBar()
-        setMapsPicture(map: "Island")
+        setMapsPicture(map: "Strangerson Island")
     }
     
     //set the picker view
@@ -67,28 +67,27 @@ class SelectMapViewController: ChooseViewController {
     //change the image of the map
     func changeImage(){
         switch selectedMaps {
-        case "Island":
-            setMapsPicture(map: "Island")
-            selectedImage = UIImage(named: "Island")
-            mapSends = "Island"
-        case "Sahara":
-            setMapsPicture(map: "Sahara")
-            selectedImage = UIImage(named: "Sahara")
-            mapSends = "Sahara"
-        case "Amazonas":
-            setMapsPicture(map: "Amazonas")
-            selectedImage = UIImage(named: "Amazonas")
-            mapSends = "Amazonas"
-        case "Gobi":
-            setMapsPicture(map: "Gobi")
-            selectedImage = UIImage(named: "Gobi")
-            mapSends = "Gobi"
-        case "Islands":
-            setMapsPicture(map: "Islands")
-            selectedImage = UIImage(named: "Islands")
-            mapSends = "Islands"
+        case "Strangerson Island":
+            setMapsPicture(map: "Strangerson Island")
+            selectedImage = UIImage(named: "Strangerson Island")
+            mapSends = "Strangerson Island"
+        case "Siberian Tiger":
+            setMapsPicture(map: "Siberian Tiger")
+            selectedImage = UIImage(named: "Siberian Tiger")
+            mapSends = "Siberian Tiger"
+        case "Welcome to the Jungle":
+            setMapsPicture(map: "Welcome to the Jungle")
+            selectedImage = UIImage(named: "Welcome to the Jungle")
+            mapSends = "Welcome to the Jungle"
+        case "Lawrence of Arabia":
+            setMapsPicture(map: "Lawrence of Arabia")
+            selectedImage = UIImage(named: "Lawrence of Arabia")
+            mapSends = "Lawrence of Arabia"
+        
         default:
-            print("")
+            setMapsPicture(map: "Strangerson Island")
+            selectedImage = UIImage(named: "Strangerson Island")
+            mapSends = "Strangerson Island"
         }
     }
     
@@ -101,7 +100,7 @@ class SelectMapViewController: ChooseViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MakeGameSegue" {
             let selectedMapVC = segue.destination as! CreatGameViewController
-            selectedMapVC.sendMapInfo = (selectedMaps ?? "") as String
+            selectedMapVC.sendMapInfo = (selectedMaps) as String
         }
     }
 }

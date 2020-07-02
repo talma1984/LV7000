@@ -17,7 +17,7 @@ class ChooseArmyViewController: ChooseViewController {
     
     let armys = ["United States", "China", "Russia", "Germany", "Mexico", "Iran", "India", "South Africa", "Israel", "United Kingdom", "Japan"]
     
-    var selectedArmy: String?
+    var selectedArmy = "United States"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,7 +88,7 @@ class ChooseArmyViewController: ChooseViewController {
             setArmyPicture(army: "United Kingdom")
             
         default:
-            print("")
+            setArmyPicture(army: "Usa")
         }
     }
     

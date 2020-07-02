@@ -10,7 +10,7 @@ import UIKit
 
 //returns information and functions to base view controller
 protocol BuldingTableViewProtocol {
-    func onClickCell(index: Int, alert: String, massage: String)
+    func onClickCell(index: Int, title: String, massage: String, image: String)
 
     func onClickBiuld(index: Int, image: String, price: Int)
         
@@ -19,7 +19,6 @@ protocol BuldingTableViewProtocol {
 class BuldingTableViewCell: UITableViewCell{
     
     var BuldingCellDelegate: BuldingTableViewProtocol?
-    var BiuldBuldingCellDelegate: BuldingTableViewProtocol?
     var index: IndexPath?
     
     var data: CustumData! {
@@ -34,22 +33,20 @@ class BuldingTableViewCell: UITableViewCell{
         bg.image = UIImage(named: data.image)
         tt.text = "\(data.title) "
         tp.text = "\(data.price)"
-        alertBuldingTitle = "\(data.title)"
-        alertBuldingMassege = "\(data.explenation)"
-        alertBiuldinImage = "\(data.image)"
+        buldingTitle = "\(data.title)"
+        buldingMassege = "\(data.explenation)"
+        biuldinImage = "\(data.image)"
         biuldigsPrice = (data.price)
     }
-    
     //get the biulding image and place it in the tableview
     fileprivate let bg: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleToFill
         
         iv.clipsToBounds = true
-        
+       
         return iv
     }()
-    
     //get the biulding title and place it in the tableview
     fileprivate let tt: UITextView = {
         let gameTextField = UITextView()
@@ -76,16 +73,15 @@ class BuldingTableViewCell: UITableViewCell{
     let backImage = UIImageView()
     let InformationButton = UIButton()
     let biuldButton = UIButton()
-    var alertBuldingTitle: String?
-    var alertBuldingMassege: String?
-    var alertBiuldinImage: String?
+    var buldingTitle: String?
+    var buldingMassege: String?
+    var biuldinImage: String?
     var biuldigsPrice: Int?
     lazy var backView: UIView = {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: 310, height: 100 ))
-        
+       
         return view
     }()
-    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -97,12 +93,13 @@ class BuldingTableViewCell: UITableViewCell{
     }
     
     
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
         setImage()
         addSubview(bg)
-        bg.frame = CGRect(x: 17, y: 30, width: 260, height: 70)
+        bg.frame = CGRect(x: 22, y: 40, width: 220, height: 50)
         addSubview(tt)
         tt.frame = CGRect(x: 0, y: 0, width: 220, height: 30)
         setButtons()
@@ -150,11 +147,11 @@ class BuldingTableViewCell: UITableViewCell{
     
     //triger the biuld button in the tableview
     @IBAction func biuld(){
-        BuldingCellDelegate?.onClickBiuld(index: (index?.row)!, image:(alertBiuldinImage)!, price: (biuldigsPrice)!)
+        BuldingCellDelegate?.onClickBiuld(index: (index?.row)!, image:(biuldinImage)!, price: (biuldigsPrice)!)
     }
     
     //triger the information button in the tableview
     @IBAction func buldingsAlert(){
-        BuldingCellDelegate?.onClickCell(index: (index?.row)!,alert: (alertBuldingTitle!),massage: (alertBuldingMassege!))
+        BuldingCellDelegate?.onClickCell(index: (index?.row)!,title: buldingTitle!,massage: buldingMassege!, image: biuldinImage!)
     }
 }

@@ -9,7 +9,9 @@
 import UIKit
 //returns information and functions to base view controller
 protocol SpecialTableViewProtocol {
-    func onClickSpecialCell(index: Int, alert: String, massage: String)
+    func onClickSpecialCell(index: Int, title: String, massage: String, image: String)
+    
+     func onClickBiuld(index: Int, image: String, price: Int)
 }
 
 
@@ -28,8 +30,11 @@ class SpecialTableViewCell: UITableViewCell {
     func updateUi(){
         bg.image = UIImage(named: data.image)
         tt.text = "\(data.title)"
-        alertSpecialTitle = "\(data.title)"
-        alertSpecialMassege = "\(data.explenation)"
+        specialTitle = "\(data.title)"
+        specialMassege = "\(data.explenation)"
+        biuldinImage = "\(data.image)"
+        biuldigsPrice = (data.price)
+        
     }
     
     //get the biulding image and place it in the tableview
@@ -63,11 +68,14 @@ class SpecialTableViewCell: UITableViewCell {
         return moneyTextField
     }()
     
+    var biuldinImage: String?
+    var biuldigsPrice: Int?
     let backImage = UIImageView()
     let moneyImage = UIImageView()
     let InformationButton = UIButton()
-    var alertSpecialTitle: String?
-    var alertSpecialMassege: String?
+    var specialTitle: String?
+    var specialMassege: String?
+     let biuldButton = UIButton()
     lazy var backView: UIView = {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 100 ))
         return view
@@ -92,7 +100,7 @@ class SpecialTableViewCell: UITableViewCell {
         setImage()
         
         addSubview(bg)
-        bg.frame = CGRect(x: 17, y: 30, width: 260, height: 70)
+        bg.frame = CGRect(x: 22, y: 40, width: 220, height: 50)
         addSubview(tt)
         tt.frame = CGRect(x: 0, y: 0, width: 220, height: 30)
         setButtons()
@@ -115,18 +123,36 @@ class SpecialTableViewCell: UITableViewCell {
     }
     
     //set the information button in every biulding
+    //set the information button in every biulding
     func setButtons(){
-        addSubview(InformationButton)
+        
         InformationButton.setImage(UIImage(named:"Information"), for: .normal)
         InformationButton.contentMode = .scaleToFill
-        InformationButton.frame = CGRect(x:260, y:70, width:20, height: 20)
+        InformationButton.frame = CGRect(x:260, y:80, width:20, height: 20)
         bringSubviewToFront(InformationButton)
         InformationButton.addTarget(self, action: #selector(specialAlert), for: .touchUpInside)
+        addSubview(InformationButton)
+        
+        biuldButton.setBackgroundImage(UIImage(named:"buttenready"), for: .normal)
+        biuldButton.contentMode = .scaleToFill
+        biuldButton.frame = CGRect(x:230, y:27, width:68, height: 24)
+        bringSubviewToFront(biuldButton)
+        biuldButton.addTarget(self, action: #selector(biuld), for: .touchUpInside)
+
+        
+        biuldButton.setTitle("Build", for: .normal)
+        biuldButton.setTitleColor(.systemGray, for: UIControl.State.normal)
+        biuldButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic" , size: 9)
+        addSubview(biuldButton)
+    }
+    
+    @IBAction func biuld(){
+        SpechialCellDelegate?.onClickBiuld(index: (index?.row)!, image:(biuldinImage)!, price: (biuldigsPrice)!)
     }
     
     //triger the information button in the tableview
-    @IBAction func specialAlert(){
-        SpechialCellDelegate?.onClickSpecialCell(index: (index?.row)!,alert: (alertSpecialTitle!),massage: (alertSpecialMassege!))
-        
-    }
+       @IBAction func specialAlert(){
+           SpechialCellDelegate?.onClickSpecialCell(index: (index?.row)!,title: (specialTitle!),massage: (specialMassege!), image: biuldinImage!)
+           
+       }
 }

@@ -10,7 +10,9 @@ import UIKit
 
 //returns information and functions to base view controller
 protocol TechTableViewProtocol {
-    func OnClickTechCell(index: Int, alert: String, massage: String)
+    func OnClickTechCell(index: Int, title: String, massage: String, image: String)
+    
+     func onClickBiuld(index: Int, image: String, price: Int)
 }
 
 
@@ -32,6 +34,8 @@ class TechTableViewCell: UITableViewCell {
         alertTechTitle = "\(data.title)"
         alertTechMassege = "\(data.explenation)"
         tp.text = "\(data.price)"
+        biuldinImage = "\(data.image)"
+        biuldigsPrice = (data.price)
     }
     
      //get the biulding image and place it in the tableview
@@ -65,11 +69,14 @@ class TechTableViewCell: UITableViewCell {
         return moneyTextField
     }()
     
+    var biuldinImage: String?
+    var biuldigsPrice: Int?
     var alertTechTitle: String?
     var alertTechMassege: String?
     let backImage = UIImageView()
     let moneyImage = UIImageView()
     let InformationButton = UIButton()
+     let biuldButton = UIButton()
     lazy var backView: UIView = {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 100 ))
         return view
@@ -90,7 +97,7 @@ class TechTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         setImage()
         addSubview(bg)
-        bg.frame = CGRect(x: 17, y: 30, width: 260, height: 70)
+        bg.frame = CGRect(x: 22, y: 40, width: 220, height: 50)
         addSubview(tt)
         tt.frame = CGRect(x: 0, y: 0, width: 220, height: 30)
         setButtons()
@@ -113,19 +120,34 @@ class TechTableViewCell: UITableViewCell {
         moneyImage.clipsToBounds = true
     }
     
-    //set the information button in every biulding
+   //set the information button in every biulding
     func setButtons(){
-        addSubview(InformationButton)
+        
         InformationButton.setImage(UIImage(named:"Information"), for: .normal)
         InformationButton.contentMode = .scaleToFill
-        InformationButton.frame = CGRect(x:260, y:70, width:20, height: 20)
+        InformationButton.frame = CGRect(x:260, y:80, width:20, height: 20)
         bringSubviewToFront(InformationButton)
         InformationButton.addTarget(self, action: #selector(techAlert), for: .touchUpInside)
+        addSubview(InformationButton)
         
+        biuldButton.setBackgroundImage(UIImage(named:"buttenready"), for: .normal)
+        biuldButton.contentMode = .scaleToFill
+        biuldButton.frame = CGRect(x:230, y:27, width:68, height: 24)
+        bringSubviewToFront(biuldButton)
+        biuldButton.addTarget(self, action: #selector(biuld), for: .touchUpInside)
+
+        
+        biuldButton.setTitle("Build", for: .normal)
+        biuldButton.setTitleColor(.systemGray, for: UIControl.State.normal)
+        biuldButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic" , size: 9)
+        addSubview(biuldButton)
     }
     
     //triger the information button in the tableview
     @IBAction func techAlert(){
-        TechCellDelegate?.OnClickTechCell(index: (index?.row)!,alert: (alertTechTitle!),massage:  (alertTechMassege!))
+        TechCellDelegate?.OnClickTechCell(index: (index?.row)!,title: (alertTechTitle!),massage:  (alertTechMassege!),image: biuldinImage! )
+    }
+    @IBAction func biuld(){
+        TechCellDelegate?.onClickBiuld(index: (index?.row)!, image:(biuldinImage)!, price: (biuldigsPrice)!)
     }
 }

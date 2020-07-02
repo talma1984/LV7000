@@ -13,6 +13,7 @@ class OpeningViewController: UIViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        AppUtility.lockOrientation(.portrait)
         
         //        let ref = Database.database().reference()
         //         ref = Database.database().reference()

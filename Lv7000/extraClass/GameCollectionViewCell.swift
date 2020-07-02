@@ -12,7 +12,10 @@ import UIKit
 
 // send numbe of bildings to gameviewcontroller
 protocol CollectionProtocol {
-    func sendNumberOfBiuldings(NumberOfBiuldings: Int)
+    func sendNumberOfBiuldings(index: Int,title: String,  NumberOfBiuldings: Int)
+    
+    func centurdTeritorry(image: String, index: Int, x: Int, y: Int)
+    
 }
 
 class GameCollectionViewCell: UICollectionViewCell {
@@ -28,22 +31,21 @@ class GameCollectionViewCell: UICollectionViewCell {
     //arrange the information from items array and arrange them in collection
     func updateUi(){
         bg.image = UIImage(named: data.image)
-        tt.text = "\(data.title)"
+        title = data.title
+        tt.text = "\(title)"
         NumberOfBuldings = data.numberOfBuldings
         resurseImage.image = UIImage(named: data.resurse)
         setNumberOfBuldings()
-        //setBiuldingImage(images: GameViewControler.shared.courentBiulding)
-        //for i in data {
-            
-        //}
-       // teritorryInfo[Int] = data.numberOfBuldings
+        pivotX = data.x
+        pivotY = data.y
+        onerText = data.possessor
+        
     }
     
     //get the photo from Items array and arrange them in the collection view
     fileprivate let bg: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(named: "teritorry1")
-        iv.translatesAutoresizingMaskIntoConstraints = false
         iv.contentMode = .scaleToFill
         iv.clipsToBounds = true
         return iv
@@ -61,12 +63,14 @@ class GameCollectionViewCell: UICollectionViewCell {
         return gameTextField
     }()
     
-    
+    var pivotX = 1
+    var pivotY = 1
     var biuldings = ""
     var teritorryInfo = [1, 1, 1]
     var  NumberOfBuldings = 3
     let backImage = UIImageView()
     let InformationButton = UIButton()
+    let centerButton = UIButton()
     let NumberOfBuldingsButton1 = UIButton()
     let NumberOfBuldingsButton2 = UIButton()
     let NumberOfBuldingsButton3 = UIButton()
@@ -75,6 +79,9 @@ class GameCollectionViewCell: UICollectionViewCell {
     let one = UIImageView()
     var resurseImage = UIImageView()
     var smallImage = UIImageView()
+    var title = ""
+    let owner = UITextField()
+    var onerText = ""
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -83,13 +90,13 @@ class GameCollectionViewCell: UICollectionViewCell {
         setButtons()
         addSubview(bg)
         addSubview(tt)
-        bg.frame = CGRect(x: 20, y: 60, width: 175, height: 70)
+        bg.frame = CGRect(x: 20, y: 80, width: 175, height: 50)
         bg.clipsToBounds = true
         bringSubviewToFront(bg)
-        tt.frame = CGRect(x: 0, y: 0, width: 205, height: 30)
+        tt.frame = CGRect(x: 0, y: 0, width: 220, height: 30)
         bringSubviewToFront(resurseImage)
         bringSubviewToFront(InformationButton)
-        
+        setProssesor()
         
     }
     //set the image behind every teritorry image
@@ -98,7 +105,7 @@ class GameCollectionViewCell: UICollectionViewCell {
         backImage.image = UIImage(named: "TerittoryRap")
         backImage.contentMode = .scaleToFill
         addSubview(backImage)
-        backImage.frame = CGRect(x: 10, y: 55, width: 220, height: 90)
+        backImage.frame = CGRect(x: 5, y: 55, width: 220, height: 92)
         backImage.clipsToBounds = true
         resurseImage.image = UIImage(named: "water")
         resurseImage.contentMode = .scaleToFill
@@ -111,7 +118,7 @@ class GameCollectionViewCell: UICollectionViewCell {
     //get  calld from the biuld button in the table view, take image and place it in the little squrse
     @IBAction func CheckAndBiuld(sender: Any){
         
-           
+        print(index as Any)
           //  GameViewControler.shared.courentBiulding = ""
         
     }
@@ -152,12 +159,29 @@ class GameCollectionViewCell: UICollectionViewCell {
         
     }
     
-     //set the information button in every biulding
+     //set the information button in every biulding and the centurd button
     func setButtons(){
         addSubview(InformationButton)
         InformationButton.setImage(UIImage(named:"Information"), for: .normal)
         InformationButton.contentMode = .scaleToFill
-        InformationButton.frame = CGRect(x:205, y:100, width:20, height: 20)
+        InformationButton.frame = CGRect(x:205, y:110, width:20, height: 20)
+        addSubview(centerButton)
+        centerButton.setImage(UIImage(named:"Centured"), for: .normal)
+        centerButton.contentMode = .scaleToFill
+        centerButton.frame = CGRect(x:12, y:126, width:13, height: 13)
+        centerButton.addTarget(self, action: #selector(centurdTeritorry), for: UIControl.Event.touchUpInside)
+    }
+    
+    //set the oners name
+    func setProssesor(){
+        owner.textAlignment = NSTextAlignment.left
+        owner.backgroundColor = .clear
+        owner.font = UIFont(name: "SofachromeRg-Italic", size: 9)
+        owner.isUserInteractionEnabled = false
+        owner.text = "Oner: \(onerText) "
+        owner.frame = CGRect(x: 20, y: 54, width:200, height: 25)
+        addSubview(owner)
+        owner.textColor = .black
         
     }
     
@@ -248,6 +272,17 @@ class GameCollectionViewCell: UICollectionViewCell {
         default:
             print("n")
         }
+    }
+    
+    @IBAction func centurdTeritorry(){
+        CollectionDelegate?.centurdTeritorry(image: title, index:(index?.row)!,x: pivotX, y: pivotY)
+        
+    }
+    
+    @IBAction func sendNumberOfBiuldings(sender: Any){
+        
+        CollectionDelegate?.sendNumberOfBiuldings(index: (index?.row)!,title: title, NumberOfBiuldings: NumberOfBuldings)
+        
     }
     
     required init?(coder: NSCoder) {

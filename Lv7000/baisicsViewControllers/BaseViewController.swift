@@ -12,11 +12,11 @@ import UIKit
 //set base view of  profile, story,
 class BaseViewController: UIViewController {
     
-    var backgroundImageView = UIImageView()
-    var frame = UIImageView()
-    var texture = UIImageView()
-    var backButton = UIButton()
-    
+    let backgroundImageView = UIImageView()
+    let frame = UIImageView()
+    let texture = UIImageView()
+    let backButton = UIButton()
+    let logo = UIImageView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +26,7 @@ class BaseViewController: UIViewController {
         setTexture()
         setBackground()
         setbuttons()
+        setlogo()
     }
     //returns to main view
     @objc func buttonClicked(_ sender: UIButton) {
@@ -82,5 +83,13 @@ class BaseViewController: UIViewController {
         backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 90).isActive = true
         backButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -80).isActive = true
         backButton.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
+    }
+    
+    func setlogo(){
+        
+        logo.image = UIImage(named: "LV7000Logo")
+        logo.contentMode = .scaleToFill
+        view.addSubview(logo)
+        logo.frame = CGRect(x: 55, y: 0, width: 250, height: 120)
     }
 }
