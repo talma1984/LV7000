@@ -18,7 +18,7 @@ class ChooseViewController: UIViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        AppUtility.lockOrientation(.landscapeLeft)
+        AppUtility.lockOrientation(.portrait)
         setBackground()
         setbuttons()
     }

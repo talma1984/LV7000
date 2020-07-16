@@ -9,17 +9,17 @@
 import UIKit
 
 //returns information and functions to base view controller
-protocol TechTableViewProtocol {
-    func OnClickTechCell(index: Int, title: String, massage: String, image: String)
+protocol DefenceTableViewProtocol {
+    func OnClickDefenceCell(index: Int, title: String, massage: String, image: String)
     
      func onClickBiuld(index: Int, image: String, price: Int)
 }
 
 
 
-class TechTableViewCell: UITableViewCell {
+class DefenceTableViewCell: UITableViewCell {
     
-    var TechCellDelegate: TechTableViewProtocol?
+    var DefenceCellDelegate: DefenceTableViewProtocol?
     var index: IndexPath?
     
     var data: CustumData! {
@@ -33,16 +33,16 @@ class TechTableViewCell: UITableViewCell {
         tt.text = "\(data.title)"
         alertTechTitle = "\(data.title)"
         alertTechMassege = "\(data.explenation)"
-        tp.text = "\(data.price)"
+        tp.text = "\(data.priceLVBit)"
         biuldinImage = "\(data.image)"
-        biuldigsPrice = (data.price)
+        biuldigsPrice = (data.priceLVBit)
     }
     
      //get the biulding image and place it in the tableview
     fileprivate let bg: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleToFill
-        iv.layer.cornerRadius = 12
+        iv.layer.cornerRadius = 4
         iv.clipsToBounds = true
         return iv
     }()
@@ -97,7 +97,7 @@ class TechTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         setImage()
         addSubview(bg)
-        bg.frame = CGRect(x: 22, y: 40, width: 220, height: 50)
+        bg.frame = CGRect(x: 70, y: 40, width: 160, height: 50)
         addSubview(tt)
         tt.frame = CGRect(x: 0, y: 0, width: 220, height: 30)
         setButtons()
@@ -145,9 +145,9 @@ class TechTableViewCell: UITableViewCell {
     
     //triger the information button in the tableview
     @IBAction func techAlert(){
-        TechCellDelegate?.OnClickTechCell(index: (index?.row)!,title: (alertTechTitle!),massage:  (alertTechMassege!),image: biuldinImage! )
+        DefenceCellDelegate?.OnClickDefenceCell(index: (index?.row)!,title: (alertTechTitle!),massage:  (alertTechMassege!),image: biuldinImage! )
     }
     @IBAction func biuld(){
-        TechCellDelegate?.onClickBiuld(index: (index?.row)!, image:(biuldinImage)!, price: (biuldigsPrice)!)
+        DefenceCellDelegate?.onClickBiuld(index: (index?.row)!, image:(biuldinImage)!, price: (biuldigsPrice)!)
     }
 }

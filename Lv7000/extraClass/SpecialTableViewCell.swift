@@ -33,7 +33,7 @@ class SpecialTableViewCell: UITableViewCell {
         specialTitle = "\(data.title)"
         specialMassege = "\(data.explenation)"
         biuldinImage = "\(data.image)"
-        biuldigsPrice = (data.price)
+        biuldigsPrice = (data.priceLVBit)
         
     }
     

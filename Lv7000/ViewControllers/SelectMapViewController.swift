@@ -11,14 +11,14 @@ import UIKit
 class SelectMapViewController: ChooseViewController {
     
     @IBOutlet weak var chooseMapTextField: UITextField!
-    
+    var gameInfo = ["United States","Strangerson Island", 6] as [Any]
     var mapImage = UIImageView()
     
     let maps = ["Strangerson Island", "Siberian Tiger", "Welcome to the Jungle", "Lawrence of Arabia"]
     var selectedImage: UIImage!
     var mapSends: String?
     var selectedMaps = "Strangerson Island"
-    var sendMaps: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -100,7 +100,14 @@ class SelectMapViewController: ChooseViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MakeGameSegue" {
             let selectedMapVC = segue.destination as! CreatGameViewController
-            selectedMapVC.sendMapInfo = (selectedMaps) as String
+            
+            
+            selectedMapVC.gameInfo[0] = (gameInfo[0]) as! String
+            selectedMapVC.gameInfo[1] = (selectedMaps) as String
+            selectedMapVC.gameInfo[2] = (gameInfo[2]) as! Int
+            
+            
+            
         }
     }
 }

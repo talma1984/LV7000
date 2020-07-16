@@ -19,6 +19,7 @@ protocol BuldingTableViewProtocol {
 class BuldingTableViewCell: UITableViewCell{
     
     var BuldingCellDelegate: BuldingTableViewProtocol?
+    var AlertCellDelegate: BuldingTableViewProtocol?
     var index: IndexPath?
     
     var data: CustumData! {
@@ -32,11 +33,11 @@ class BuldingTableViewCell: UITableViewCell{
         
         bg.image = UIImage(named: data.image)
         tt.text = "\(data.title) "
-        tp.text = "\(data.price)"
+        tp.text = "\(data.priceLVBit)"
         buldingTitle = "\(data.title)"
         buldingMassege = "\(data.explenation)"
         biuldinImage = "\(data.image)"
-        biuldigsPrice = (data.price)
+        biuldigsPrice = (data.priceLVBit)
     }
     //get the biulding image and place it in the tableview
     fileprivate let bg: UIImageView = {
@@ -152,6 +153,6 @@ class BuldingTableViewCell: UITableViewCell{
     
     //triger the information button in the tableview
     @IBAction func buldingsAlert(){
-        BuldingCellDelegate?.onClickCell(index: (index?.row)!,title: buldingTitle!,massage: buldingMassege!, image: biuldinImage!)
+        AlertCellDelegate?.onClickCell(index: (index?.row)!,title: buldingTitle!,massage: buldingMassege!, image: biuldinImage!)
     }
 }

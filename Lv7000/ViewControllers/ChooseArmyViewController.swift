@@ -14,8 +14,9 @@ class ChooseArmyViewController: ChooseViewController {
     
     var armyImage = UIImageView()
     let armysPiker = UIPickerView()
+    var gameInfo = ["United States","Strangerson Island", 6] as [Any]
+    let armys = ["United States", "China", "Russia", "Germany","Iran", "India", "Israel", "United Kingdom", "Japan"]
     
-    let armys = ["United States", "China", "Russia", "Germany", "Mexico", "Iran", "India", "South Africa", "Israel", "United Kingdom", "Japan"]
     
     var selectedArmy = "United States"
     
@@ -101,7 +102,11 @@ class ChooseArmyViewController: ChooseViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if segue.identifier == "MakeGameSegue" {
             let selectedArmysInfo = segue.destination as! CreatGameViewController
-            selectedArmysInfo.sendArmyInfo = ((selectedArmy as String?)!)
+            
+            
+            selectedArmysInfo.gameInfo[0] = ((selectedArmy as String?)!)
+            selectedArmysInfo.gameInfo[1] = (gameInfo[1]) as! String
+            selectedArmysInfo.gameInfo[2] = (gameInfo[2]) as! Int
         }
     }
 }

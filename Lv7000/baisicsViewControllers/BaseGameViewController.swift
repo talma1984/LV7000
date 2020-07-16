@@ -8,12 +8,20 @@
 
 import UIKit
 
+
+//protocol buyingProtocol {
+//    func buyBiulding(index: Int, image: String)
+//}
 //set base view of  the game
 class BaseGameViewController: UIViewController {
     
+    
+    
+//    var protocolDelegate: buyingProtocol!
     //scrollview stuff
     var scrollImageView = UIImageView()
     var scrollView: UIScrollView!
+   
     
     //time stuff
     var timeTextField = UITextField()
@@ -28,9 +36,7 @@ class BaseGameViewController: UIViewController {
     var lvBit = 10000
     var titanium = 300
     var soldiers = 60
-    
     var bankButton = UIButton()
-    
     let bitTextField = UITextField()
     let waterTextField = UITextField()
     let uraniumTextField = UITextField()
@@ -60,17 +66,17 @@ class BaseGameViewController: UIViewController {
     let topImage = UIImageView()
     let buldingButton = UIButton()
     let armyButton = UIButton()
-    let techButton = UIButton()
+    let defenceButton = UIButton()
     let specialButton = UIButton()
     var selectedTableViewButtons: String?
     let iformationGame = UIButton()
     let buldingGameTableView = UITableView()
     let armyGameTableView = UITableView()
-    let techGameTableView = UITableView()
+    let defenceGameTableView = UITableView()
     let specialGameTableView = UITableView()
     let buldingsTableViewCell = UITableViewCell()
     let armyTableViewCell = UITableViewCell()
-    let techTableViewCell = UITableViewCell()
+    let defenceTableViewCell = UITableViewCell()
     
     //xtras tuff
     var smallImages = UIImageView()
@@ -97,11 +103,13 @@ class BaseGameViewController: UIViewController {
     var teritory = 0
     
     
-    var sendMapInfo: String?
-    var sendArmyInfo: String?
+    var imagee = ""
+    var indexx = 0
+    
+    var gameInfo = ["United States","Strangerson Island", 6] as [Any]
     var buildingsArray = [CustumData]()
     var armysArray = [CustumData]()
-    var teckArray = [CustumData]()
+    var defenceArray = [CustumData]()
     var specialArray = [CustumData]()
     
     //get stuff from items array
@@ -114,32 +122,26 @@ class BaseGameViewController: UIViewController {
     let chiBuldings = ItemsArray.fetchChinaBuildings()
     let RussiaBuldings = ItemsArray.fetchRussiaBuildings()
     let gerBuldings = ItemsArray.fetchGermanyBuildings()
-    let mexBuldings = ItemsArray.fetchMexicoBuildings()
     let iraBuldings = ItemsArray.fetchIranBuildings()
     let indBuldings = ItemsArray.fetchIndiaBuildings()
-    let souBuldings = ItemsArray.fetchSouthAfricasBuildings()
     let isrBuldings = ItemsArray.fetchIsraelBuildings()
     let ukBuldings = ItemsArray.fetchUnitedKingdomBuildings()
     let japBuldings = ItemsArray.fetchJapanBuildings()
-    let usaTechs = ItemsArray.UnitedStatesetchTech()
-    let chiTechs = ItemsArray.ChinafetchTech()
-    let RussiaTechs = ItemsArray.RussiafetchTech()
-    let gerTechs = ItemsArray.GermanyfetchTech()
-    let mexTechs = ItemsArray.MexicofetchTech()
-    let iraTechs = ItemsArray.IranfetchTech()
-    let indTechs = ItemsArray.IndiafetchTech()
-    let souTechs = ItemsArray.SouthAfricafetchTech()
-    let isrTechs = ItemsArray.IsraelfetchTech()
-    let ukTechs = ItemsArray.UnitedKingdomfetchTech()
-    let japTechs = ItemsArray.JapanfetchTech()
+    let usaDefence = ItemsArray.UnitedStatesetchDefence()
+    let chiDefence = ItemsArray.ChinafetchDefence()
+    let RussiaDefence = ItemsArray.RussiafetchDefence()
+    let gerDefence = ItemsArray.GermanyfetchDefence()
+    let iraDefence = ItemsArray.IranfetchDefence()
+    let indDefence = ItemsArray.IndiafetchDefence()
+    let isrDefence = ItemsArray.IsraelfetchDefence()
+    let ukDefence = ItemsArray.UnitedKingdomfetchDefence()
+    let japDefence = ItemsArray.JapanfetchDefence()
     let usaSpecials = ItemsArray.UnitedStatesfetchSpecial()
     let chiSpecials = ItemsArray.ChinafetchSpecial()
     let RussiaSpecials = ItemsArray.RussiafetchSpecial()
     let gerSpecials = ItemsArray.GermanyfetchSpecial()
-    let mexSpecials = ItemsArray.MexicofetchSpecial()
     let iraSpecials = ItemsArray.IranfetchSpecial()
     let indSpecials = ItemsArray.IndiafetchSpecial()
-    let souSpecials = ItemsArray.SouthAfricafetchSpecial()
     let isrSpecials = ItemsArray.IsraelfetchSpecial()
     let ukSpecials = ItemsArray.UnitedKingdomfetchSpecial()
     let japSpecials = ItemsArray.JapanfetchSpecial()
@@ -147,27 +149,22 @@ class BaseGameViewController: UIViewController {
     let chiArmys = ItemsArray.ChinafetchArmy()
     let RussiaArmys = ItemsArray.RussiafetchArmy()
     let gerArmys = ItemsArray.GermanyfetchArmy()
-    let mexArmys = ItemsArray.MexicofetchArmy()
     let iraArmys = ItemsArray.IranfetchArmy()
     let indArmys = ItemsArray.IndiafetchArmy()
-    let souArmys = ItemsArray.SouthAfricafetchArmy()
     let isrArmys = ItemsArray.IsraelfetchArmy()
     let ukArmys = ItemsArray.UnitedKingdomfetchArmy()
     let japArmys = ItemsArray.JapanfetchArmy()
- 
-    //set array to later fiil in
-    var playerOne = [CustumTeritorryData(title: "String", image: "String", size: 3, possessor: "None", numberOfBuldings: 6, resurse: "String", x: 3, y: 4, width: 5, height: 6)].self
+    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         AppUtility.lockOrientation(.landscapeLeft)
         
-        getArmy(army: sendArmyInfo!)
-        setScollerView(map: sendMapInfo!)
+        getArmy(army: (gameInfo[0]) as! String)
+        setScollerView(map: gameInfo[1]as! String)
         setZoomScale(for: scrollView.bounds.size)
-        scrollView.zoomScale = scrollView.maximumZoomScale
-        scrollView.zoomScale = scrollView.minimumZoomScale
         setCalenderfrense()
         xtraImages()
         setBankfrense()
@@ -175,11 +172,17 @@ class BaseGameViewController: UIViewController {
         endTurnButton()
         setinfoChatfrense()
         
+        scrollView.zoomScale = scrollView.maximumZoomScale
+        scrollView.zoomScale = scrollView.minimumZoomScale
         
-        
-        getTheTeritorrys(map: "\(sendMapInfo ?? "Strangerson Island")")
+        getTheTeritorrys(map: "\(gameInfo[1])")
+        print(gameInfo[1])
+        print(gameInfo[0])
+        print(gameInfo[2])
         
     }
+    
+    
     
     
     //make the game only on landskape mode
@@ -188,15 +191,15 @@ class BaseGameViewController: UIViewController {
         let value = UIInterfaceOrientation.landscapeLeft.rawValue
         UIDevice.current.setValue(value, forKey: "orientation")
     }
-
+    
     override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
         return .landscapeLeft
     }
-
+    
     private func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask.landscapeLeft
     }
-
+    
     private func shouldAutorotate() -> Bool {
         return true
     }
@@ -289,7 +292,7 @@ class BaseGameViewController: UIViewController {
         case "Calendar":
             let title = "Calendar"
             let messege = "In the Calender you can see how many turns did the game have.\n"
-            + "In planet LV7000 every week is eight days, anm every month is 24 says and Three weeks.\n" + "you need to biuld Rocket launchers becuse every eight days you will send suplay: water & titanium back to earth and you get money and peuple in returne.\n" + "every month there will be a secret suplay and every player will get somthing unique from back home."
+                + "In planet LV7000 every week is eight days, anm every month is 24 says and Three weeks.\n" + "you need to biuld Rocket launchers becuse every eight days you will send suplay: water & titanium back to earth and you get money and peuple in returne.\n" + "every month there will be a secret suplay and every player will get somthing unique from back home."
             
             setinfoChatSystem(display: "information" ,title: title, massage: messege, image: "no image")
             
@@ -306,7 +309,7 @@ class BaseGameViewController: UIViewController {
             infoArray[1] = title
             infoArray[2] = messege
             infoArray[3] = "Money"
-            case "Water":
+        case "Water":
             let title = "Water"
             let messege =  "Water: water plants help you increse youre water suplay. Every eigth days you will send as much water as you can back home, in return you will get mor troops from youre homland."
             setinfoChatSystem(display: "information" ,title: title, massage: messege, image: "no image ")
@@ -315,7 +318,7 @@ class BaseGameViewController: UIViewController {
             infoArray[1] = title
             infoArray[2] = messege
             infoArray[3] = "Water"
-            case "Titanium":
+        case "Titanium":
             let title = "Titanium"
             let messege = "Titanium: Titanium Refinery help you increse youre Titanium suplay. titanium is Important for youre Armed forces. they all need it for there batturies. if you send Titanium home you will get in return LVbit and Troops!"
             setinfoChatSystem(display: "information" ,title: title, massage: messege, image: "no image ")
@@ -324,7 +327,7 @@ class BaseGameViewController: UIViewController {
             infoArray[1] = title
             infoArray[2] = messege
             infoArray[3] = "Titanium"
-            case "Uranium":
+        case "Uranium":
             let title = "Uranium"
             let messege = "Uranium: Uranium Mine help you increse youre uranium suplay. uranium is used for special vehicles and biuldings"
             setinfoChatSystem(display: "information" ,title: title, massage: messege, image: "no image ")
@@ -333,7 +336,7 @@ class BaseGameViewController: UIViewController {
             infoArray[1] = title
             infoArray[2] = messege
             infoArray[3] = "Uranium"
-            case "Troops":
+        case "Troops":
             let title = "Troops"
             let messege = "Troops: you will get more troops from youre homland if you send water and titanium back home. troops are needed to buy more Army. infantry and armed forces "
             setinfoChatSystem(display: "information" ,title: title, massage: messege, image: "no image ")
@@ -363,59 +366,59 @@ class BaseGameViewController: UIViewController {
             selectedTableViewButtons = "buldingButton"
             buldingButton.setBackgroundImage(UIImage(named: "BuldingOn"), for: UIControl.State.normal)
             armyButton.setBackgroundImage(UIImage(named: "ArmyOff"), for: UIControl.State.normal)
-            techButton.setBackgroundImage(UIImage(named: "TeckOff"), for: UIControl.State.normal)
+            defenceButton.setBackgroundImage(UIImage(named: "TeckOff"), for: UIControl.State.normal)
             specialButton.setBackgroundImage(UIImage(named: "SpecialOff"), for: UIControl.State.normal)
             buldingButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 8)
             armyButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 7)
-            techButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 7)
+            defenceButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 7)
             specialButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 7)
             buldingButton.setTitleColor(.systemGray3, for: .normal)
             armyButton.setTitleColor(.systemGreen, for: .normal)
-            techButton.setTitleColor(.systemGreen, for: .normal)
+            defenceButton.setTitleColor(.systemGreen, for: .normal)
             specialButton.setTitleColor(.systemBlue, for: .normal)
             setGameTableView(button: "bulding")
         case "armyButton":
             selectedTableViewButtons = "armyButton"
             buldingButton.setBackgroundImage(UIImage(named: "BuldingOff"), for: UIControl.State.normal)
             armyButton.setBackgroundImage(UIImage(named: "ArmyOn"), for: UIControl.State.normal)
-            techButton.setBackgroundImage(UIImage(named: "TeckOff"), for: UIControl.State.normal)
+            defenceButton.setBackgroundImage(UIImage(named: "TeckOff"), for: UIControl.State.normal)
             specialButton.setBackgroundImage(UIImage(named: "SpecialOff"), for: UIControl.State.normal)
             armyButton.setTitleColor(.systemGray2, for: .normal)
             buldingButton.setTitleColor(.systemBlue, for: .normal)
-            techButton.setTitleColor(.systemGreen, for: .normal)
+            defenceButton.setTitleColor(.systemGreen, for: .normal)
             specialButton.setTitleColor(.systemBlue, for: .normal)
             armyButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 8)
-            techButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 7)
+            defenceButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 7)
             buldingButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size:7)
             specialButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 7)
             setGameTableView(button: "army")
-        case "techButton":
-            selectedTableViewButtons = "techButton"
+        case "defenceButton":
+            selectedTableViewButtons = "defenceButton"
             buldingButton.setBackgroundImage(UIImage(named: "BuldingOff"), for: UIControl.State.normal)
             armyButton.setBackgroundImage(UIImage(named: "ArmyOff"), for: UIControl.State.normal)
-            techButton.setBackgroundImage(UIImage(named: "TeckOn"), for: UIControl.State.normal)
+            defenceButton.setBackgroundImage(UIImage(named: "TeckOn"), for: UIControl.State.normal)
             specialButton.setBackgroundImage(UIImage(named: "SpecialOff"), for: UIControl.State.normal)
-            techButton.setTitleColor(.systemGray2, for: .normal)
+            defenceButton.setTitleColor(.systemGray2, for: .normal)
             buldingButton.setTitleColor(.systemBlue, for: .normal)
             armyButton.setTitleColor(.systemGreen, for: .normal)
             specialButton.setTitleColor(.systemBlue, for: .normal)
             armyButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 7)
-            techButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 8)
+            defenceButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 8)
             buldingButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size:7)
             specialButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 7)
-            setGameTableView(button: "tech")
+            setGameTableView(button: "defence")
         case "specialButton":
             selectedTableViewButtons = "specialButton"
             buldingButton.setBackgroundImage(UIImage(named: "BuldingOff"), for: UIControl.State.normal)
             armyButton.setBackgroundImage(UIImage(named: "ArmyOff"), for: UIControl.State.normal)
-            techButton.setBackgroundImage(UIImage(named: "TeckOff"), for: UIControl.State.normal)
+            defenceButton.setBackgroundImage(UIImage(named: "TeckOff"), for: UIControl.State.normal)
             specialButton.setBackgroundImage(UIImage(named: "SpecialOn"), for: UIControl.State.normal)
             specialButton.setTitleColor(.systemGray3, for: .normal)
             buldingButton.setTitleColor(.systemBlue, for: .normal)
             armyButton.setTitleColor(.systemGreen, for: .normal)
-            techButton.setTitleColor(.systemGreen, for: .normal)
+            defenceButton.setTitleColor(.systemGreen, for: .normal)
             armyButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 7)
-            techButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 7)
+            defenceButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 7)
             buldingButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size:7)
             specialButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 8)
             setGameTableView(button: "special")
@@ -444,7 +447,7 @@ class BaseGameViewController: UIViewController {
     func setZoomScale(for scrollViewSize: CGSize) {
         
         let imageSize = scrollImageView.bounds.size
-        let widthScale = scrollViewSize.width /  imageSize.width
+        let widthScale = scrollViewSize.width / imageSize.width
         let heightScale = scrollViewSize.height / imageSize.height
         let minimumScale = min(widthScale, heightScale)
         scrollView.minimumZoomScale = minimumScale
@@ -456,21 +459,30 @@ class BaseGameViewController: UIViewController {
         let mapSend = map
         
         scrollImageView.image = (UIImage(named: mapSend))
-        
         scrollView = UIScrollView(frame: view.bounds)
-        scrollView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        scrollView.backgroundColor = .black
-        scrollImageView.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
-        //scrollImageView.frame = view.bounds
+        view.addSubview(scrollView)
+        scrollView.autoresizingMask = [ .flexibleWidth,.flexibleHeight]
+        scrollView.backgroundColor = .clear
+        
+        scrollImageView.frame = view.bounds
+        
         scrollImageView.contentMode = .scaleAspectFill
         scrollImageView.clipsToBounds = true
         scrollView.delegate = self
+        scrollView.autoresizesSubviews = true
+        
+        
+        
         scrollView.addSubview(scrollImageView)
         
         
-        view.sendSubviewToBack(scrollImageView)
-        view.addSubview(scrollView)
+        //view.bringSubviewToFront(topImageContainerView)
+        
+        
+        // view.sendSubviewToBack(scrollImageView)
+        
     }
+    
     
     //set the time refrenses and buttons atribiuts(on the top right of the screen)
     func setCalenderfrense(){
@@ -604,8 +616,8 @@ class BaseGameViewController: UIViewController {
             subjectBiuldingImage.contentMode = .scaleToFill
             subjectBiuldingImage.frame = CGRect(x: 10, y: 50, width: 80, height: 70)
             subjectBiuldinInfo.text = "\(massage)"
-            subjectBiuldinInfo.textColor = UIColor.systemGray6
-            subjectBiuldinInfo.font = UIFont(name: "SofachromeRg-Italic", size: 9)
+            subjectBiuldinInfo.textColor = UIColor.black
+            subjectBiuldinInfo.font = UIFont(name: "SofachromeRg-Italic", size: 10)
             subjectBiuldinInfo.backgroundColor = .clear
             subjectBiuldinInfo.isScrollEnabled = true
             subjectBiuldinInfo.isEditable = false
@@ -640,8 +652,8 @@ class BaseGameViewController: UIViewController {
             subjectArmyImage.contentMode = .scaleToFill
             subjectArmyImage.frame = CGRect(x: 10, y: 50, width: 80, height: 70)
             subjectArmyInfo.text = "\(massage)"
-            subjectArmyInfo.textColor = UIColor.systemGray6
-            subjectArmyInfo.font = UIFont(name: "SofachromeRg-Italic", size: 9)
+            subjectArmyInfo.textColor = UIColor.black
+            subjectArmyInfo.font = UIFont(name: "SofachromeRg-Italic", size: 10)
             subjectArmyInfo.backgroundColor = .clear
             subjectArmyInfo.frame = CGRect(x: 90, y: 52, width: 90, height: 65)
             subjectArmyInfo.isScrollEnabled = true
@@ -672,13 +684,13 @@ class BaseGameViewController: UIViewController {
             informationTitle.textAlignment = .left
             infoCaht.addSubview(subjectInfo)
             subjectInfo.text = "\(massage)"
-            subjectInfo.textColor = UIColor.systemGray6
+            subjectInfo.textColor = UIColor.black
             subjectInfo.font = UIFont(name: "SofachromeRg-Italic", size: 10)
             subjectInfo.frame = CGRect(x: 7 , y: 50, width: 180, height: 65)
             subjectInfo.backgroundColor = .clear
             subjectInfo.isScrollEnabled = true
             subjectInfo.isEditable = false
-             subjectInfo.textAlignment = NSTextAlignment.left
+            subjectInfo.textAlignment = NSTextAlignment.left
             subjectInfo.isEditable = false
             subjectBiuldingImage.isHidden = true
             subjectBiuldinInfo.isHidden = true
@@ -729,7 +741,7 @@ class BaseGameViewController: UIViewController {
         informationArmyTitle.isHidden = true
         informationTitle.isHidden = true
         subjectInfo.isHidden = true
-       
+        
     }
     
     
@@ -741,8 +753,8 @@ class BaseGameViewController: UIViewController {
         view.addSubview(bankButton)
         bankButton.frame = CGRect(x: 2, y: 0, width: 351, height: 50)
         bankButton.addTarget(self, action: #selector(bankButtonClicked), for: .touchUpInside)
-
-       
+        
+        
         
         bitTextField.textAlignment = NSTextAlignment.left
         bitTextField.backgroundColor = .clear
@@ -760,7 +772,7 @@ class BaseGameViewController: UIViewController {
         bankButton.addSubview(waterTextField)
         waterTextField.isUserInteractionEnabled = false
         waterTextField.textColor = .black
-       
+        
         titaniumTextField.textAlignment = NSTextAlignment.left
         titaniumTextField.backgroundColor = .clear
         titaniumTextField.font = UIFont(name: "SofachromeRg-Italic", size: 11)
@@ -769,7 +781,7 @@ class BaseGameViewController: UIViewController {
         bankButton.addSubview(titaniumTextField)
         titaniumTextField.isUserInteractionEnabled = false
         titaniumTextField.textColor = .black
-       
+        
         uraniumTextField.textAlignment = NSTextAlignment.left
         uraniumTextField.backgroundColor = .clear
         uraniumTextField.font = UIFont(name: "SofachromeRg-Italic", size: 11)
@@ -781,28 +793,28 @@ class BaseGameViewController: UIViewController {
         bitButton.setImage(UIImage(named: "Money"), for: UIControl.State.normal)
         
         waterButton.setImage(UIImage(named: "Water"), for: UIControl.State.normal)
-           
+        
         titaniumButton.setImage(UIImage(named: "Titanium"), for: UIControl.State.normal)
-            
+        
         uraniumButton.setImage(UIImage(named: "Uranium"), for: UIControl.State.normal)
-            
+        
         
         troopsButton.contentMode = .scaleAspectFill
         
         troopsButton.setImage(UIImage(named: "Soldier"), for: UIControl.State.normal)
-            
+        
         bankButton.addSubview(troopsButton)
         bitButton.frame = CGRect(x: 60, y: 3, width: 25, height: 25)
         bitTextField.frame = CGRect(x: 30, y: 15 , width: 311, height: 37)
         waterButton.frame = CGRect(x: 120, y: 3, width: 20, height: 20)
         waterTextField.frame = CGRect(x: 105, y: 15 , width: 311, height: 37)
         titaniumButton.frame = CGRect(x: 180, y: 3, width: 24, height: 24)
-         titaniumTextField.frame = CGRect(x: 170, y: 15 , width: 311, height: 37)
+        titaniumTextField.frame = CGRect(x: 170, y: 15 , width: 311, height: 37)
         uraniumButton.frame = CGRect(x: 240, y: 3, width: 22, height: 22)
-         uraniumTextField.frame = CGRect(x: 230, y: 15 , width: 311, height: 37)
+        uraniumTextField.frame = CGRect(x: 230, y: 15 , width: 311, height: 37)
         troopsButton.frame = CGRect(x: 300, y: 1, width: 23, height: 25)
-         troopsTextField.frame = CGRect(x: 290, y: 15 , width: 311, height: 37)
-
+        troopsTextField.frame = CGRect(x: 290, y: 15 , width: 311, height: 37)
+        
         bitButton.contentMode = .scaleAspectFill
         waterButton.contentMode = .scaleAspectFill
         titaniumButton.contentMode = .scaleAspectFill
@@ -836,7 +848,7 @@ class BaseGameViewController: UIViewController {
         
         
         
-       
+        
         troopsTextField.textAlignment = NSTextAlignment.left
         troopsTextField.backgroundColor = .clear
         troopsTextField.font = UIFont(name: "SofachromeRg-Italic", size: 11)
@@ -905,7 +917,7 @@ class BaseGameViewController: UIViewController {
         actionButtons()
     }
     
-    //controll the table views on the 4 buttons biuld, army ,special and tech
+    //controll the table views on the 4 buttons biuld, army ,special and defenceButton
     func actionButtons(){
         topImage.addSubview(buldingButton)
         buldingButton.frame = CGRect(x: 28, y: 16, width: 66, height: 16)
@@ -927,16 +939,16 @@ class BaseGameViewController: UIViewController {
         armyButton.setTitle("Army", for: .normal)
         armyButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 7)
         armyButton.setTitleColor(.systemGreen, for: .normal)
-        topImage.addSubview(techButton)
-        techButton.frame = CGRect(x: 160, y: 16, width: 65, height: 16)
-        techButton.setBackgroundImage(UIImage(named: "TeckOff"), for: UIControl.State.normal)
-        techButton.contentMode = .scaleAspectFill
-        let tappedTech = MyTapGesture.init(target: self, action:#selector(self.actionButtonClicked(recognaizer:)))
-        tappedTech.actionButton = "techButton"
-        techButton.addGestureRecognizer(tappedTech)
-        techButton.setTitle("Tech", for: .normal)
-        techButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 7)
-        techButton.setTitleColor(.systemGreen, for: .normal)
+        topImage.addSubview(defenceButton)
+        defenceButton.frame = CGRect(x: 155, y: 16, width: 70, height: 16)
+        defenceButton.setBackgroundImage(UIImage(named: "TeckOff"), for: UIControl.State.normal)
+        defenceButton.contentMode = .scaleAspectFill
+        let tappedDefence = MyTapGesture.init(target: self, action:#selector(self.actionButtonClicked(recognaizer:)))
+        tappedDefence.actionButton = "defenceButton"
+        defenceButton.addGestureRecognizer(tappedDefence)
+        defenceButton.setTitle("Defence", for: .normal)
+        defenceButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 7)
+        defenceButton.setTitleColor(.systemGreen, for: .normal)
         topImage.addSubview(specialButton)
         specialButton.frame = CGRect(x: 226, y: 16, width: 66, height: 16)
         specialButton.setBackgroundImage(UIImage(named: "SpecialOff"), for: UIControl.State.normal)
@@ -963,7 +975,7 @@ class BaseGameViewController: UIViewController {
             buldingGameTableView.register(BuldingTableViewCell.self,  forCellReuseIdentifier: "BuldingCell")
             buldingGameTableView.isHidden = false
             armyGameTableView.isHidden = true
-            techGameTableView.isHidden = true
+            defenceGameTableView.isHidden = true
             specialGameTableView.isHidden = true
         case "army":
             armyGameTableView.backgroundColor = UIColor.clear
@@ -975,19 +987,19 @@ class BaseGameViewController: UIViewController {
             armyGameTableView.register(ArmyTableViewCell.self,  forCellReuseIdentifier: "armyCell")
             buldingGameTableView.isHidden = true
             armyGameTableView.isHidden = false
-            techGameTableView.isHidden = true
+            defenceGameTableView.isHidden = true
             specialGameTableView.isHidden = true
-        case "tech":
-            techGameTableView.backgroundColor = UIColor.clear
-            techGameTableView.delegate = self
-            techGameTableView.dataSource = self
-            gameImage.addSubview(techGameTableView)
-            techGameTableView.backgroundColor = UIColor.clear
-            techGameTableView.frame = CGRect(x: 310, y: 45, width: 300, height: 100)
-            techGameTableView.register(TechTableViewCell.self,  forCellReuseIdentifier: "techCell")
+        case "defence":
+            defenceGameTableView.backgroundColor = UIColor.clear
+            defenceGameTableView.delegate = self
+            defenceGameTableView.dataSource = self
+            gameImage.addSubview(defenceGameTableView)
+            defenceGameTableView.backgroundColor = UIColor.clear
+            defenceGameTableView.frame = CGRect(x: 310, y: 45, width: 300, height: 100)
+            defenceGameTableView.register(DefenceTableViewCell.self,  forCellReuseIdentifier: "defenceCell")
             buldingGameTableView.isHidden = true
             armyGameTableView.isHidden = true
-            techGameTableView.isHidden = false
+            defenceGameTableView.isHidden = false
             specialGameTableView.isHidden = true
         case "special":
             specialGameTableView.backgroundColor = UIColor.clear
@@ -999,7 +1011,7 @@ class BaseGameViewController: UIViewController {
             specialGameTableView.register(SpecialTableViewCell.self,  forCellReuseIdentifier: "spechialCell")
             buldingGameTableView.isHidden = true
             armyGameTableView.isHidden = true
-            techGameTableView.isHidden = true
+            defenceGameTableView.isHidden = true
             specialGameTableView.isHidden = false
         default:
             print("no table view set")
@@ -1178,8 +1190,8 @@ class BaseGameViewController: UIViewController {
     
     //get the teritorrys from map array that the player will start the game whith
     func getTheTeritorrys(map: String) {
-       
-       
+        
+        
         switch  map{
             
         case "Strangerson Island":
@@ -1188,112 +1200,123 @@ class BaseGameViewController: UIViewController {
             playerTeritorrys.append(StrangersonIsland[number])
             playerTeritorrys.append(StrangersonIsland[number + 1])
             playerTeritorrys.append(StrangersonIsland[number + 2])
-            playerOne.removeAll()
-            playerOne.append(contentsOf: playerTeritorrys)
+            
+            playerTeritorrys[0].title = "Capitol " + playerTeritorrys[0].title
+            //if let name = UserDefaults.standard.string(forKey: "uName"){
+            //            playerTeritorrys[0].possessor = (name)
+            //            playerTeritorrys[1].possessor = (name)
+            //            playerTeritorrys[2].possessor = (name)
             
             
             
-            case "Siberian Tiger":
+        case "Siberian Tiger":
+            
             playerTeritorrys.removeAll()
-            let number = Int.random(in: 0 ..< StrangersonIsland.count-2)
+            let number = Int.random(in: 0 ..< SiberianTiger.count-2)
             playerTeritorrys.append(SiberianTiger[number])
             playerTeritorrys.append(SiberianTiger[number + 1])
             playerTeritorrys.append(SiberianTiger[number + 2])
-            playerOne.removeAll()
-            playerOne.append(contentsOf: playerTeritorrys)
-            case "Welcome to the Jungle":
+            playerTeritorrys[0].title = "Capitol " + playerTeritorrys[0].title
+            //if let name = UserDefaults.standard.string(forKey: "uName"){
+                       //            playerTeritorrys[0].possessor = (name)
+                       //            playerTeritorrys[1].possessor = (name)
+                       //            playerTeritorrys[2].possessor = (name)
+            
+        case "Welcome to the Jungle":
+            print("need to make teritorrys for Welcome to the Jungle")
             playerTeritorrys.removeAll()
-            let number = Int.random(in: 0 ..< StrangersonIsland.count-2)
+            
+            let number = Int.random(in: 0 ..< WelcomeToTheJungle.count-2)
             playerTeritorrys.append(WelcomeToTheJungle[number])
             playerTeritorrys.append(WelcomeToTheJungle[number + 1])
             playerTeritorrys.append(WelcomeToTheJungle[number + 2])
-            playerOne.removeAll()
-            playerOne.append(contentsOf: playerTeritorrys)
-            case "Lawrence of Arabia":
+            playerTeritorrys[0].title = "Capitol " + playerTeritorrys[0].title
+            //if let name = UserDefaults.standard.string(forKey: "uName"){
+                       //            playerTeritorrys[0].possessor = (name)
+                       //            playerTeritorrys[1].possessor = (name)
+                       //            playerTeritorrys[2].possessor = (name)
+        case "Lawrence of Arabia":
+            print("need to make teritorrys for Lawrence of Arabia")
+            
             playerTeritorrys.removeAll()
-            let number = Int.random(in: 0 ..< StrangersonIsland.count-2)
+            let number = Int.random(in: 0 ..< LawrenceOfArabia.count-2)
             playerTeritorrys.append(LawrenceOfArabia[number])
             playerTeritorrys.append(LawrenceOfArabia[number + 1])
             playerTeritorrys.append(LawrenceOfArabia[number + 2])
-            playerOne.removeAll()
-            playerOne.append(contentsOf: playerTeritorrys)
+            playerTeritorrys[0].title = "Capitol " + playerTeritorrys[0].title
+            //if let name = UserDefaults.standard.string(forKey: "uName"){
+                       //            playerTeritorrys[0].possessor = (name)
+                       //            playerTeritorrys[1].possessor = (name)
+                       //            playerTeritorrys[2].possessor = (name)
         default:
             print("nomap")
         }
-        if let name = UserDefaults.standard.string(forKey: "uName"){
-            playerOne[0].possessor = (name)
-            playerOne[1].possessor = (name)
-            playerOne[2].possessor = (name)
-            
-        }
+        //        if let name = UserDefaults.standard.string(forKey: "uName"){
+        //            playerTeritorrys[0].possessor = (name)
+        //            playerTeritorrys[1].possessor = (name)
+        //            playerTeritorrys[2].possessor = (name)
+        
+        // }
         
         
     }
     
     func getArmy(army: String){
         
-       
+        
         switch army {
         case "United States":
             buildingsArray.append(contentsOf: usaBuldings)
             armysArray.append(contentsOf: usaArmys)
-            teckArray.append(contentsOf: usaTechs)
+            defenceArray.append(contentsOf: usaDefence)
             specialArray.append(contentsOf: usaSpecials)
         case "China":
             buildingsArray.append(contentsOf: chiBuldings)
             armysArray.append(contentsOf: chiArmys)
-            teckArray.append(contentsOf: chiTechs)
+            defenceArray.append(contentsOf: chiDefence)
             specialArray.append(contentsOf: chiSpecials)
         case "Russia":
             buildingsArray.append(contentsOf: RussiaBuldings)
             armysArray.append(contentsOf: RussiaArmys)
-            teckArray.append(contentsOf: RussiaTechs)
+            defenceArray.append(contentsOf: RussiaDefence)
             specialArray.append(contentsOf: RussiaSpecials)
         case "Germany":
             buildingsArray.append(contentsOf: gerBuldings)
             armysArray.append(contentsOf: gerArmys)
-            teckArray.append(contentsOf: gerTechs)
+            defenceArray.append(contentsOf: gerDefence)
             specialArray.append(contentsOf: gerSpecials)
-        case "Mexico":
-            buildingsArray.append(contentsOf: mexBuldings)
-            armysArray.append(contentsOf: mexArmys)
-            teckArray.append(contentsOf: mexTechs)
-            specialArray.append(contentsOf: mexSpecials)
         case "Iran":
             buildingsArray.append(contentsOf: iraBuldings)
             armysArray.append(contentsOf: iraArmys)
-            teckArray.append(contentsOf: iraTechs)
+            defenceArray.append(contentsOf: iraDefence)
             specialArray.append(contentsOf: iraSpecials)
         case "India":
             buildingsArray.append(contentsOf: indBuldings)
             armysArray.append(contentsOf: indArmys)
-            teckArray.append(contentsOf: indTechs)
+            defenceArray.append(contentsOf: indDefence)
             specialArray.append(contentsOf: indSpecials)
-        case "South Africa":
-            buildingsArray.append(contentsOf: souBuldings)
-            armysArray.append(contentsOf: souArmys)
-            teckArray.append(contentsOf: souTechs)
-            specialArray.append(contentsOf: souSpecials)
+            
         case "Israel":
             buildingsArray.append(contentsOf: isrBuldings)
             armysArray.append(contentsOf: isrArmys)
-            teckArray.append(contentsOf: isrTechs)
+            defenceArray.append(contentsOf: isrDefence)
             specialArray.append(contentsOf: isrSpecials)
         case "United Kingdom":
             buildingsArray.append(contentsOf: ukBuldings)
             armysArray.append(contentsOf: ukArmys)
-            teckArray.append(contentsOf: ukTechs)
+            defenceArray.append(contentsOf: ukDefence)
             specialArray.append(contentsOf: ukSpecials)
         case "Japan":
             buildingsArray.append(contentsOf: japBuldings)
             armysArray.append(contentsOf: japArmys)
-            teckArray.append(contentsOf: japTechs)
+            defenceArray.append(contentsOf: japDefence)
             specialArray.append(contentsOf: japSpecials)
         default:
             print("no army")
         }
-
+        
     }
+    
     
     //class that helps to know which button was pushed
     class MyTapGesture: UITapGestureRecognizer{
@@ -1322,8 +1345,8 @@ extension BaseGameViewController: UITableViewDelegate, UITableViewDataSource {
             return buildingsArray.count
         case "armyButton":
             return armysArray.count
-        case "techButton":
-            return teckArray.count
+        case "defenceButton":
+            return defenceArray.count
         case "specialButton":
             return specialArray.count
         default:
@@ -1341,6 +1364,7 @@ extension BaseGameViewController: UITableViewDelegate, UITableViewDataSource {
             BuldingCell.backgroundColor = .clear
             let bulding = buildingsArray[indexPath.row]
             BuldingCell.data = bulding
+            BuldingCell.AlertCellDelegate = self
             BuldingCell.BuldingCellDelegate = self
             BuldingCell.index = indexPath
             
@@ -1356,14 +1380,14 @@ extension BaseGameViewController: UITableViewDelegate, UITableViewDataSource {
             armyCell.index = indexPath
             return armyCell
             
-        case "techButton":
-            let techCell = tableView.dequeueReusableCell(withIdentifier: "techCell", for: indexPath) as! TechTableViewCell
-            techCell.backgroundColor = .clear
-            let tech = teckArray[indexPath.row]
-            techCell.data = tech
-            techCell.TechCellDelegate = self
-            techCell.index = indexPath
-            return techCell
+        case "defenceButton":
+            let defenceCell = tableView.dequeueReusableCell(withIdentifier: "defenceCell", for: indexPath) as! DefenceTableViewCell
+            defenceCell.backgroundColor = .clear
+            let defence = defenceArray[indexPath.row]
+            defenceCell.data = defence
+            defenceCell.DefenceCellDelegate = self
+            defenceCell.index = indexPath
+            return defenceCell
             
         case "specialButton":
             let spechialCell = tableView.dequeueReusableCell(withIdentifier: "spechialCell", for: indexPath) as! SpecialTableViewCell
@@ -1384,7 +1408,6 @@ extension BaseGameViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
-    
 }
 
 //get info from biulding
@@ -1395,41 +1418,37 @@ extension BaseGameViewController: BuldingTableViewProtocol{
         infoArray[1] = title
         infoArray[2] = massage
         infoArray[3] = image
-        
     }
-    
     
     func onClickBiuld(index: Int, image: String, price: Int) {
         
-        print(index, image, price)
+        
+        
+        print("here")
+        imagee = image
+        indexx = index
+        
         let prices = price
         
-        
-        //check if you have enof money
+        //check if you have enuf money
         if lvBit >= price  {
             lvBit -= prices
-            print(lvBit)
             bitTextField.text = "\(lvBit)"
             waterTextField.text = "\(water)"
             titaniumTextField.text = "\(titanium) "
             uraniumTextField.text = "\(uranium) "
-            GameViewControler.shared.courentBiulding = "\(image)"
-            GameCollectionViewCell.init().sendNumberOfBiuldings(sender: self)
-            smallImages.image = UIImage(named: "Usa")
-            smallImages.contentMode = .scaleToFill
-            smallImages.frame = CGRect(x: 5, y: 2, width:30, height: 16)
-            smallImages.clipsToBounds = true
-            GameCollectionViewCell.init().NumberOfBuldingsButton1.addSubview(smallImages)
+            
+            let name = Notification.Name(rawValue: biuldNotificationKey)
+            NotificationCenter.default.post(name: name, object: nil)
+//            protocolDelegate?.buyBiulding(index: indexx , image: imagee )
             
         } else {
-             
             
             let alert = UIAlertController(title: "Insufficient Funds", message: " you need to get more: LVBIT" , preferredStyle: UIAlertController.Style.alert)
             // add an action (button)
             alert.addAction(UIAlertAction(title: "Got It", style: UIAlertAction.Style.default, handler: nil))
             //show the alert
             self.present(alert, animated: true, completion: nil)
-            
         }
     }
 }
@@ -1446,9 +1465,9 @@ extension BaseGameViewController: SpecialTableViewProtocol{
     }
 }
 
-//get info from theccell
-extension BaseGameViewController: TechTableViewProtocol{
-    func OnClickTechCell(index: Int, title: String, massage: String, image: String) {
+//get info from defenccell
+extension BaseGameViewController: DefenceTableViewProtocol{
+    func OnClickDefenceCell(index: Int, title: String, massage: String, image: String) {
         
         setinfoChatSystem(display: "biulding", title: title, massage: massage, image: image)
         infoArray[0] = "biulding"
@@ -1471,8 +1490,8 @@ extension BaseGameViewController: ArmyTableViewCProtocol{
     }
     
     
-    func onClickBiuld(index: Int, title: String, image: String, price: Int, hitPoints: Int) {
-        print(index, image, price, hitPoints, title)
+    func onClickArmyBiuld(index: Int, title: String, image: String, price: Int) {
+        print(index, image, price, title)
     }
 }
 

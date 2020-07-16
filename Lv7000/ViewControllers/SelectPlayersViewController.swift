@@ -10,6 +10,7 @@ import UIKit
 
 class SelectPlayersViewController: ChooseViewController {
     
+    var gameInfo = ["United States","Strangerson Island", 6] as [Any]
     @IBOutlet weak var PlayersSagment: UISegmentedControl!
     
     var selectPlayersImage = UIImageView()
@@ -159,7 +160,12 @@ class SelectPlayersViewController: ChooseViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if segue.identifier == "MakeGameSegue" {
             let selectedNumOfPlayers = segue.destination as! CreatGameViewController
-            selectedNumOfPlayers.sendNumberOfPlayersInfo = (numberofPlayers as Int)
+            
+            
+            selectedNumOfPlayers.gameInfo[0] = (gameInfo[0]) as! String
+            selectedNumOfPlayers.gameInfo[1] = (gameInfo[1]) as! String
+            selectedNumOfPlayers.gameInfo[2] = (numberofPlayers as Int)
+            
         }
     }
 }

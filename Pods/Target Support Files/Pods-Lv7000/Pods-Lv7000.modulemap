@@ -1,0 +1,6 @@
+framework module Pods_Lv7000 {
+  umbrella header "Pods-Lv7000-umbrella.h"
+
+  export *
+  module * { export * }
+}

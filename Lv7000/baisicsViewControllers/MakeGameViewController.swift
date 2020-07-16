@@ -97,3 +97,24 @@ class MakeGameViewController: UIViewController {
     }
 }
 
+
+
+///nsnotification\
+// make it global
+//let biuldingNotifications = "Ok"
+
+
+//on the called screen
+//let biuld = Notification.Name(rawValue: biuldingNotifications)
+    
+//deinit {
+//    NotificationCenter.default.removeObserver(self)
+//}
+//func createObservers(){
+//    NotificationCenter.default.addObserver(self, selector: #selector(sendNumberOfBiuldings), name: biuld, object: nil)
+//
+//}
+
+
+//on the caller screen
+//            NotificationCenter.default.post(name: Notification.Name(rawValue: biuldingNotifications), object: image)

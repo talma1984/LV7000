@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="11J-1U-Xie">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HrY-q8-VPi">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -939,7 +939,7 @@ Without prejudice to any other administrative or judicial legal remedy, you have
                                 <rect key="frame" x="90" y="673" width="244" height="80"/>
                                 <state key="normal" backgroundImage="launch"/>
                                 <connections>
-                                    <segue destination="MHk-l7-qht" kind="show" identifier="gameInformationSegue" id="nxq-vT-A3F"/>
+                                    <segue destination="Ano-lr-oQ0" kind="show" identifier="loadInformationSegue" id="nbs-cz-0rL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CKZ-dr-Xfp">
@@ -950,7 +950,7 @@ Without prejudice to any other administrative or judicial legal remedy, you have
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" backgroundImage="SelectMap"/>
                                 <connections>
-                                    <segue destination="2EY-it-TWG" kind="show" id="HsO-mq-K3U"/>
+                                    <segue destination="2EY-it-TWG" kind="show" identifier="sendMapArraySegue" id="HsO-mq-K3U"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xek-wD-kF0">
@@ -972,7 +972,7 @@ Without prejudice to any other administrative or judicial legal remedy, you have
                                 </constraints>
                                 <state key="normal" backgroundImage="SelectPlayers"/>
                                 <connections>
-                                    <segue destination="ZHN-Wp-w2r" kind="show" id="8Pm-tA-Vh9"/>
+                                    <segue destination="ZHN-Wp-w2r" kind="show" identifier="sendPlayersArraySegue" id="8Pm-tA-Vh9"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Frt-xP-mRu">
@@ -988,7 +988,7 @@ Without prejudice to any other administrative or judicial legal remedy, you have
                                 </constraints>
                                 <state key="normal" backgroundImage="SelectArmy copy"/>
                                 <connections>
-                                    <segue destination="jXd-bX-lYH" kind="show" id="uNp-G2-xhV"/>
+                                    <segue destination="jXd-bX-lYH" kind="show" identifier="sendArmyArraySegue" id="uNp-G2-xhV"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qmk-Q6-iSh">
@@ -1257,7 +1257,7 @@ Without prejudice to any other administrative or judicial legal remedy, you have
                                 <rect key="frame" x="90" y="648" width="244" height="80"/>
                                 <state key="normal" backgroundImage="join"/>
                                 <connections>
-                                    <segue destination="CJ3-Zh-MgJ" kind="show" id="HRr-RT-2wG"/>
+                                    <segue destination="Ano-lr-oQ0" kind="show" id="pCZ-ds-Ifc"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Time per turn" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PJn-mv-05Y">
@@ -1339,24 +1339,27 @@ Without prejudice to any other administrative or judicial legal remedy, you have
             </objects>
             <point key="canvasLocation" x="3667" y="-707"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Wer-Pj-9IU">
+        <!--Load View Controller-->
+        <scene sceneID="fHR-XD-xpT">
             <objects>
-                <viewController id="CJ3-Zh-MgJ" sceneMemberID="viewController">
+                <viewController id="Ano-lr-oQ0" customClass="LoadViewController" customModule="Lv7000" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Qu3-0E-5qc"/>
-                        <viewControllerLayoutGuide type="bottom" id="1MA-hb-b5o"/>
+                        <viewControllerLayoutGuide type="top" id="w8h-XK-QYN"/>
+                        <viewControllerLayoutGuide type="bottom" id="YWe-PV-mag"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="eAh-4k-RT9">
+                    <view key="view" contentMode="scaleToFill" id="KcZ-fQ-KWX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="beP-7h-wpj"/>
+                    <navigationItem key="navigationItem" id="Nil-2O-cMA"/>
+                    <connections>
+                        <segue destination="MHk-l7-qht" kind="show" identifier="gameInformationSegue" id="xeH-LI-mri"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fR9-JI-Q8R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Vo-I5-VfE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5857.971014492754" y="-707.14285714285711"/>
+            <point key="canvasLocation" x="5155" y="-986"/>
         </scene>
         <!--Game View Controler-->
         <scene sceneID="cJc-0W-GzG">
@@ -1375,12 +1378,13 @@ Without prejudice to any other administrative or judicial legal remedy, you have
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NRU-DR-xix" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5856.521739130435" y="-1351.3392857142856"/>
+            <point key="canvasLocation" x="6567" y="-1548"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ohU-rp-wev"/>
-        <segue reference="iUb-vD-dxv"/>
+        <segue reference="nbs-cz-0rL"/>
+        <segue reference="Lb0-Rw-trz"/>
+        <segue reference="atw-nw-OX2"/>
         <segue reference="bq5-cf-OWU"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>

@@ -21,6 +21,7 @@
 		043CC13B24751A2C00F90824 /* PlayersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043CC13A24751A2C00F90824 /* PlayersCell.swift */; };
 		043CC13D24767ED100F90824 /* GameViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043CC13C24767ED100F90824 /* GameViewControler.swift */; };
 		0466DCE724A0A24100F89351 /* Army.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0466DCE624A0A24100F89351 /* Army.swift */; };
+		046740C524AF26EB007739D8 /* LoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046740C424AF26EB007739D8 /* LoadViewController.swift */; };
 		048CEDE72482BE68006E563C /* divlit.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 048CEDE62482BE68006E563C /* divlit.ttf */; };
 		048CEDE92482BE9C006E563C /* KITCHENPOLICE.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 048CEDE82482BE9C006E563C /* KITCHENPOLICE.TTF */; };
 		048CEDEB2482BEAE006E563C /* Neutronium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 048CEDEA2482BEAE006E563C /* Neutronium.ttf */; };
@@ -30,7 +31,7 @@
 		048CEDF3248E31E7006E563C /* GameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048CEDF2248E31E7006E563C /* GameCollectionViewCell.swift */; };
 		048CEDF7248FA995006E563C /* ItemsArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048CEDF6248FA995006E563C /* ItemsArray.swift */; };
 		048CEDF92490E8FA006E563C /* ArmyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048CEDF82490E8FA006E563C /* ArmyTableViewCell.swift */; };
-		048CEDFB2490E9DD006E563C /* TechTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048CEDFA2490E9DD006E563C /* TechTableViewCell.swift */; };
+		048CEDFB2490E9DD006E563C /* DefenceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048CEDFA2490E9DD006E563C /* DefenceTableViewCell.swift */; };
 		048CEDFD2490E9F2006E563C /* SpecialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048CEDFC2490E9F2006E563C /* SpecialTableViewCell.swift */; };
 		04E7B1BC2450642300C21378 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E7B1BB2450642300C21378 /* Launch Screen.storyboard */; };
 		7F4960250463D80C035D7116 /* Pods_Lv7000.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFE053BFC88ED1E7D63EE7C4 /* Pods_Lv7000.framework */; };
@@ -59,6 +60,7 @@
 		043CC13A24751A2C00F90824 /* PlayersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersCell.swift; sourceTree = "<group>"; };
 		043CC13C24767ED100F90824 /* GameViewControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewControler.swift; sourceTree = "<group>"; };
 		0466DCE624A0A24100F89351 /* Army.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Army.swift; sourceTree = "<group>"; };
+		046740C424AF26EB007739D8 /* LoadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadViewController.swift; sourceTree = "<group>"; };
 		048CEDE62482BE68006E563C /* divlit.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = divlit.ttf; path = "pics/letters/divlit 2/divlit.ttf"; sourceTree = SOURCE_ROOT; };
 		048CEDE82482BE9C006E563C /* KITCHENPOLICE.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = KITCHENPOLICE.TTF; path = "pics/letters/kitchen-police/KITCHENPOLICE.TTF"; sourceTree = SOURCE_ROOT; };
 		048CEDEA2482BEAE006E563C /* Neutronium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Neutronium.ttf; path = pics/letters/neutronium/Neutronium.ttf; sourceTree = SOURCE_ROOT; };
@@ -68,7 +70,7 @@
 		048CEDF2248E31E7006E563C /* GameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionViewCell.swift; sourceTree = "<group>"; };
 		048CEDF6248FA995006E563C /* ItemsArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsArray.swift; sourceTree = "<group>"; };
 		048CEDF82490E8FA006E563C /* ArmyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmyTableViewCell.swift; sourceTree = "<group>"; };
-		048CEDFA2490E9DD006E563C /* TechTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechTableViewCell.swift; sourceTree = "<group>"; };
+		048CEDFA2490E9DD006E563C /* DefenceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefenceTableViewCell.swift; sourceTree = "<group>"; };
 		048CEDFC2490E9F2006E563C /* SpecialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialTableViewCell.swift; sourceTree = "<group>"; };
 		04E7B1BB2450642300C21378 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		5434FB65E5851C657AF183A4 /* Pods-Lv7000.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lv7000.debug.xcconfig"; path = "Target Support Files/Pods-Lv7000/Pods-Lv7000.debug.xcconfig"; sourceTree = "<group>"; };
@@ -82,7 +84,6 @@
 		F8DB6D0024320B42000B6EC7 /* Lv7000.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lv7000.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8DB6D0324320B42000B6EC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8DB6D0524320B42000B6EC7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F8DB6D1124320B48000B6EC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8DB6D17243214B4000B6EC7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,7 +118,7 @@
 				048CEDF02487A0A3006E563C /* BuldingTableViewCell.swift */,
 				0466DCE624A0A24100F89351 /* Army.swift */,
 				048CEDFC2490E9F2006E563C /* SpecialTableViewCell.swift */,
-				048CEDFA2490E9DD006E563C /* TechTableViewCell.swift */,
+				048CEDFA2490E9DD006E563C /* DefenceTableViewCell.swift */,
 				043CC13A24751A2C00F90824 /* PlayersCell.swift */,
 				048CEDF6248FA995006E563C /* ItemsArray.swift */,
 				048CEDF82490E8FA006E563C /* ArmyTableViewCell.swift */,
@@ -159,6 +160,7 @@
 			children = (
 				F87AF29524334C3A0014939D /* Assets.xcassets */,
 				04E7B1BB2450642300C21378 /* Launch Screen.storyboard */,
+				F8DB6D0524320B42000B6EC7 /* SceneDelegate.swift */,
 				F8DB6D0324320B42000B6EC7 /* AppDelegate.swift */,
 				048CEDE52482BE07006E563C /* Fonts */,
 			);
@@ -174,6 +176,7 @@
 				0415513C246D781F00768BAA /* SelectPlayersViewController.swift */,
 				F87AF29124334BA60014939D /* MainViewController.swift */,
 				F87AF28D24334AC10014939D /* OpeningViewController.swift */,
+				046740C424AF26EB007739D8 /* LoadViewController.swift */,
 				0415513A246D77ED00768BAA /* SelectMapViewController.swift */,
 				04351FC52468298200AA2A5C /* ProfileViewController.swift */,
 				04351FC22468293D00AA2A5C /* StoryViewController.swift */,
@@ -203,9 +206,7 @@
 		F8DB6D0224320B42000B6EC7 /* Lv7000 */ = {
 			isa = PBXGroup;
 			children = (
-				F8DB6D0524320B42000B6EC7 /* SceneDelegate.swift */,
 				04351FB82452EF0300AA2A5C /* Main.storyboard */,
-				F8DB6D1124320B48000B6EC7 /* Info.plist */,
 				F8DB6D17243214B4000B6EC7 /* GoogleService-Info.plist */,
 				043CC139247519E500F90824 /* extraClass */,
 				04351FC9246AAB5600AA2A5C /* baisicsViewControllers */,
@@ -348,7 +349,7 @@
 				04351FC62468298200AA2A5C /* ProfileViewController.swift in Sources */,
 				F8DB6D0424320B42000B6EC7 /* AppDelegate.swift in Sources */,
 				04351FCB246AADAA00AA2A5C /* CreatGameViewController.swift in Sources */,
-				048CEDFB2490E9DD006E563C /* TechTableViewCell.swift in Sources */,
+				048CEDFB2490E9DD006E563C /* DefenceTableViewCell.swift in Sources */,
 				048CEDF3248E31E7006E563C /* GameCollectionViewCell.swift in Sources */,
 				F8DB6D0624320B42000B6EC7 /* SceneDelegate.swift in Sources */,
 				048CEDF92490E8FA006E563C /* ArmyTableViewCell.swift in Sources */,
@@ -358,6 +359,7 @@
 				04351FBF24640E3500AA2A5C /* JoinGameViewController.swift in Sources */,
 				04351FC8246AAB1800AA2A5C /* MakeGameViewController.swift in Sources */,
 				043CC13D24767ED100F90824 /* GameViewControler.swift in Sources */,
+				046740C524AF26EB007739D8 /* LoadViewController.swift in Sources */,
 				048CEDF7248FA995006E563C /* ItemsArray.swift in Sources */,
 				04155139246D76C800768BAA /* ChooseArmyViewController.swift in Sources */,
 				048CEDFD2490E9F2006E563C /* SpecialTableViewCell.swift in Sources */,

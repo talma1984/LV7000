@@ -18,29 +18,23 @@ class CreatGameViewController: MakeGameViewController {
     var imageViews = UIImageView()
     var selectedMaps: UIImageView!
     
-    var sendArmyInfo = "United States"
-    var sendMapInfo = "Strangerson Island"
-    var sendNumberOfPlayersInfo = 6
+    
     var gameInfo = ["United States","Strangerson Island", 6] as [Any]
     var mapLabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getInfo()
+        
         setMapImage()
         choosenArmyLabel()
         mapLabelText()
         NumOfPlayersLabe()
-        AppUtility.lockOrientation(.landscapeLeft)
+        AppUtility.lockOrientation(.portrait)
     }
     
     //get the information from all 3 view and put them together
-    func getInfo(){
-        gameInfo[0] = sendArmyInfo
-        gameInfo[1] = sendMapInfo
-        gameInfo[2] = sendNumberOfPlayersInfo
-    }
+    
     
     // set the map image in the middle of the screen
     func setMapImage(){
@@ -57,15 +51,39 @@ class CreatGameViewController: MakeGameViewController {
     
     //send information to the start of the game
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "gameInformationSegue" {
-            let GameVC = segue.destination as! GameViewControler
-           // GameVC.scrollImageView = UIImageView(image: self.selectedImage)
-            GameVC.sendArmyInfo = (gameInfo[0]) as? String
-            GameVC.sendMapInfo = (gameInfo[1]) as? String
+        if segue.identifier == "loadInformationSegue" {
+            let LoadVC = segue.destination as! LoadViewController
+          
+            LoadVC.gameInfo[0] = (gameInfo[0]) as! String
+            LoadVC.gameInfo[1] = (gameInfo[1]) as! String
+            LoadVC.gameInfo[2] = (gameInfo[2]) as! Int
             
+        }else if segue.identifier == "sendArmyArraySegue" {
+            let ArmyVC = segue.destination as! ChooseArmyViewController
+          
+            ArmyVC.gameInfo[0] = (gameInfo[0]) as! String
+            ArmyVC.gameInfo[1] = (gameInfo[1]) as! String
+            ArmyVC.gameInfo[2] = (gameInfo[2]) as! Int
+            
+        }else if segue.identifier == "sendMapArraySegue" {
+            let MapVC = segue.destination as! SelectMapViewController
+          
+            MapVC.gameInfo[0] = (gameInfo[0]) as! String
+            MapVC.gameInfo[1] = (gameInfo[1]) as! String
+            MapVC.gameInfo[2] = (gameInfo[2]) as! Int
+            
+        }else if segue.identifier == "sendPlayersArraySegue" {
+            let PlayerVC = segue.destination as! SelectPlayersViewController
+          
+            PlayerVC.gameInfo[0] = (gameInfo[0]) as! String
+            PlayerVC.gameInfo[1] = (gameInfo[1]) as! String
+            PlayerVC.gameInfo[2] = (gameInfo[2]) as! Int
             
         }
     }
+    
+    
+    
     
     //the lable of the army
     func choosenArmyLabel(){
@@ -90,4 +108,5 @@ class CreatGameViewController: MakeGameViewController {
         numberOfPlayerslable.textAlignment = .center
         numberOfPlayerslable.font = UIFont(name: "Charter-Italic", size: 27)
     }
+    
 }

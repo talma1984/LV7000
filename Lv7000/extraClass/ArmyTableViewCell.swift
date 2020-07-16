@@ -12,7 +12,7 @@ import UIKit
 protocol ArmyTableViewCProtocol {
     func onClickArmyCell(index: Int, title: String, massage: String, image: String)
     
-    func onClickBiuld(index: Int,title: String, image: String, price: Int, hitPoints: Int)
+    func onClickArmyBiuld(index: Int,title: String, image: String, price: Int)
 }
 
 class ArmyTableViewCell: UITableViewCell {
@@ -31,10 +31,10 @@ class ArmyTableViewCell: UITableViewCell {
         tt.text = "\(data.title)"
         armyTitle = "\(data.title)"
         alertArmyMassege = "\(data.explenation)"
-        tp.text = "\(data.price)"
+        tp.text = "\(data.priceLVBit)"
         armyImage = "\(data.image)"
-        armyPrice = data.price
-        Hitpoints = data.hitPoints
+        armyPrice = data.priceLVBit
+        
         
     }
     //get the biulding image and place it in the tableview
@@ -141,7 +141,7 @@ class ArmyTableViewCell: UITableViewCell {
         biuldButton.addTarget(self, action: #selector(biuld), for: .touchUpInside)
 
         
-        biuldButton.setTitle("Build", for: .normal)
+        biuldButton.setTitle("Buy", for: .normal)
         biuldButton.setTitleColor(.systemGray, for: UIControl.State.normal)
         biuldButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic" , size: 9)
         addSubview(biuldButton)
@@ -149,10 +149,10 @@ class ArmyTableViewCell: UITableViewCell {
     
     //triger the information button in the tableview
     @IBAction func armyAlert(){
-        ArmyCellDelegate?.onClickArmyCell(index: (index?.row)!,title: (armyTitle!),massage: (alertArmyMassege!), image: armyImage!)
+        ArmyCellDelegate?.onClickArmyCell(index: (index?.row)!,title: armyTitle!,massage: (alertArmyMassege!), image: armyImage!)
     }
     @IBAction func biuld(){
        
-        ArmyCellDelegate?.onClickBiuld(index: index!.row,title: armyTitle!, image: armyImage!, price: armyPrice!, hitPoints: Hitpoints!)
+        ArmyCellDelegate?.onClickArmyBiuld(index: index!.row,title: armyTitle!, image: armyImage!, price: armyPrice!)
     }
 }

@@ -9,15 +9,27 @@
 import UIKit
 import FirebaseDatabase
 
+
 class OpeningViewController: UIViewController  {
+    
+    
+    let ref  = Database.database().reference()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         AppUtility.lockOrientation(.portrait)
         
-        //        let ref = Database.database().reference()
-        //         ref = Database.database().reference()
+        
+        
+        
+        
+        // to make the ref silent
+        print(ref)
         setupDelegate()
+        setDataBaseRefrenses()
+        
     }
     
     func setupDelegate(){
@@ -28,6 +40,21 @@ class OpeningViewController: UIViewController  {
         }
     }
     
+    func setDataBaseRefrenses(){
+        ref.child("User/Username").setValue("\(String(describing: userName))")
+        ref.child("User/Averege:").setValue(0)
+        ref.child("User/Password").setValue("\(String(describing: password))")
+        ref.child("User/Email").setValue("\(String(describing: userEmail))")
+        ref.child("User/Wins").setValue("\(0)")
+        ref.child("User/Averege:").setValue(0)
+        ref.child("User/Rank").setValue("Private")
+        
+    }
+    
+//    func checkPassAndUssername(str: String) -> Bool {
+//
+//        return false
+//    }
     @IBOutlet weak var userName: UITextField!
     
     @IBOutlet weak var password: UITextField!
@@ -36,10 +63,19 @@ class OpeningViewController: UIViewController  {
     
     @IBAction func playButton(_ sender: UIButton) {
         
-        if let name = userName.text{
-            UserDefaults.standard.set(name, forKey: "uName")
+        if  (userName.text != nil) && (password.text != nil) && (userEmail.text != nil){
+//             ref.child("User/Username").setValue("\(String(describing: userName))") =  userName.text
+            print("full blown")
+        }else {
+            let alert = UIAlertController(title: "Field Empty", message: " One or more of the fields above is empty, pless fill them." , preferredStyle: UIAlertController.Style.alert)
+                // add an action (button)
+                alert.addAction(UIAlertAction(title: "Got It", style: UIAlertAction.Style.default, handler: nil))
+                //show the alert
+                self.present(alert, animated: true, completion: nil)
+            }
+            
         }
-    }
+    
     
     @IBAction func termsAndConditions(_ sender: UITextField) {
     }
@@ -52,8 +88,13 @@ class OpeningViewController: UIViewController  {
 extension OpeningViewController: UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == userName {
+            //need to add check if user name is free
+           // checkPassAndUssername(str: String)
             textField.resignFirstResponder()//
             password.becomeFirstResponder()//TF2 will respond immediately after TF1 resign.
+            
+            //need to add check if password is free
+            // checkPassAndUssername(str: String)
         } else if textField == password  {
             textField.resignFirstResponder()
             userEmail.becomeFirstResponder()//TF3 will respond first
@@ -63,3 +104,20 @@ extension OpeningViewController: UITextFieldDelegate{
         return true
     }
 }
+
+
+
+///// database helpfull stuff
+
+/// set sata
+
+//ref.child("User/Username").setValue("itzik")
+//ref.childByAutoId().setValue(["Username":"Tom","Rank":"Private","Wins":7,"Email":"tak@email","Averege":0])
+
+
+//retrive data
+//        ref.child("User").observeSingleEvent(of: .value)
+//        {(snapshot) in
+//            let user = snapshot.value as? [String:Any]
+//            print(user as Any)
+//   }

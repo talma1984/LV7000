@@ -9,38 +9,50 @@
 import UIKit
 
 
-
+let biuldNotificationKey = "biuld"
 // send numbe of bildings to gameviewcontroller
 protocol CollectionProtocol {
+    
     func sendNumberOfBiuldings(index: Int,title: String,  NumberOfBiuldings: Int)
     
-    func centurdTeritorry(image: String, index: Int, x: Int, y: Int)
+    func centurdTeritorry(image: String, index: Int, x: Int, y: Int, width: Int, height: Int)
     
 }
 
 class GameCollectionViewCell: UICollectionViewCell {
     
+    let biuld = Notification.Name(rawValue: biuldNotificationKey)
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     var CollectionDelegate: CollectionProtocol?
     var index: IndexPath?
-    
     var data: CustumTeritorryData! {
         didSet {
             updateUi()
         }
     }
+    
     //arrange the information from items array and arrange them in collection
     func updateUi(){
         bg.image = UIImage(named: data.image)
         title = data.title
         tt.text = "\(title)"
-        NumberOfBuldings = data.numberOfBuldings
+        NumOBildings = data.numberOfBuldings
         resurseImage.image = UIImage(named: data.resurse)
         setNumberOfBuldings()
         pivotX = data.x
         pivotY = data.y
+        pivotWidth = data.width
+        pivotHeight = data.height
+        
         onerText = data.possessor
         
     }
+    
+    
     
     //get the photo from Items array and arrange them in the collection view
     fileprivate let bg: UIImageView = {
@@ -57,7 +69,7 @@ class GameCollectionViewCell: UICollectionViewCell {
         let gameTextField = UITextView()
         gameTextField.textAlignment = NSTextAlignment.center
         gameTextField.textColor = UIColor.systemGray
-        gameTextField.font = UIFont(name: "SofachromeRg-Italic", size: 15)
+        gameTextField.font = UIFont(name: "SofachromeRg-Italic", size: 13)
         gameTextField.isUserInteractionEnabled = false
         gameTextField.backgroundColor = .clear
         return gameTextField
@@ -65,9 +77,12 @@ class GameCollectionViewCell: UICollectionViewCell {
     
     var pivotX = 1
     var pivotY = 1
+    var pivotWidth = 1
+    var pivotHeight = 1
+    
     var biuldings = ""
     var teritorryInfo = [1, 1, 1]
-    var  NumberOfBuldings = 3
+    var  NumOBildings = 3
     let backImage = UIImageView()
     let InformationButton = UIButton()
     let centerButton = UIButton()
@@ -82,9 +97,11 @@ class GameCollectionViewCell: UICollectionViewCell {
     var title = ""
     let owner = UITextField()
     var onerText = ""
-    
+
+   
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         
         setImages()
         setButtons()
@@ -93,11 +110,12 @@ class GameCollectionViewCell: UICollectionViewCell {
         bg.frame = CGRect(x: 20, y: 80, width: 175, height: 50)
         bg.clipsToBounds = true
         bringSubviewToFront(bg)
-        tt.frame = CGRect(x: 0, y: 0, width: 220, height: 30)
+        tt.frame = CGRect(x: 0, y: 0, width: 240, height: 30)
         bringSubviewToFront(resurseImage)
         bringSubviewToFront(InformationButton)
         setProssesor()
         
+        createObservers()
     }
     //set the image behind every teritorry image
     func setImages(){
@@ -115,13 +133,6 @@ class GameCollectionViewCell: UICollectionViewCell {
         
     }
     
-    //get  calld from the biuld button in the table view, take image and place it in the little squrse
-    @IBAction func CheckAndBiuld(sender: Any){
-        
-        print(index as Any)
-          //  GameViewControler.shared.courentBiulding = ""
-        
-    }
     
     //check how many biuldings you can biuld in each teritorry and place it
     func setBiuldingImage(images: String){
@@ -136,26 +147,35 @@ class GameCollectionViewCell: UICollectionViewCell {
         smallImage.frame = CGRect(x: 5, y: 2, width:30, height: 16)
         smallImage.clipsToBounds = true
         bringSubviewToFront(smallImage)
-        switch NumberOfBuldings {
+        switch NumOBildings {
         case 1:
-            print(NumberOfBuldings)
+            print(NumOBildings)
             NumberOfBuldingsButton1.addSubview(smallImage)
         case 2:
-            print(NumberOfBuldings)
+            print(NumOBildings)
             NumberOfBuldingsButton2.addSubview(smallImage)
         case 3:
-            print(NumberOfBuldings)
+            print(NumOBildings)
             NumberOfBuldingsButton3.addSubview(smallImage)
         case 4:
-            print(NumberOfBuldings)
+            print(NumOBildings)
             NumberOfBuldingsButton4.addSubview(smallImage)
         case 5:
-            print(NumberOfBuldings)
+            print(NumOBildings)
             NumberOfBuldingsButton5.addSubview(smallImage)
         default:
             print("defult num")
         }
         
+        
+    }
+    
+    
+    
+    //creat the observers for the biuld function from diffrent table view in the base game
+    func createObservers()  {
+        print("im here1")
+        NotificationCenter.default.addObserver(self, selector: #selector(sendNumberOfBiuldings), name: biuld, object: nil )
         
     }
     
@@ -179,7 +199,7 @@ class GameCollectionViewCell: UICollectionViewCell {
         owner.font = UIFont(name: "SofachromeRg-Italic", size: 9)
         owner.isUserInteractionEnabled = false
         owner.text = "Oner: \(onerText) "
-        owner.frame = CGRect(x: 20, y: 54, width:200, height: 25)
+        owner.frame = CGRect(x: 20, y: 54, width:250, height: 25)
         addSubview(owner)
         owner.textColor = .black
         
@@ -188,7 +208,7 @@ class GameCollectionViewCell: UICollectionViewCell {
     //check how many biuldings you can biuld in each teritorry and place it
     func setNumberOfBuldings(){
         
-        switch NumberOfBuldings {
+        switch NumOBildings {
         case 1:
             NumberOfBuldingsButton1.setImage(UIImage(named:"NumberOfBuldings"), for: .normal)
             NumberOfBuldingsButton1.contentMode = .scaleToFill
@@ -274,18 +294,27 @@ class GameCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    @IBAction func centurdTeritorry(){
-        CollectionDelegate?.centurdTeritorry(image: title, index:(index?.row)!,x: pivotX, y: pivotY)
+    @IBAction func centurdTeritorry(sender: Any){
+        CollectionDelegate?.centurdTeritorry(image: title, index:(index?.row)!,x: pivotX, y: pivotY, width: pivotWidth, height: pivotHeight)
         
     }
     
-    @IBAction func sendNumberOfBiuldings(sender: Any){
+    
+    
+    @IBAction func sendNumberOfBiuldings(){
         
-        CollectionDelegate?.sendNumberOfBiuldings(index: (index?.row)!,title: title, NumberOfBiuldings: NumberOfBuldings)
+       
+        
+        
+        print("im here2")
+        
+        CollectionDelegate?.sendNumberOfBiuldings(index:(index?.row)!,title: title,NumberOfBiuldings: NumOBildings)
         
     }
+    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
