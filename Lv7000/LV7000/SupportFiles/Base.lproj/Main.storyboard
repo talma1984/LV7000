@@ -9,7 +9,7 @@
         <!--Opening View Controller-->
         <scene sceneID="417-mZ-S92">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="overCurrentContext" id="11J-1U-Xie" customClass="OpeningViewController" customModule="Lv7000" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="overCurrentContext" id="11J-1U-Xie" customClass="OpeningViewController" customModule="LV7000" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vf6-lc-6fF"/>
                         <viewControllerLayoutGuide type="bottom" id="ZvW-pA-lnt"/>
@@ -72,7 +72,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="bezel" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B0D-nL-eWA">
-                                <rect key="frame" x="90" y="431.5" width="234" height="31"/>
+                                <rect key="frame" x="90" y="431.5" width="234" height="28"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="0.40499250856164382" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
@@ -80,8 +80,8 @@
                                 <attributedString key="attributedText">
                                     <fragment content="Enter your email:">
                                         <attributes>
-                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <font key="NSFont" metaFont="system" size="16"/>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="16" name="Copperplate"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -105,7 +105,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="userEmail" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zzv-a0-jMm">
-                                <rect key="frame" x="90" y="466.5" width="234" height="31"/>
+                                <rect key="frame" x="90" y="463.5" width="234" height="31"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="0.4003103595890411" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <bool key="isElement" value="NO"/>
@@ -805,7 +805,7 @@ Without prejudice to any other administrative or judicial legal remedy, you have
         <!--Main View Controller-->
         <scene sceneID="94j-79-buu">
             <objects>
-                <viewController storyboardIdentifier="MainPage" automaticallyAdjustsScrollViewInsets="NO" id="0Lk-F7-ozn" customClass="MainViewController" customModule="Lv7000" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainPage" automaticallyAdjustsScrollViewInsets="NO" id="0Lk-F7-ozn" customClass="MainViewController" customModule="LV7000" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="43p-W6-qfq"/>
                         <viewControllerLayoutGuide type="bottom" id="Ddx-vS-3R1"/>
@@ -926,7 +926,7 @@ Without prejudice to any other administrative or judicial legal remedy, you have
         <!--Creat Game View Controller-->
         <scene sceneID="6nx-46-fkt">
             <objects>
-                <viewController id="HrY-q8-VPi" customClass="CreatGameViewController" customModule="Lv7000" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HrY-q8-VPi" customClass="CreatGameViewController" customModule="LV7000" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="q2e-mU-GCU"/>
                         <viewControllerLayoutGuide type="bottom" id="7hM-JV-KFL"/>
@@ -1044,7 +1044,7 @@ Without prejudice to any other administrative or judicial legal remedy, you have
         <!--Select Map View Controller-->
         <scene sceneID="2mP-qI-avd">
             <objects>
-                <viewController id="2EY-it-TWG" customClass="SelectMapViewController" customModule="Lv7000" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2EY-it-TWG" customClass="SelectMapViewController" customModule="LV7000" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tgq-NX-wy3"/>
                         <viewControllerLayoutGuide type="bottom" id="Zf4-bk-l7a"/>
@@ -1097,7 +1097,7 @@ Without prejudice to any other administrative or judicial legal remedy, you have
         <!--Select Players View Controller-->
         <scene sceneID="8iY-cF-BlN">
             <objects>
-                <viewController id="ZHN-Wp-w2r" customClass="SelectPlayersViewController" customModule="Lv7000" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ZHN-Wp-w2r" customClass="SelectPlayersViewController" customModule="LV7000" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="I1L-lC-fuQ"/>
                         <viewControllerLayoutGuide type="bottom" id="y1f-PR-iw7"/>
@@ -1169,7 +1169,7 @@ Without prejudice to any other administrative or judicial legal remedy, you have
         <!--Choose Army View Controller-->
         <scene sceneID="Ivj-1J-IdZ">
             <objects>
-                <viewController storyboardIdentifier="SelectPlayersViewController" id="jXd-bX-lYH" customClass="ChooseArmyViewController" customModule="Lv7000" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectPlayersViewController" id="jXd-bX-lYH" customClass="ChooseArmyViewController" customModule="LV7000" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cYh-sm-Dhn"/>
                         <viewControllerLayoutGuide type="bottom" id="gij-8e-Jtl"/>
@@ -1222,7 +1222,7 @@ Without prejudice to any other administrative or judicial legal remedy, you have
         <!--Profile View Controller-->
         <scene sceneID="3c0-wl-waM">
             <objects>
-                <viewController id="NDu-xh-fvG" customClass="ProfileViewController" customModule="Lv7000" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="NDu-xh-fvG" customClass="ProfileViewController" customModule="LV7000" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8DY-Sk-IWX"/>
                         <viewControllerLayoutGuide type="bottom" id="TkB-NF-cLW"/>
@@ -1342,7 +1342,7 @@ Without prejudice to any other administrative or judicial legal remedy, you have
         <!--Load View Controller-->
         <scene sceneID="fHR-XD-xpT">
             <objects>
-                <viewController id="Ano-lr-oQ0" customClass="LoadViewController" customModule="Lv7000" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ano-lr-oQ0" customClass="LoadViewController" customModule="LV7000" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="w8h-XK-QYN"/>
                         <viewControllerLayoutGuide type="bottom" id="YWe-PV-mag"/>
@@ -1364,7 +1364,7 @@ Without prejudice to any other administrative or judicial legal remedy, you have
         <!--Game View Controler-->
         <scene sceneID="cJc-0W-GzG">
             <objects>
-                <viewController id="MHk-l7-qht" customClass="GameViewControler" customModule="Lv7000" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="MHk-l7-qht" customClass="GameViewControler" customModule="LV7000" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="i5W-32-L9D"/>
                         <viewControllerLayoutGuide type="bottom" id="7b6-iw-6ed"/>
@@ -1382,9 +1382,10 @@ Without prejudice to any other administrative or judicial legal remedy, you have
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="37v-gk-1BV"/>
         <segue reference="nbs-cz-0rL"/>
         <segue reference="Lb0-Rw-trz"/>
-        <segue reference="atw-nw-OX2"/>
+        <segue reference="iUb-vD-dxv"/>
         <segue reference="bq5-cf-OWU"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>

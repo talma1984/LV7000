@@ -261,18 +261,18 @@ class BaseGameViewController: UIViewController {
             
             chat.setBackgroundImage(UIImage(named: "SpecialOff"), for: UIControl.State.normal)
             info.setBackgroundImage(UIImage(named: "TeckOn"), for: UIControl.State.normal)
-            info.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 9)
+            info.titleLabel!.font = UIFont(name: "NEVERSAYDIE", size: 9)
             info.setTitleColor(.systemGray3, for: .normal)
             chat.setTitleColor(.systemGreen, for: .normal)
-            chat.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 7)
+            chat.titleLabel!.font = UIFont(name: "NEVERSAYDIE", size: 7)
             setinfoChatSystem(display: infoArray[0],title: infoArray[1] , massage: infoArray[2], image: infoArray[3])
         case "chatButton":
             chat.setBackgroundImage(UIImage(named: "SpecialOn"), for: UIControl.State.normal)
             info.setBackgroundImage(UIImage(named: "TeckOff"), for: UIControl.State.normal)
-            info.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 7)
+            info.titleLabel!.font = UIFont(name: "NEVERSAYDIE", size: 7)
             info.setTitleColor(.systemBlue, for: .normal)
             chat.setTitleColor(.systemGray3, for: .normal)
-            chat.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 9)
+            chat.titleLabel!.font = UIFont(name: "NEVERSAYDIE", size: 9)
             
             subjectBiuldingImage.isHidden = true
             subjectBiuldinInfo.isHidden = true
@@ -368,10 +368,10 @@ class BaseGameViewController: UIViewController {
             armyButton.setBackgroundImage(UIImage(named: "ArmyOff"), for: UIControl.State.normal)
             defenceButton.setBackgroundImage(UIImage(named: "TeckOff"), for: UIControl.State.normal)
             specialButton.setBackgroundImage(UIImage(named: "SpecialOff"), for: UIControl.State.normal)
-            buldingButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 8)
-            armyButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 7)
-            defenceButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 7)
-            specialButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 7)
+            buldingButton.titleLabel!.font = UIFont(name: "NEVERSAYDIE", size: 8)
+            armyButton.titleLabel!.font = UIFont(name: "NEVERSAYDIE", size: 7)
+            defenceButton.titleLabel!.font = UIFont(name: "NEVERSAYDIE", size: 7)
+            specialButton.titleLabel!.font = UIFont(name: "NEVERSAYDIE", size: 7)
             buldingButton.setTitleColor(.systemGray3, for: .normal)
             armyButton.setTitleColor(.systemGreen, for: .normal)
             defenceButton.setTitleColor(.systemGreen, for: .normal)
@@ -387,10 +387,10 @@ class BaseGameViewController: UIViewController {
             buldingButton.setTitleColor(.systemBlue, for: .normal)
             defenceButton.setTitleColor(.systemGreen, for: .normal)
             specialButton.setTitleColor(.systemBlue, for: .normal)
-            armyButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 8)
-            defenceButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 7)
-            buldingButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size:7)
-            specialButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 7)
+            armyButton.titleLabel!.font = UIFont(name: "NEVERSAYDIE", size: 8)
+            defenceButton.titleLabel!.font = UIFont(name: "NEVERSAYDIE", size: 7)
+            buldingButton.titleLabel!.font = UIFont(name: "NEVERSAYDIE", size:7)
+            specialButton.titleLabel!.font = UIFont(name: "NEVERSAYDIE", size: 7)
             setGameTableView(button: "army")
         case "defenceButton":
             selectedTableViewButtons = "defenceButton"
@@ -402,10 +402,10 @@ class BaseGameViewController: UIViewController {
             buldingButton.setTitleColor(.systemBlue, for: .normal)
             armyButton.setTitleColor(.systemGreen, for: .normal)
             specialButton.setTitleColor(.systemBlue, for: .normal)
-            armyButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 7)
-            defenceButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 8)
-            buldingButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size:7)
-            specialButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 7)
+            armyButton.titleLabel!.font = UIFont(name: "NEVERSAYDIE", size: 7)
+            defenceButton.titleLabel!.font = UIFont(name: "NEVERSAYDIE", size: 8)
+            buldingButton.titleLabel!.font = UIFont(name: "NEVERSAYDIE", size:7)
+            specialButton.titleLabel!.font = UIFont(name: "NEVERSAYDIE", size: 7)
             setGameTableView(button: "defence")
         case "specialButton":
             selectedTableViewButtons = "specialButton"
@@ -417,10 +417,10 @@ class BaseGameViewController: UIViewController {
             buldingButton.setTitleColor(.systemBlue, for: .normal)
             armyButton.setTitleColor(.systemGreen, for: .normal)
             defenceButton.setTitleColor(.systemGreen, for: .normal)
-            armyButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 7)
-            defenceButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 7)
-            buldingButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size:7)
-            specialButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 8)
+            armyButton.titleLabel!.font = UIFont(name: "NEVERSAYDIE", size: 7)
+            defenceButton.titleLabel!.font = UIFont(name: "NEVERSAYDIE", size: 7)
+            buldingButton.titleLabel!.font = UIFont(name: "NEVERSAYDIE", size:7)
+            specialButton.titleLabel!.font = UIFont(name: "NEVERSAYDIE", size: 8)
             setGameTableView(button: "special")
         default:
             print("random from action button")
@@ -497,7 +497,7 @@ class BaseGameViewController: UIViewController {
         turnTextField.textAlignment = NSTextAlignment.left
         turnTextField.backgroundColor = .clear
         turnTextField.textColor = UIColor.systemTeal
-        turnTextField.font = UIFont(name: "SofachromeRg-Italic", size: 10)
+        turnTextField.font = UIFont(name: "NEVERSAYDIE", size: 10)
         turnTextField.text = "Turn: \(gameTurn)"
         turnTextField.isUserInteractionEnabled = false
         calenderButton.addSubview(timeTextField)
@@ -505,7 +505,7 @@ class BaseGameViewController: UIViewController {
         timeTextField.textAlignment = NSTextAlignment.center
         timeTextField.backgroundColor = .clear
         timeTextField.textColor = UIColor.systemTeal
-        timeTextField.font = UIFont(name: "SofachromeRg-Italic", size: 9)
+        timeTextField.font = UIFont(name: "NEVERSAYDIE", size: 9)
         timeTextField.text = " \(time())"
         timeTextField.isUserInteractionEnabled = false
         informationCalender.setBackgroundImage(UIImage(named: "Information"), for: UIControl.State.normal)
@@ -583,11 +583,11 @@ class BaseGameViewController: UIViewController {
         tapped.stringValue = "infoButton"
         info.addGestureRecognizer(tapped)
         info.setTitle("Info", for: UIControl.State.normal)
-        info.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 9)
+        info.titleLabel!.font = UIFont(name: "NEVERSAYDIE", size: 9)
         info.setTitleColor(.systemGray3, for: .normal)
         chat.setTitle("Chat", for: UIControl.State.normal)
         chat.setTitleColor(.systemGreen, for: .normal)
-        chat.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 7)
+        chat.titleLabel!.font = UIFont(name: "NEVERSAYDIE", size: 7)
         chat.setBackgroundImage(UIImage(named: "SpecialOff"), for: UIControl.State.normal)
         chat.contentMode = .scaleAspectFill
         infoCaht.addSubview(chat)
@@ -605,7 +605,7 @@ class BaseGameViewController: UIViewController {
             informationBiildingTitle.text = "\(title)"
             informationBiildingTitle.backgroundColor = .clear
             informationBiildingTitle.textColor = UIColor.black
-            informationBiildingTitle.font = UIFont(name: "SofachromeRg-Italic", size: 11)
+            informationBiildingTitle.font = UIFont(name: "NEVERSAYDIE", size: 11)
             informationBiildingTitle.isUserInteractionEnabled = false
             informationBiildingTitle.frame =  CGRect(x: 10, y: 28, width: 170, height: 30)
             informationBiildingTitle.textAlignment = .left
@@ -617,7 +617,7 @@ class BaseGameViewController: UIViewController {
             subjectBiuldingImage.frame = CGRect(x: 10, y: 50, width: 80, height: 70)
             subjectBiuldinInfo.text = "\(massage)"
             subjectBiuldinInfo.textColor = UIColor.black
-            subjectBiuldinInfo.font = UIFont(name: "SofachromeRg-Italic", size: 10)
+            subjectBiuldinInfo.font = UIFont(name: "NEVERSAYDIE", size: 10)
             subjectBiuldinInfo.backgroundColor = .clear
             subjectBiuldinInfo.isScrollEnabled = true
             subjectBiuldinInfo.isEditable = false
@@ -641,7 +641,7 @@ class BaseGameViewController: UIViewController {
             informationArmyTitle.text = "\(title)"
             informationArmyTitle.backgroundColor = .clear
             informationArmyTitle.textColor = UIColor.black
-            informationArmyTitle.font = UIFont(name: "SofachromeRg-Italic", size: 11)
+            informationArmyTitle.font = UIFont(name: "NEVERSAYDIE", size: 11)
             informationArmyTitle.isUserInteractionEnabled = false
             informationArmyTitle.frame = CGRect(x: 10, y: 28, width: 170, height: 30)
             informationArmyTitle.textAlignment = .left
@@ -653,7 +653,7 @@ class BaseGameViewController: UIViewController {
             subjectArmyImage.frame = CGRect(x: 10, y: 50, width: 80, height: 70)
             subjectArmyInfo.text = "\(massage)"
             subjectArmyInfo.textColor = UIColor.black
-            subjectArmyInfo.font = UIFont(name: "SofachromeRg-Italic", size: 10)
+            subjectArmyInfo.font = UIFont(name: "NEVERSAYDIE", size: 10)
             subjectArmyInfo.backgroundColor = .clear
             subjectArmyInfo.frame = CGRect(x: 90, y: 52, width: 90, height: 65)
             subjectArmyInfo.isScrollEnabled = true
@@ -677,7 +677,7 @@ class BaseGameViewController: UIViewController {
             informationTitle.text = "\(title)"
             informationTitle.backgroundColor = .clear
             informationTitle.textColor = UIColor.black
-            informationTitle.font = UIFont(name: "SofachromeRg-Italic", size: 11)
+            informationTitle.font = UIFont(name: "NEVERSAYDIE", size: 11)
             informationTitle.isUserInteractionEnabled = false
             informationTitle.frame = CGRect(x: 10, y: 28, width: 170, height: 30)
             informationTitle.isEditable = false
@@ -685,7 +685,7 @@ class BaseGameViewController: UIViewController {
             infoCaht.addSubview(subjectInfo)
             subjectInfo.text = "\(massage)"
             subjectInfo.textColor = UIColor.black
-            subjectInfo.font = UIFont(name: "SofachromeRg-Italic", size: 10)
+            subjectInfo.font = UIFont(name: "NEVERSAYDIE", size: 10)
             subjectInfo.frame = CGRect(x: 7 , y: 50, width: 180, height: 65)
             subjectInfo.backgroundColor = .clear
             subjectInfo.isScrollEnabled = true
@@ -758,7 +758,7 @@ class BaseGameViewController: UIViewController {
         
         bitTextField.textAlignment = NSTextAlignment.left
         bitTextField.backgroundColor = .clear
-        bitTextField.font = UIFont(name: "SofachromeRg-Italic", size: 11)
+        bitTextField.font = UIFont(name: "NEVERSAYDIE", size: 11)
         bitTextField.isUserInteractionEnabled = false
         bitTextField.text = "\(lvBit)"
         bankButton.addSubview(bitTextField)
@@ -766,7 +766,7 @@ class BaseGameViewController: UIViewController {
         
         waterTextField.textAlignment = NSTextAlignment.left
         waterTextField.backgroundColor = .clear
-        waterTextField.font = UIFont(name: "SofachromeRg-Italic", size: 11)
+        waterTextField.font = UIFont(name: "NEVERSAYDIE", size: 11)
         waterTextField.isUserInteractionEnabled = false
         waterTextField.text = "\(water)"
         bankButton.addSubview(waterTextField)
@@ -775,7 +775,7 @@ class BaseGameViewController: UIViewController {
         
         titaniumTextField.textAlignment = NSTextAlignment.left
         titaniumTextField.backgroundColor = .clear
-        titaniumTextField.font = UIFont(name: "SofachromeRg-Italic", size: 11)
+        titaniumTextField.font = UIFont(name: "NEVERSAYDIE", size: 11)
         titaniumTextField.isUserInteractionEnabled = false
         titaniumTextField.text = "\(titanium) "
         bankButton.addSubview(titaniumTextField)
@@ -784,7 +784,7 @@ class BaseGameViewController: UIViewController {
         
         uraniumTextField.textAlignment = NSTextAlignment.left
         uraniumTextField.backgroundColor = .clear
-        uraniumTextField.font = UIFont(name: "SofachromeRg-Italic", size: 11)
+        uraniumTextField.font = UIFont(name: "NEVERSAYDIE", size: 11)
         uraniumTextField.isUserInteractionEnabled = false
         uraniumTextField.text = "\(uranium) "
         bankButton.addSubview(uraniumTextField)
@@ -851,7 +851,7 @@ class BaseGameViewController: UIViewController {
         
         troopsTextField.textAlignment = NSTextAlignment.left
         troopsTextField.backgroundColor = .clear
-        troopsTextField.font = UIFont(name: "SofachromeRg-Italic", size: 11)
+        troopsTextField.font = UIFont(name: "NEVERSAYDIE", size: 11)
         troopsTextField.isUserInteractionEnabled = false
         troopsTextField.text = "\(soldiers) "
         bankButton.addSubview(troopsTextField)
@@ -927,7 +927,7 @@ class BaseGameViewController: UIViewController {
         tappedBuilding.actionButton = "buldingButton"
         buldingButton.addGestureRecognizer(tappedBuilding)
         buldingButton.setTitle("Bulding", for: .normal)
-        buldingButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 7)
+        buldingButton.titleLabel!.font = UIFont(name: "NEVERSAYDIE", size: 7)
         buldingButton.setTitleColor(.systemBlue, for: .normal)
         topImage.addSubview(armyButton)
         armyButton.frame = CGRect(x: 94, y: 16, width: 66, height: 16)
@@ -937,7 +937,7 @@ class BaseGameViewController: UIViewController {
         tappedArmy.actionButton = "armyButton"
         armyButton.addGestureRecognizer(tappedArmy)
         armyButton.setTitle("Army", for: .normal)
-        armyButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 7)
+        armyButton.titleLabel!.font = UIFont(name: "NEVERSAYDIE", size: 7)
         armyButton.setTitleColor(.systemGreen, for: .normal)
         topImage.addSubview(defenceButton)
         defenceButton.frame = CGRect(x: 155, y: 16, width: 70, height: 16)
@@ -947,7 +947,7 @@ class BaseGameViewController: UIViewController {
         tappedDefence.actionButton = "defenceButton"
         defenceButton.addGestureRecognizer(tappedDefence)
         defenceButton.setTitle("Defence", for: .normal)
-        defenceButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 7)
+        defenceButton.titleLabel!.font = UIFont(name: "NEVERSAYDIE", size: 7)
         defenceButton.setTitleColor(.systemGreen, for: .normal)
         topImage.addSubview(specialButton)
         specialButton.frame = CGRect(x: 226, y: 16, width: 66, height: 16)
@@ -957,7 +957,7 @@ class BaseGameViewController: UIViewController {
         tappedSpecial.actionButton = "specialButton"
         specialButton.addGestureRecognizer(tappedSpecial)
         specialButton.setTitle("Special", for: .normal)
-        specialButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 7)
+        specialButton.titleLabel!.font = UIFont(name: "NEVERSAYDIE", size: 7)
         specialButton.setTitleColor(.systemBlue, for: .normal)
     }
     
