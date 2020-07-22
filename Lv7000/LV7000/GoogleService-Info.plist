@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>209453487998-d5tn7kfk0s6eeao6lkfc8dgdj7dcacb9.apps.googleusercontent.com</string>
+	<string>1082813215843-7egsh8v23nv4lav6b31v4t39l74202b3.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.209453487998-d5tn7kfk0s6eeao6lkfc8dgdj7dcacb9</string>
+	<string>com.googleusercontent.apps.1082813215843-7egsh8v23nv4lav6b31v4t39l74202b3</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCwFvuIw8PbBNJ3_IO3kM0Rc4M_rv4xKu4</string>
+	<string>AIzaSyDm8KUl8ilQtFx6nuiTTXSzjrDLfhSsuFU</string>
 	<key>GCM_SENDER_ID</key>
-	<string>209453487998</string>
+	<string>1082813215843</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>tm.LV7000</string>
 	<key>PROJECT_ID</key>
-	<string>lv7001-16edd</string>
+	<string>lv7000</string>
 	<key>STORAGE_BUCKET</key>
-	<string>lv7001-16edd.appspot.com</string>
+	<string>lv7000.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:209453487998:ios:de7b4a53944346ff90852f</string>
+	<string>1:1082813215843:ios:e20e78405f19e7d5763456</string>
 	<key>DATABASE_URL</key>
-	<string>https://lv7001-16edd.firebaseio.com</string>
+	<string>https://lv7000.firebaseio.com</string>
 </dict>
 </plist>

@@ -2,16 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIAppFonts</key>
-	<array>
-		<string>sofachrome rg it.ttf</string>
-		<string>Neutronium.ttf</string>
-		<string>NEVERSAYDIE.ttf</string>
-		<string>divlit.ttf</string>
-		<string>KITCHENPOLICE.TTF</string>
-	</array>
-	<key>KITCHENPOLICE.TTF</key>
-	<string></string>
+	<key>FirebaseScreenReportingEnabled</key>
+	<false/>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -69,6 +61,14 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>NEVERSAYDIE.ttf</string>
+		<string>sofachrome rg it.ttf</string>
+		<string>Neutronium.ttf</string>
+		<string>KITCHENPOLICE.TTF</string>
+		<string>divlit.ttf</string>
 	</array>
 </dict>
 </plist>
