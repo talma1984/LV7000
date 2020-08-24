@@ -17,11 +17,11 @@ class BaseGameViewController: UIViewController {
     
     
     
-//    var protocolDelegate: buyingProtocol!
+    //    var protocolDelegate: buyingProtocol!
     //scrollview stuff
     var scrollImageView = UIImageView()
     var scrollView: UIScrollView!
-   
+    
     
     //time stuff
     var timeTextField = UITextField()
@@ -101,7 +101,7 @@ class BaseGameViewController: UIViewController {
     
     //teritorry
     var teritory = 0
-    
+    var num = 0
     
     var imagee = ""
     var indexx = 0
@@ -113,7 +113,7 @@ class BaseGameViewController: UIViewController {
     var specialArray = [CustumData]()
     
     //get stuff from items array
-    let StrangersonIsland = ItemsArray.fetchStrangersonIsland()
+    var StrangersonIsland = ItemsArray.fetchStrangersonIsland()
     let LawrenceOfArabia = ItemsArray.fetchLawrenceOfArabia()
     let WelcomeToTheJungle = ItemsArray.fetchWelcomeToTheJungle()
     let SiberianTiger = ItemsArray.fetchSiberianTiger()
@@ -155,7 +155,7 @@ class BaseGameViewController: UIViewController {
     let ukArmys = ItemsArray.UnitedKingdomfetchArmy()
     let japArmys = ItemsArray.JapanfetchArmy()
     
-   
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -171,15 +171,9 @@ class BaseGameViewController: UIViewController {
         setGameReference()
         endTurnButton()
         setinfoChatfrense()
-        
         scrollView.zoomScale = scrollView.maximumZoomScale
         scrollView.zoomScale = scrollView.minimumZoomScale
-        
         getTheTeritorrys(map: "\(gameInfo[1])")
-        print(gameInfo[1])
-        print(gameInfo[0])
-        print(gameInfo[2])
-        
     }
     
     
@@ -463,7 +457,7 @@ class BaseGameViewController: UIViewController {
         view.addSubview(scrollView)
         scrollView.autoresizingMask = [ .flexibleWidth,.flexibleHeight]
         scrollView.backgroundColor = .clear
-        
+        scrollImageView.isUserInteractionEnabled = true
         scrollImageView.frame = view.bounds
         
         scrollImageView.contentMode = .scaleAspectFill
@@ -973,10 +967,15 @@ class BaseGameViewController: UIViewController {
             buldingGameTableView.backgroundColor = UIColor.clear
             buldingGameTableView.frame = CGRect(x: 310, y: 45, width: 300, height: 100)
             buldingGameTableView.register(BuldingTableViewCell.self,  forCellReuseIdentifier: "BuldingCell")
+            buldingGameTableView.isPagingEnabled = true
+            buldingGameTableView.isScrollEnabled = true
+            buldingGameTableView.allowsSelection = false
+            buldingGameTableView.isEditing = false
             buldingGameTableView.isHidden = false
             armyGameTableView.isHidden = true
             defenceGameTableView.isHidden = true
             specialGameTableView.isHidden = true
+            
         case "army":
             armyGameTableView.backgroundColor = UIColor.clear
             armyGameTableView.delegate = self
@@ -985,6 +984,10 @@ class BaseGameViewController: UIViewController {
             armyGameTableView.backgroundColor = UIColor.clear
             armyGameTableView.frame = CGRect(x: 310, y: 45, width: 300, height: 100)
             armyGameTableView.register(ArmyTableViewCell.self,  forCellReuseIdentifier: "armyCell")
+            armyGameTableView.isPagingEnabled = true
+            armyGameTableView.isScrollEnabled = true
+            armyGameTableView.allowsSelection = false
+            armyGameTableView.isEditing = false
             buldingGameTableView.isHidden = true
             armyGameTableView.isHidden = false
             defenceGameTableView.isHidden = true
@@ -997,6 +1000,10 @@ class BaseGameViewController: UIViewController {
             defenceGameTableView.backgroundColor = UIColor.clear
             defenceGameTableView.frame = CGRect(x: 310, y: 45, width: 300, height: 100)
             defenceGameTableView.register(DefenceTableViewCell.self,  forCellReuseIdentifier: "defenceCell")
+            defenceGameTableView.isPagingEnabled = true
+            defenceGameTableView.isScrollEnabled = true
+            defenceGameTableView.allowsSelection = false
+            defenceGameTableView.isEditing = false
             buldingGameTableView.isHidden = true
             armyGameTableView.isHidden = true
             defenceGameTableView.isHidden = false
@@ -1009,6 +1016,10 @@ class BaseGameViewController: UIViewController {
             specialGameTableView.backgroundColor = UIColor.clear
             specialGameTableView.frame = CGRect(x: 310, y: 45, width: 300, height: 100)
             specialGameTableView.register(SpecialTableViewCell.self,  forCellReuseIdentifier: "spechialCell")
+            specialGameTableView.isPagingEnabled = true
+            specialGameTableView.isScrollEnabled = true
+            specialGameTableView.allowsSelection = false
+            specialGameTableView.isEditing = false
             buldingGameTableView.isHidden = true
             armyGameTableView.isHidden = true
             defenceGameTableView.isHidden = true
@@ -1195,18 +1206,26 @@ class BaseGameViewController: UIViewController {
         switch  map{
             
         case "Strangerson Island":
+            
             playerTeritorrys.removeAll()
             let number = Int.random(in: 0 ..< StrangersonIsland.count-2)
-            playerTeritorrys.append(StrangersonIsland[number])
-            playerTeritorrys.append(StrangersonIsland[number + 1])
-            playerTeritorrys.append(StrangersonIsland[number + 2])
             
-            playerTeritorrys[0].title = "Capitol " + playerTeritorrys[0].title
-            //if let name = UserDefaults.standard.string(forKey: "uName"){
-            //            playerTeritorrys[0].possessor = (name)
-            //            playerTeritorrys[1].possessor = (name)
-            //            playerTeritorrys[2].possessor = (name)
-            
+            num = number
+            if let name = UserDefaults.standard.string(forKey: "uName"){
+                
+                StrangersonIsland[number].possessor = name
+                StrangersonIsland[number + 1].possessor = name
+                StrangersonIsland[number + 2].possessor = name
+                
+                
+                playerTeritorrys.append(StrangersonIsland[number])
+                playerTeritorrys.append(StrangersonIsland[number + 1])
+                playerTeritorrys.append(StrangersonIsland[number + 2])
+                
+                playerTeritorrys[0].title = "Capitol " + playerTeritorrys[0].title
+                
+                
+            }
             
             
         case "Siberian Tiger":
@@ -1217,10 +1236,6 @@ class BaseGameViewController: UIViewController {
             playerTeritorrys.append(SiberianTiger[number + 1])
             playerTeritorrys.append(SiberianTiger[number + 2])
             playerTeritorrys[0].title = "Capitol " + playerTeritorrys[0].title
-            //if let name = UserDefaults.standard.string(forKey: "uName"){
-                       //            playerTeritorrys[0].possessor = (name)
-                       //            playerTeritorrys[1].possessor = (name)
-                       //            playerTeritorrys[2].possessor = (name)
             
         case "Welcome to the Jungle":
             print("need to make teritorrys for Welcome to the Jungle")
@@ -1232,9 +1247,9 @@ class BaseGameViewController: UIViewController {
             playerTeritorrys.append(WelcomeToTheJungle[number + 2])
             playerTeritorrys[0].title = "Capitol " + playerTeritorrys[0].title
             //if let name = UserDefaults.standard.string(forKey: "uName"){
-                       //            playerTeritorrys[0].possessor = (name)
-                       //            playerTeritorrys[1].possessor = (name)
-                       //            playerTeritorrys[2].possessor = (name)
+            //            playerTeritorrys[0].possessor = (name)
+            //            playerTeritorrys[1].possessor = (name)
+        //            playerTeritorrys[2].possessor = (name)
         case "Lawrence of Arabia":
             print("need to make teritorrys for Lawrence of Arabia")
             
@@ -1245,9 +1260,9 @@ class BaseGameViewController: UIViewController {
             playerTeritorrys.append(LawrenceOfArabia[number + 2])
             playerTeritorrys[0].title = "Capitol " + playerTeritorrys[0].title
             //if let name = UserDefaults.standard.string(forKey: "uName"){
-                       //            playerTeritorrys[0].possessor = (name)
-                       //            playerTeritorrys[1].possessor = (name)
-                       //            playerTeritorrys[2].possessor = (name)
+            //            playerTeritorrys[0].possessor = (name)
+            //            playerTeritorrys[1].possessor = (name)
+        //            playerTeritorrys[2].possessor = (name)
         default:
             print("nomap")
         }
@@ -1399,7 +1414,7 @@ extension BaseGameViewController: UITableViewDelegate, UITableViewDataSource {
             return spechialCell
             
         default:
-            print("random from action button")
+            print("random from special button")
         }
         let Cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         return Cell
@@ -1440,7 +1455,7 @@ extension BaseGameViewController: BuldingTableViewProtocol{
             
             let name = Notification.Name(rawValue: biuldNotificationKey)
             NotificationCenter.default.post(name: name, object: nil)
-//            protocolDelegate?.buyBiulding(index: indexx , image: imagee )
+            //            protocolDelegate?.buyBiulding(index: indexx , image: imagee )
             
         } else {
             

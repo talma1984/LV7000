@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class ProfileViewController: BaseViewController {
     
+    let ref = Database.database().reference()
+    let countryButton = UIButton()
     let name = UITextField()
     let rank = UITextField()
     let rankD = UITextField()
@@ -21,24 +24,36 @@ class ProfileViewController: BaseViewController {
     let avaregeD = UITextField()
     let friends = UITextField()
     let friendsD = UITextField()
-    let contrey = UITextField()
-    let contreyD = UITextField()
-    var Rank = "Private"
-    var World = 5000
-    var You = 300
-    var winsN = 4
-    var lostN = 20
-    var avaregeN = 2.2
-    var FriendsN = 12
-    var contreyN = "Israel"
+    let country = UITextField()
+    let countryD = UITextField()
+    var nameOfUser = "no"
+    var rankStrin = "no"
+    var worldN: Int?
+    var You: Int?
+    var winsN: Int?
+    var lostN: Int?
+    var avaregeN: Double?
+    var FriendsN: Int?
+    var countryN: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //  connectFireBas()
         AppUtility.lockOrientation(.portrait)
         setTPlayerName()
         setRankLabel()
         setWiningLabel()
+        setCountryButton()
+       
+        
+    }
+    
+    
+    
+    
+    
+    @IBAction func pickContrey(){
+        performSegue(withIdentifier: "pickCountry", sender: self)
     }
     
     //get the player name and putbit on the screen
@@ -50,11 +65,9 @@ class ProfileViewController: BaseViewController {
         //name.backgroundColor = .clear
         name.font = UIFont(name: "SofachromeRg-Italic", size: 32)
         name.textColor = UIColor.systemIndigo
-        if let userName = UserDefaults.standard.string(forKey: "uName"){
-            //if we have a user:
-            //greet
-            name.text = " \(userName)"
-        }
+        
+        name.text = " \(nameOfUser)"
+        
     }
     
     //set the ranks of the player
@@ -64,7 +77,7 @@ class ProfileViewController: BaseViewController {
         rank.frame = CGRect(x: 88 ,y: 160,width: 230, height: 30 )
         rank.textAlignment = NSTextAlignment.left
         rank.font = UIFont(name: "SofachromeRg-Italic", size: 16)
-      
+        
         rank.text = "Rank: "
         rank.textColor = UIColor.systemGray3
         rank.isUserInteractionEnabled = false
@@ -72,7 +85,7 @@ class ProfileViewController: BaseViewController {
         rankD.frame = CGRect(x: 88 ,y: 185,width: 230, height: 30 )
         rankD.textAlignment = NSTextAlignment.left
         rankD.font = UIFont(name: "SofachromeRg-Italic", size: 16)
-        rankD.text = "\(Rank)"
+        rankD.text = "\(rankStrin)"
         rankD.textColor = UIColor.systemGray3
         rankD.isUserInteractionEnabled = false
         
@@ -81,14 +94,14 @@ class ProfileViewController: BaseViewController {
         rankWNumbers.frame = CGRect(x: 88 ,y: 210,width: 250, height: 30 )
         rankWNumbers.textAlignment = NSTextAlignment.left
         rankWNumbers.font = UIFont(name: "SofachromeRg-Italic", size: 15)
-        rankWNumbers.text = "World: \(World)"
+        rankWNumbers.text = "World: \(worldN ?? 1)"
         rankWNumbers.textColor = UIColor.systemGray3
         rankWNumbers.isUserInteractionEnabled = false
         view.addSubview(rankNumbers)
         rankNumbers.frame = CGRect(x: 88 ,y: 235,width: 250, height: 30 )
         rankNumbers.textAlignment = NSTextAlignment.left
         rankNumbers.font = UIFont(name: "SofachromeRg-Italic", size: 16)
-        rankNumbers.text = "You: \(You)"
+        rankNumbers.text = "You: \(You ?? 1)"
         rankNumbers.textColor = UIColor.systemGray3
         rankNumbers.isUserInteractionEnabled = false
     }
@@ -101,14 +114,14 @@ class ProfileViewController: BaseViewController {
         wins.textAlignment = NSTextAlignment.left
         wins.font = UIFont(name: "SofachromeRg-Italic", size: 16)
         wins.textColor = UIColor.systemGray3
-        wins.text = "wins: \(winsN)"
+        wins.text = "wins: \(winsN ??  1)"
         wins.isUserInteractionEnabled = false
         view.addSubview(lost)
         lost.frame = CGRect(x: 88 ,y: 290,width: 250, height: 30 )
         lost.textAlignment = NSTextAlignment.left
         lost.font = UIFont(name: "SofachromeRg-Italic", size: 16)
         lost.textColor = UIColor.systemGray3
-        lost.text = "lost: \(lostN)"
+        lost.text = "lost: \(lostN ?? 1)"
         lost.isUserInteractionEnabled = false
         view.addSubview(avarege)
         avarege.frame = CGRect(x: 88 ,y: 320,width: 230, height: 30 )
@@ -122,7 +135,7 @@ class ProfileViewController: BaseViewController {
         avaregeD.textAlignment = NSTextAlignment.left
         avaregeD.font = UIFont(name: "SofachromeRg-Italic", size: 18)
         avaregeD.textColor = UIColor.systemGray3
-        avaregeD.text = " \(avaregeN)"
+        avaregeD.text = " \(avaregeN ?? 1)"
         avaregeD.isUserInteractionEnabled = false
         
         view.addSubview(friends)
@@ -137,21 +150,39 @@ class ProfileViewController: BaseViewController {
         friendsD.textAlignment = NSTextAlignment.left
         friendsD.font = UIFont(name: "SofachromeRg-Italic", size: 16)
         friendsD.textColor = UIColor.systemGray3
-        friendsD.text = "\(FriendsN)"
+        friendsD.text = "\(FriendsN ?? 1)"
         friendsD.isUserInteractionEnabled = false
-        view.addSubview(contrey)
-        contrey.frame = CGRect(x: 88 ,y: 440,width: 230, height: 30 )
-        contrey.textAlignment = NSTextAlignment.left
-        contrey.font = UIFont(name: "SofachromeRg-Italic", size: 16)
-        contrey.text = "Contrey: "
-        contrey.textColor = UIColor.systemGray3
-        contrey.isUserInteractionEnabled = false
-        view.addSubview(contreyD)
-        contreyD.frame = CGRect(x: 88 ,y: 466,width: 230, height: 30 )
-        contreyD.textAlignment = NSTextAlignment.left
-        contreyD.font = UIFont(name: "SofachromeRg-Italic", size: 16)
-        contreyD.text = "\(contreyN)"
-        contreyD.textColor = UIColor.systemGray3
-        contreyD.isUserInteractionEnabled = false
+        view.addSubview(country)
+        country.frame = CGRect(x: 88 ,y: 440,width: 230, height: 30 )
+        country.textAlignment = NSTextAlignment.left
+        country.font = UIFont(name: "SofachromeRg-Italic", size: 16)
+        country.text = "Contrey: "
+        country.textColor = UIColor.systemGray3
+        country.isUserInteractionEnabled = false
+        view.addSubview(countryD)
+        countryD.frame = CGRect(x: 88 ,y: 466,width: 230, height: 30 )
+        countryD.textAlignment = NSTextAlignment.left
+        countryD.font = UIFont(name: "SofachromeRg-Italic", size: 16)
+        countryD.text = "\(countryN ?? "no")"
+        countryD.textColor = UIColor.systemGray3
+        countryD.isUserInteractionEnabled = false
+    }
+    
+    func setCountryButton(){
+        if countryN == "no country"{
+            
+            countryButton.isHidden = false
+            view.addSubview(countryButton)
+            countryButton.frame = CGRect(x: 0 ,y: 466,width: 88, height: 30 )
+            countryButton.setBackgroundImage(UIImage(named: "buttenready"), for: UIControl.State.normal)
+            countryButton.addTarget(self, action: #selector(pickContrey), for: .touchUpInside)
+            countryButton.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 12)
+            countryButton.setTitle("Add", for: .normal)
+            countryButton.titleLabel!.textAlignment = .left
+        }else{
+            countryButton.isHidden = true
+            
+        }
+        
     }
 }

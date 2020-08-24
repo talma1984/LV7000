@@ -17,14 +17,14 @@ class GameViewControler: BaseGameViewController  {
     
     
     
-   
     
     
-     let ref  = Database.database().reference()
     
+    let ref  = Database.database().reference()
     
+    let btn = UIButton()
     //set the layouts of the collection view
-    let teritoryCollectionView:  UICollectionView = {
+    var teritoryCollectionView:  UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -54,7 +54,7 @@ class GameViewControler: BaseGameViewController  {
         setCollectionView()
         getCotrdinates()
         moveTheView(image: teritorryTitle, pivx: pivotX, pivy: pivoty,pivW: width, pivH: height)
-   
+        
     }
     //get cordinates of the capitol teritorry for the start of each turn
     func getCotrdinates(){
@@ -81,10 +81,14 @@ class GameViewControler: BaseGameViewController  {
         gameImage.addSubview(teritoryCollectionView)
         teritoryCollectionView.delegate = self
         teritoryCollectionView.dataSource = self
-        teritoryCollectionView.register(GameCollectionViewCell.self, forCellWithReuseIdentifier: "collCell")
+        teritoryCollectionView.register(TeritorryCollectionViewCell.self, forCellWithReuseIdentifier: "collCell")
+        //teritoryCollectionView.register(TeritorryCollectionViewCell.self, forCellWithReuseIdentifier: "collCell")
+        // teritoryCollectionView.register(TeritorryCollectionViewCell.self, forCellWithReuseIdentifier: "collCell")
         teritoryCollectionView.frame = CGRect(x: 50, y:10, width: 245, height: 150)
         teritoryCollectionView.backgroundColor = UIColor.clear
         teritoryCollectionView.isPagingEnabled = true
+        let flowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        teritoryCollectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: flowLayout)
         
     }
     
@@ -109,30 +113,48 @@ class GameViewControler: BaseGameViewController  {
         }
     }
     
+    
+    
     @IBAction func move(){
-        // moveView(image: String, pivx: Int, pivy: Int)
+        
+        moveTheView(image: teritorryTitle, pivx: pivotX, pivy: pivoty,pivW: width, pivH: height)
+        
     }
     
     //biuld the map game out of buttons each teritorry
     func getMapTeritorrys(map: Int){
-        
+        var count = 0
         
         switch map {
         case 1:
             for teritorry in StrangersonIsland {
+                
+                
+                
+                
                 let teritorysImages = UIButton()
+                
                 teritorysImages.frame = CGRect(x: teritorry.x,y: teritorry.y,width: teritorry.width, height: teritorry.height )
                 teritorysImages.clipsToBounds = true
-                
-                teritorysImages.setBackgroundImage(UIImage(named: teritorry.image), for: UIControl.State.normal)
+                teritorysImages.setBackgroundImage(UIImage(named: teritorry.image)?.withRenderingMode(.alwaysTemplate), for: UIControl.State.normal)
                 teritorysImages.setTitle("\(teritorry.title)", for: .normal)
                 teritorysImages.contentHorizontalAlignment = .center
                 teritorysImages.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 8)
                 teritorysImages.setTitleColor(.systemGray3, for: .normal)
                 scrollImageView.addSubview(teritorysImages)
+                teritorysImages.addTarget(self, action: #selector(move), for: UIControl.Event.touchDownRepeat)
                 
-                teritorysImages.addTarget(self, action: #selector(move), for: UIControl.Event.touchUpInside)
+                if num == count{
+                    teritorysImages.tintColor = .red
+                }
+                if num + 1 == count{
+                    teritorysImages.tintColor = .systemRed
+                }
+                if num + 2 == count{
+                    teritorysImages.tintColor = .blue
+                }
                 
+                count += 1
             }
         case 2:
             for teritorry in SiberianTiger {
@@ -145,7 +167,7 @@ class GameViewControler: BaseGameViewController  {
                 teritorysImages.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 8)
                 teritorysImages.setTitleColor(.systemGray3, for: .normal)
                 scrollImageView.addSubview(teritorysImages)
-              
+                
                 
                 
             }
@@ -184,7 +206,7 @@ class GameViewControler: BaseGameViewController  {
         
     }
     
-     //move the view to the players teritorry on click
+    //move the view to the players teritorry on click
     private func moveTheView(image: String, pivx: Int, pivy: Int, pivW: Int, pivH: Int){
         
         var x = 1.1
@@ -216,19 +238,16 @@ class GameViewControler: BaseGameViewController  {
         scrollView.setContentOffset(CGPoint(x: x - w ,y:  y - h), animated: true)
         scrollView.setZoomScale(2.5, animated: true)
         
-//        ref.child("User").observeSingleEvent(of: .value)
-//                {(snapshot) in
-//                    let user = snapshot.value as? [String:Any]
-                    //print(user as Any)
-       // }
     }
 }
 
 extension GameViewControler: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
     
+    
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: 220 , height: 150)
+        return CGSize(width: 245 , height: 150)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -236,7 +255,7 @@ extension GameViewControler: UICollectionViewDelegateFlowLayout, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let collectionCell =  collectionView.dequeueReusableCell(withReuseIdentifier: "collCell", for: indexPath) as! GameCollectionViewCell
+        let collectionCell =  collectionView.dequeueReusableCell(withReuseIdentifier: "collCell", for: indexPath) as! TeritorryCollectionViewCell
         
         let teritorry = playerTeritorrys[indexPath.row]
         collectionCell.data = teritorry
@@ -245,15 +264,8 @@ extension GameViewControler: UICollectionViewDelegateFlowLayout, UICollectionVie
         
         return collectionCell
     }
-//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-//       let visibleRect = CGRect(origin: teritoryCollectionView.contentOffset, size: teritoryCollectionView.bounds.size)
-//       let midPointOfVisibleRect = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
-////       if let visibleIndexPath = teritoryCollectionView.indexPathForItem(at: midPointOfVisibleRect) {
-////                yourPageControl.currentPage = visibleIndexPath.row
-////       }
-//    }
-    
 }
+
 
 extension GameViewControler: CollectionProtocol{
     func centurdTeritorry(image: String, index: Int, x: Int, y: Int, width: Int, height: Int) {
@@ -270,3 +282,4 @@ extension GameViewControler: CollectionProtocol{
         
     }
 }
+

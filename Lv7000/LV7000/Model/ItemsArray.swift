@@ -11,14 +11,11 @@ struct CustumData {
     
     let title: String
     let image: String
-    
     let priceLVBit: Int
     let priceMan: Int
     let priceTitanium: Int
     let priceUranium: Int
-    
     let explenation: String
-    
 }
 //struct of the teritorry attribiuts
 struct CustumTeritorryData {

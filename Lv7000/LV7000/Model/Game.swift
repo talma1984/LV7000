@@ -15,6 +15,7 @@ class Game {
    
 // take the number of players form creat game and players how choose "join" and arange them in random order ready to play
    func shuffledPlayrs(numberOfArmys: [String]) -> [String]{
+    let collors = ["red",  "white", "blue", "brown","cyan" ,"darkGray" ,"gray","green" ,"lightGray","magenta" ,"orange","purple","systemIndigo","systemPink","systemTeal","systemYellow"]
         var players = numberOfArmys
         var playersShuffled = [String]()
         
@@ -27,6 +28,7 @@ class Game {
         return playersShuffled
     }
  
+    
     // start game
     
     //player1 turn

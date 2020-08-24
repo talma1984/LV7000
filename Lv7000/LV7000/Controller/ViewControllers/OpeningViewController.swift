@@ -16,7 +16,7 @@ class OpeningViewController: UIViewController  {
     
     
     let ref  = Database.database().reference()
-    
+    var uName = ""
     
     
     override func viewDidLoad() {
@@ -32,19 +32,6 @@ class OpeningViewController: UIViewController  {
             }
         }
     }
-    
-    func setDataBaseRefrenses(){
-        ref.child("User/Username").setValue("\(String(describing: userName))")
-        ref.child("User/Averege:").setValue(0)
-        ref.child("User/Password").setValue("\(String(describing: password))")
-        ref.child("User/Email").setValue("\(String(describing: userEmail))")
-        ref.child("User/Wins").setValue("\(0)")
-        ref.child("User/Averege:").setValue(0)
-        ref.child("User/Rank").setValue("Private")
-        
-    }
-    
-    
     
     @IBOutlet weak var errLabel: UILabel!
     
@@ -101,8 +88,9 @@ class OpeningViewController: UIViewController  {
                    
                     if let name = self.userName.text{
                         UserDefaults.standard.set(name, forKey: "uName")
+                        self.uName = name
                     }
-                    
+                    self.createDataBase()
                     self.performSegue(withIdentifier: "MainMenuSegue", sender: self)
                 }
             }
@@ -115,6 +103,11 @@ class OpeningViewController: UIViewController  {
         
         errLabel.alpha = 1
         errLabel.text = message
+    }
+    
+    func createDataBase(){
+
+        self.ref.child("users").child(String(describing: uName)).setValue(["Wins" : 0,"Losts" : 0, "Averege" : 1.1, "Rank" :"Private", "World" : 0,"Friends" : 0, "country" : "no country"])
     }
     
     func validateFields() -> String? {

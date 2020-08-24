@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//set base view of  , choose army, select platers, select map
+//set base view of  , choose army, select platers, select map choose country
 class ChooseViewController: UIViewController  {
     
     let backgroundImageView = UIImageView()

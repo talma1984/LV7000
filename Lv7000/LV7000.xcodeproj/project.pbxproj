@@ -25,12 +25,11 @@
 		040C971524C19ECF00A18B57 /* SelectMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040C970824C19ECF00A18B57 /* SelectMapViewController.swift */; };
 		040C971624C19ECF00A18B57 /* OpeningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040C970924C19ECF00A18B57 /* OpeningViewController.swift */; };
 		040C971824C19ECF00A18B57 /* JoinGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040C970B24C19ECF00A18B57 /* JoinGameViewController.swift */; };
-		040C971924C19ECF00A18B57 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040C970C24C19ECF00A18B57 /* SettingsViewController.swift */; };
 		040C971B24C19EEE00A18B57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 040C971A24C19EEE00A18B57 /* Assets.xcassets */; };
 		040C972024C19F3900A18B57 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040C971D24C19F3800A18B57 /* Game.swift */; };
 		040C972124C19F3900A18B57 /* Army.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040C971E24C19F3800A18B57 /* Army.swift */; };
 		040C972224C19F3900A18B57 /* ItemsArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040C971F24C19F3800A18B57 /* ItemsArray.swift */; };
-		040C972924C19F5700A18B57 /* GameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040C972324C19F5700A18B57 /* GameCollectionViewCell.swift */; };
+		040C972924C19F5700A18B57 /* TeritorryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040C972324C19F5700A18B57 /* TeritorryCollectionViewCell.swift */; };
 		040C972A24C19F5700A18B57 /* DefenceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040C972424C19F5700A18B57 /* DefenceTableViewCell.swift */; };
 		040C972B24C19F5700A18B57 /* PlayersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040C972524C19F5700A18B57 /* PlayersCell.swift */; };
 		040C972C24C19F5700A18B57 /* BuldingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040C972624C19F5700A18B57 /* BuldingTableViewCell.swift */; };
@@ -43,6 +42,7 @@
 		040C973A24C55E2100A18B57 /* sofachrome rg it.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 040C973124C55DAD00A18B57 /* sofachrome rg it.ttf */; };
 		040C97A624C5D38E00A18B57 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040C97A524C5D38E00A18B57 /* Utilities.swift */; };
 		040C97AA24C6EEAD00A18B57 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 040C97A924C6EEAD00A18B57 /* GoogleService-Info.plist */; };
+		04B9997C24D015EC001D9979 /* ChooseCountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B9997B24D015EC001D9979 /* ChooseCountryViewController.swift */; };
 		39150BD4B4DC98129884F44C /* Pods_LV7000.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C457B922C91D6D2C03926595 /* Pods_LV7000.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,12 +67,11 @@
 		040C970824C19ECF00A18B57 /* SelectMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectMapViewController.swift; sourceTree = "<group>"; };
 		040C970924C19ECF00A18B57 /* OpeningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpeningViewController.swift; sourceTree = "<group>"; };
 		040C970B24C19ECF00A18B57 /* JoinGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinGameViewController.swift; sourceTree = "<group>"; };
-		040C970C24C19ECF00A18B57 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		040C971A24C19EEE00A18B57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../../Desktop/talhomework/aplications/Lv7001/Lv7001/Supporting Files/Assets.xcassets"; sourceTree = "<group>"; };
 		040C971D24C19F3800A18B57 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		040C971E24C19F3800A18B57 /* Army.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Army.swift; sourceTree = "<group>"; };
 		040C971F24C19F3800A18B57 /* ItemsArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsArray.swift; sourceTree = "<group>"; };
-		040C972324C19F5700A18B57 /* GameCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCollectionViewCell.swift; sourceTree = "<group>"; };
+		040C972324C19F5700A18B57 /* TeritorryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeritorryCollectionViewCell.swift; sourceTree = "<group>"; };
 		040C972424C19F5700A18B57 /* DefenceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefenceTableViewCell.swift; sourceTree = "<group>"; };
 		040C972524C19F5700A18B57 /* PlayersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersCell.swift; sourceTree = "<group>"; };
 		040C972624C19F5700A18B57 /* BuldingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuldingTableViewCell.swift; sourceTree = "<group>"; };
@@ -85,6 +84,7 @@
 		040C973524C55DAE00A18B57 /* KITCHENPOLICE.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = KITCHENPOLICE.TTF; sourceTree = "<group>"; };
 		040C97A524C5D38E00A18B57 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utilities.swift; path = ../../../LoginExample/LoginExample/View/Utilities.swift; sourceTree = "<group>"; };
 		040C97A924C6EEAD00A18B57 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		04B9997B24D015EC001D9979 /* ChooseCountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCountryViewController.swift; sourceTree = "<group>"; };
 		30A129AD378189DB60FC1DDF /* Pods-LV7000.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LV7000.release.xcconfig"; path = "Target Support Files/Pods-LV7000/Pods-LV7000.release.xcconfig"; sourceTree = "<group>"; };
 		C457B922C91D6D2C03926595 /* Pods_LV7000.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LV7000.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF6558E09F1421874B8F483F /* Pods-LV7000.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LV7000.debug.xcconfig"; path = "Target Support Files/Pods-LV7000/Pods-LV7000.debug.xcconfig"; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 				040C972724C19F5700A18B57 /* ArmyTableViewCell.swift */,
 				040C972624C19F5700A18B57 /* BuldingTableViewCell.swift */,
 				040C972424C19F5700A18B57 /* DefenceTableViewCell.swift */,
-				040C972324C19F5700A18B57 /* GameCollectionViewCell.swift */,
+				040C972324C19F5700A18B57 /* TeritorryCollectionViewCell.swift */,
 				040C972524C19F5700A18B57 /* PlayersCell.swift */,
 				040C972824C19F5700A18B57 /* SpecialTableViewCell.swift */,
 			);
@@ -193,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				040C970024C19ECF00A18B57 /* ChooseArmyViewController.swift */,
+				04B9997B24D015EC001D9979 /* ChooseCountryViewController.swift */,
 				040C970124C19ECF00A18B57 /* MainViewController.swift */,
 				040C970224C19ECF00A18B57 /* CreatGameViewController.swift */,
 				040C970324C19ECF00A18B57 /* SelectPlayersViewController.swift */,
@@ -203,7 +204,6 @@
 				040C970824C19ECF00A18B57 /* SelectMapViewController.swift */,
 				040C970924C19ECF00A18B57 /* OpeningViewController.swift */,
 				040C970B24C19ECF00A18B57 /* JoinGameViewController.swift */,
-				040C970C24C19ECF00A18B57 /* SettingsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -357,6 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B9997C24D015EC001D9979 /* ChooseCountryViewController.swift in Sources */,
 				040C96FD24C19DFE00A18B57 /* MakeGameViewController.swift in Sources */,
 				040C972B24C19F5700A18B57 /* PlayersCell.swift in Sources */,
 				040C972224C19F3900A18B57 /* ItemsArray.swift in Sources */,
@@ -365,14 +366,13 @@
 				040C972124C19F3900A18B57 /* Army.swift in Sources */,
 				040C96DF24C19D2C00A18B57 /* AppDelegate.swift in Sources */,
 				040C971224C19ECF00A18B57 /* GameViewControler.swift in Sources */,
-				040C971924C19ECF00A18B57 /* SettingsViewController.swift in Sources */,
 				040C971424C19ECF00A18B57 /* ProfileViewController.swift in Sources */,
 				040C971624C19ECF00A18B57 /* OpeningViewController.swift in Sources */,
 				040C972A24C19F5700A18B57 /* DefenceTableViewCell.swift in Sources */,
 				040C97A624C5D38E00A18B57 /* Utilities.swift in Sources */,
 				040C971524C19ECF00A18B57 /* SelectMapViewController.swift in Sources */,
 				040C971324C19ECF00A18B57 /* LoadViewController.swift in Sources */,
-				040C972924C19F5700A18B57 /* GameCollectionViewCell.swift in Sources */,
+				040C972924C19F5700A18B57 /* TeritorryCollectionViewCell.swift in Sources */,
 				040C970D24C19ECF00A18B57 /* ChooseArmyViewController.swift in Sources */,
 				040C972D24C19F5700A18B57 /* ArmyTableViewCell.swift in Sources */,
 				040C972024C19F3900A18B57 /* Game.swift in Sources */,
