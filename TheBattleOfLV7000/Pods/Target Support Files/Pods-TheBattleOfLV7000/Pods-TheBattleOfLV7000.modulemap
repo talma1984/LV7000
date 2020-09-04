@@ -1,0 +1,6 @@
+framework module Pods_TheBattleOfLV7000 {
+  umbrella header "Pods-TheBattleOfLV7000-umbrella.h"
+
+  export *
+  module * { export * }
+}
