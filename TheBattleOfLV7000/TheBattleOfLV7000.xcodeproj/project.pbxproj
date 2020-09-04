@@ -1,0 +1,603 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04068F5425010F4000B210AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068F5325010F4000B210AC /* AppDelegate.swift */; };
+		04068F5625010F4000B210AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068F5525010F4000B210AC /* SceneDelegate.swift */; };
+		04068F5B25010F4000B210AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04068F5925010F4000B210AC /* Main.storyboard */; };
+		04068F6025010F4600B210AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04068F5E25010F4600B210AC /* LaunchScreen.storyboard */; };
+		04068F682501117000B210AC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04068F672501117000B210AC /* GoogleService-Info.plist */; };
+		04068F7425011AE000B210AC /* KITCHENPOLICE.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 04068F6F25011AE000B210AC /* KITCHENPOLICE.TTF */; };
+		04068F7525011AE000B210AC /* sofachrome rg it.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04068F7025011AE000B210AC /* sofachrome rg it.ttf */; };
+		04068F7625011AE000B210AC /* NEVERSAYDIE.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04068F7125011AE000B210AC /* NEVERSAYDIE.ttf */; };
+		04068F7725011AE000B210AC /* divlit.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04068F7225011AE000B210AC /* divlit.ttf */; };
+		04068F7825011AE000B210AC /* Neutronium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04068F7325011AE000B210AC /* Neutronium.ttf */; };
+		04068F8225011F1E00B210AC /* Army.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068F7F25011F1B00B210AC /* Army.swift */; };
+		04068F8325011F1E00B210AC /* ItemsArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068F8025011F1D00B210AC /* ItemsArray.swift */; };
+		04068F8425011F1E00B210AC /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068F8125011F1E00B210AC /* Game.swift */; };
+		04068F9925011F4200B210AC /* ChooseArmyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068F8625011F4200B210AC /* ChooseArmyViewController.swift */; };
+		04068F9A25011F4200B210AC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068F8725011F4200B210AC /* MainViewController.swift */; };
+		04068F9B25011F4200B210AC /* CreatGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068F8825011F4200B210AC /* CreatGameViewController.swift */; };
+		04068F9C25011F4200B210AC /* SelectPlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068F8925011F4200B210AC /* SelectPlayersViewController.swift */; };
+		04068F9D25011F4200B210AC /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068F8A25011F4200B210AC /* StoryViewController.swift */; };
+		04068F9E25011F4200B210AC /* GameViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068F8B25011F4200B210AC /* GameViewControler.swift */; };
+		04068F9F25011F4200B210AC /* LoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068F8C25011F4200B210AC /* LoadViewController.swift */; };
+		04068FA025011F4200B210AC /* ChooseCountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068F8D25011F4200B210AC /* ChooseCountryViewController.swift */; };
+		04068FA125011F4200B210AC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068F8E25011F4200B210AC /* ProfileViewController.swift */; };
+		04068FA225011F4200B210AC /* SelectMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068F8F25011F4200B210AC /* SelectMapViewController.swift */; };
+		04068FA325011F4200B210AC /* OpeningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068F9025011F4200B210AC /* OpeningViewController.swift */; };
+		04068FA425011F4200B210AC /* JoinAGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068F9125011F4200B210AC /* JoinAGameViewController.swift */; };
+		04068FA525011F4200B210AC /* JoinGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068F9225011F4200B210AC /* JoinGameViewController.swift */; };
+		04068FA625011F4200B210AC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068F9325011F4200B210AC /* SettingsViewController.swift */; };
+		04068FA725011F4200B210AC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068F9525011F4200B210AC /* BaseViewController.swift */; };
+		04068FA825011F4200B210AC /* BaseGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068F9625011F4200B210AC /* BaseGameViewController.swift */; };
+		04068FA925011F4200B210AC /* ChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068F9725011F4200B210AC /* ChooseViewController.swift */; };
+		04068FAA25011F4200B210AC /* MakeGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068F9825011F4200B210AC /* MakeGameViewController.swift */; };
+		04068FB325011F7700B210AC /* BuldingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068FAB25011F6E00B210AC /* BuldingTableViewCell.swift */; };
+		04068FB425011F7700B210AC /* TeritorryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068FAC25011F6F00B210AC /* TeritorryCollectionViewCell.swift */; };
+		04068FB525011F7700B210AC /* PlayersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068FAD25011F7000B210AC /* PlayersCell.swift */; };
+		04068FB725011F7700B210AC /* ArmyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068FAF25011F7300B210AC /* ArmyTableViewCell.swift */; };
+		04068FB825011F7700B210AC /* SpecialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068FB025011F7500B210AC /* SpecialTableViewCell.swift */; };
+		04068FB925011F7700B210AC /* DefenceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068FB125011F7600B210AC /* DefenceTableViewCell.swift */; };
+		04068FBA25011F7700B210AC /* OneTeritorryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068FB225011F7700B210AC /* OneTeritorryCollectionViewCell.swift */; };
+		04068FBC2501212800B210AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04068FBB2501212600B210AC /* Assets.xcassets */; };
+		8C1D4B13BEEFBA8D32F2CAAE /* Pods_TheBattleOfLV7000.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EDDE8FE4D140D147770DBCA /* Pods_TheBattleOfLV7000.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		04068F5025010F4000B210AC /* TheBattleOfLV7000.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheBattleOfLV7000.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04068F5325010F4000B210AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		04068F5525010F4000B210AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		04068F5A25010F4000B210AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		04068F5F25010F4600B210AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		04068F6125010F4600B210AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04068F672501117000B210AC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		04068F6F25011AE000B210AC /* KITCHENPOLICE.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = KITCHENPOLICE.TTF; sourceTree = "<group>"; };
+		04068F7025011AE000B210AC /* sofachrome rg it.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sofachrome rg it.ttf"; sourceTree = "<group>"; };
+		04068F7125011AE000B210AC /* NEVERSAYDIE.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NEVERSAYDIE.ttf; sourceTree = "<group>"; };
+		04068F7225011AE000B210AC /* divlit.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = divlit.ttf; sourceTree = "<group>"; };
+		04068F7325011AE000B210AC /* Neutronium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Neutronium.ttf; sourceTree = "<group>"; };
+		04068F7F25011F1B00B210AC /* Army.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Army.swift; sourceTree = "<group>"; };
+		04068F8025011F1D00B210AC /* ItemsArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsArray.swift; sourceTree = "<group>"; };
+		04068F8125011F1E00B210AC /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		04068F8625011F4200B210AC /* ChooseArmyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseArmyViewController.swift; sourceTree = "<group>"; };
+		04068F8725011F4200B210AC /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		04068F8825011F4200B210AC /* CreatGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatGameViewController.swift; sourceTree = "<group>"; };
+		04068F8925011F4200B210AC /* SelectPlayersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectPlayersViewController.swift; sourceTree = "<group>"; };
+		04068F8A25011F4200B210AC /* StoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
+		04068F8B25011F4200B210AC /* GameViewControler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewControler.swift; sourceTree = "<group>"; };
+		04068F8C25011F4200B210AC /* LoadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadViewController.swift; sourceTree = "<group>"; };
+		04068F8D25011F4200B210AC /* ChooseCountryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseCountryViewController.swift; sourceTree = "<group>"; };
+		04068F8E25011F4200B210AC /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		04068F8F25011F4200B210AC /* SelectMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectMapViewController.swift; sourceTree = "<group>"; };
+		04068F9025011F4200B210AC /* OpeningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpeningViewController.swift; sourceTree = "<group>"; };
+		04068F9125011F4200B210AC /* JoinAGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinAGameViewController.swift; sourceTree = "<group>"; };
+		04068F9225011F4200B210AC /* JoinGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinGameViewController.swift; sourceTree = "<group>"; };
+		04068F9325011F4200B210AC /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		04068F9525011F4200B210AC /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		04068F9625011F4200B210AC /* BaseGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseGameViewController.swift; sourceTree = "<group>"; };
+		04068F9725011F4200B210AC /* ChooseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseViewController.swift; sourceTree = "<group>"; };
+		04068F9825011F4200B210AC /* MakeGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeGameViewController.swift; sourceTree = "<group>"; };
+		04068FAB25011F6E00B210AC /* BuldingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuldingTableViewCell.swift; sourceTree = "<group>"; };
+		04068FAC25011F6F00B210AC /* TeritorryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeritorryCollectionViewCell.swift; sourceTree = "<group>"; };
+		04068FAD25011F7000B210AC /* PlayersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersCell.swift; sourceTree = "<group>"; };
+		04068FAF25011F7300B210AC /* ArmyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArmyTableViewCell.swift; sourceTree = "<group>"; };
+		04068FB025011F7500B210AC /* SpecialTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecialTableViewCell.swift; sourceTree = "<group>"; };
+		04068FB125011F7600B210AC /* DefenceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefenceTableViewCell.swift; sourceTree = "<group>"; };
+		04068FB225011F7700B210AC /* OneTeritorryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneTeritorryCollectionViewCell.swift; sourceTree = "<group>"; };
+		04068FBB2501212600B210AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../../Desktop/talhomework/aplications/Lv7001/Lv7001/Supporting Files/Assets.xcassets"; sourceTree = "<group>"; };
+		05A6B950D04493EFB744BF5B /* Pods-TheBattleOfLV7000.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheBattleOfLV7000.debug.xcconfig"; path = "Target Support Files/Pods-TheBattleOfLV7000/Pods-TheBattleOfLV7000.debug.xcconfig"; sourceTree = "<group>"; };
+		0EDDE8FE4D140D147770DBCA /* Pods_TheBattleOfLV7000.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheBattleOfLV7000.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA21244BF603299CC223AC11 /* Pods-TheBattleOfLV7000.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheBattleOfLV7000.release.xcconfig"; path = "Target Support Files/Pods-TheBattleOfLV7000/Pods-TheBattleOfLV7000.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		04068F4D25010F4000B210AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C1D4B13BEEFBA8D32F2CAAE /* Pods_TheBattleOfLV7000.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04068F4725010F3F00B210AC = {
+			isa = PBXGroup;
+			children = (
+				04068F5225010F4000B210AC /* TheBattleOfLV7000 */,
+				04068F5125010F4000B210AC /* Products */,
+				AAAD25C0551737BE93670579 /* Pods */,
+				1FF9A548AFD161EBB43D1534 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		04068F5125010F4000B210AC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04068F5025010F4000B210AC /* TheBattleOfLV7000.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		04068F5225010F4000B210AC /* TheBattleOfLV7000 */ = {
+			isa = PBXGroup;
+			children = (
+				04068F6D25011AC000B210AC /* Supporting Files */,
+				04068F6C25011A3E00B210AC /* Model */,
+				04068F6B25011A3900B210AC /* View */,
+				04068F6925011A2200B210AC /* Controller */,
+				04068F5E25010F4600B210AC /* LaunchScreen.storyboard */,
+				04068F5925010F4000B210AC /* Main.storyboard */,
+				04068F672501117000B210AC /* GoogleService-Info.plist */,
+				04068F6125010F4600B210AC /* Info.plist */,
+			);
+			path = TheBattleOfLV7000;
+			sourceTree = "<group>";
+		};
+		04068F6925011A2200B210AC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04068F9425011F4200B210AC /* BaseViewControllers */,
+				04068F8525011F4200B210AC /* ViewControllers */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04068F6B25011A3900B210AC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04068FAF25011F7300B210AC /* ArmyTableViewCell.swift */,
+				04068FAB25011F6E00B210AC /* BuldingTableViewCell.swift */,
+				04068FB125011F7600B210AC /* DefenceTableViewCell.swift */,
+				04068FB225011F7700B210AC /* OneTeritorryCollectionViewCell.swift */,
+				04068FAD25011F7000B210AC /* PlayersCell.swift */,
+				04068FB025011F7500B210AC /* SpecialTableViewCell.swift */,
+				04068FAC25011F6F00B210AC /* TeritorryCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04068F6C25011A3E00B210AC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04068F7F25011F1B00B210AC /* Army.swift */,
+				04068F8125011F1E00B210AC /* Game.swift */,
+				04068F8025011F1D00B210AC /* ItemsArray.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04068F6D25011AC000B210AC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				04068F6E25011AE000B210AC /* Fonts */,
+				04068F5325010F4000B210AC /* AppDelegate.swift */,
+				04068F5525010F4000B210AC /* SceneDelegate.swift */,
+				04068FBB2501212600B210AC /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		04068F6E25011AE000B210AC /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				04068F6F25011AE000B210AC /* KITCHENPOLICE.TTF */,
+				04068F7025011AE000B210AC /* sofachrome rg it.ttf */,
+				04068F7125011AE000B210AC /* NEVERSAYDIE.ttf */,
+				04068F7225011AE000B210AC /* divlit.ttf */,
+				04068F7325011AE000B210AC /* Neutronium.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		04068F8525011F4200B210AC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				04068F8625011F4200B210AC /* ChooseArmyViewController.swift */,
+				04068F8725011F4200B210AC /* MainViewController.swift */,
+				04068F8825011F4200B210AC /* CreatGameViewController.swift */,
+				04068F8925011F4200B210AC /* SelectPlayersViewController.swift */,
+				04068F8A25011F4200B210AC /* StoryViewController.swift */,
+				04068F8B25011F4200B210AC /* GameViewControler.swift */,
+				04068F8C25011F4200B210AC /* LoadViewController.swift */,
+				04068F8D25011F4200B210AC /* ChooseCountryViewController.swift */,
+				04068F8E25011F4200B210AC /* ProfileViewController.swift */,
+				04068F8F25011F4200B210AC /* SelectMapViewController.swift */,
+				04068F9025011F4200B210AC /* OpeningViewController.swift */,
+				04068F9125011F4200B210AC /* JoinAGameViewController.swift */,
+				04068F9225011F4200B210AC /* JoinGameViewController.swift */,
+				04068F9325011F4200B210AC /* SettingsViewController.swift */,
+			);
+			name = ViewControllers;
+			path = "../../../../../Desktop/copi of lv700/LV7000/LV7000/Controller/ViewControllers";
+			sourceTree = "<group>";
+		};
+		04068F9425011F4200B210AC /* BaseViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				04068F9525011F4200B210AC /* BaseViewController.swift */,
+				04068F9625011F4200B210AC /* BaseGameViewController.swift */,
+				04068F9725011F4200B210AC /* ChooseViewController.swift */,
+				04068F9825011F4200B210AC /* MakeGameViewController.swift */,
+			);
+			name = BaseViewControllers;
+			path = "../../../../../Desktop/copi of lv700/LV7000/LV7000/Controller/BaseViewControllers";
+			sourceTree = "<group>";
+		};
+		1FF9A548AFD161EBB43D1534 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0EDDE8FE4D140D147770DBCA /* Pods_TheBattleOfLV7000.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AAAD25C0551737BE93670579 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				05A6B950D04493EFB744BF5B /* Pods-TheBattleOfLV7000.debug.xcconfig */,
+				EA21244BF603299CC223AC11 /* Pods-TheBattleOfLV7000.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		04068F4F25010F4000B210AC /* TheBattleOfLV7000 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04068F6425010F4600B210AC /* Build configuration list for PBXNativeTarget "TheBattleOfLV7000" */;
+			buildPhases = (
+				1C1DCCD6FC4A153EA7B9CAA2 /* [CP] Check Pods Manifest.lock */,
+				04068F4C25010F4000B210AC /* Sources */,
+				04068F4D25010F4000B210AC /* Frameworks */,
+				04068F4E25010F4000B210AC /* Resources */,
+				6B5D6F069F7939F7FE75A093 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TheBattleOfLV7000;
+			productName = TheBattleOfLV7000;
+			productReference = 04068F5025010F4000B210AC /* TheBattleOfLV7000.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		04068F4825010F3F00B210AC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1170;
+				LastUpgradeCheck = 1170;
+				ORGANIZATIONNAME = aurica;
+				TargetAttributes = {
+					04068F4F25010F4000B210AC = {
+						CreatedOnToolsVersion = 11.7;
+					};
+				};
+			};
+			buildConfigurationList = 04068F4B25010F3F00B210AC /* Build configuration list for PBXProject "TheBattleOfLV7000" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 04068F4725010F3F00B210AC;
+			productRefGroup = 04068F5125010F4000B210AC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				04068F4F25010F4000B210AC /* TheBattleOfLV7000 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		04068F4E25010F4000B210AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04068F7825011AE000B210AC /* Neutronium.ttf in Resources */,
+				04068F7625011AE000B210AC /* NEVERSAYDIE.ttf in Resources */,
+				04068F6025010F4600B210AC /* LaunchScreen.storyboard in Resources */,
+				04068F7725011AE000B210AC /* divlit.ttf in Resources */,
+				04068FBC2501212800B210AC /* Assets.xcassets in Resources */,
+				04068F682501117000B210AC /* GoogleService-Info.plist in Resources */,
+				04068F7425011AE000B210AC /* KITCHENPOLICE.TTF in Resources */,
+				04068F5B25010F4000B210AC /* Main.storyboard in Resources */,
+				04068F7525011AE000B210AC /* sofachrome rg it.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1C1DCCD6FC4A153EA7B9CAA2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TheBattleOfLV7000-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6B5D6F069F7939F7FE75A093 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TheBattleOfLV7000/Pods-TheBattleOfLV7000-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TheBattleOfLV7000/Pods-TheBattleOfLV7000-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TheBattleOfLV7000/Pods-TheBattleOfLV7000-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		04068F4C25010F4000B210AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04068F9D25011F4200B210AC /* StoryViewController.swift in Sources */,
+				04068FA425011F4200B210AC /* JoinAGameViewController.swift in Sources */,
+				04068FAA25011F4200B210AC /* MakeGameViewController.swift in Sources */,
+				04068F9B25011F4200B210AC /* CreatGameViewController.swift in Sources */,
+				04068FB525011F7700B210AC /* PlayersCell.swift in Sources */,
+				04068F9A25011F4200B210AC /* MainViewController.swift in Sources */,
+				04068FA825011F4200B210AC /* BaseGameViewController.swift in Sources */,
+				04068FB825011F7700B210AC /* SpecialTableViewCell.swift in Sources */,
+				04068FA025011F4200B210AC /* ChooseCountryViewController.swift in Sources */,
+				04068FA725011F4200B210AC /* BaseViewController.swift in Sources */,
+				04068FA625011F4200B210AC /* SettingsViewController.swift in Sources */,
+				04068FB725011F7700B210AC /* ArmyTableViewCell.swift in Sources */,
+				04068FA125011F4200B210AC /* ProfileViewController.swift in Sources */,
+				04068FA325011F4200B210AC /* OpeningViewController.swift in Sources */,
+				04068FA225011F4200B210AC /* SelectMapViewController.swift in Sources */,
+				04068F9E25011F4200B210AC /* GameViewControler.swift in Sources */,
+				04068F8325011F1E00B210AC /* ItemsArray.swift in Sources */,
+				04068FA925011F4200B210AC /* ChooseViewController.swift in Sources */,
+				04068F8425011F1E00B210AC /* Game.swift in Sources */,
+				04068F9F25011F4200B210AC /* LoadViewController.swift in Sources */,
+				04068F9C25011F4200B210AC /* SelectPlayersViewController.swift in Sources */,
+				04068FB925011F7700B210AC /* DefenceTableViewCell.swift in Sources */,
+				04068F9925011F4200B210AC /* ChooseArmyViewController.swift in Sources */,
+				04068F8225011F1E00B210AC /* Army.swift in Sources */,
+				04068FB425011F7700B210AC /* TeritorryCollectionViewCell.swift in Sources */,
+				04068F5425010F4000B210AC /* AppDelegate.swift in Sources */,
+				04068FBA25011F7700B210AC /* OneTeritorryCollectionViewCell.swift in Sources */,
+				04068FB325011F7700B210AC /* BuldingTableViewCell.swift in Sources */,
+				04068FA525011F4200B210AC /* JoinGameViewController.swift in Sources */,
+				04068F5625010F4000B210AC /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		04068F5925010F4000B210AC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04068F5A25010F4000B210AC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		04068F5E25010F4600B210AC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04068F5F25010F4600B210AC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		04068F6225010F4600B210AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		04068F6325010F4600B210AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		04068F6525010F4600B210AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05A6B950D04493EFB744BF5B /* Pods-TheBattleOfLV7000.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3NMQ3D66GQ;
+				INFOPLIST_FILE = TheBattleOfLV7000/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tm.TheBattleOfLV7000;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		04068F6625010F4600B210AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA21244BF603299CC223AC11 /* Pods-TheBattleOfLV7000.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3NMQ3D66GQ;
+				INFOPLIST_FILE = TheBattleOfLV7000/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tm.TheBattleOfLV7000;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04068F4B25010F3F00B210AC /* Build configuration list for PBXProject "TheBattleOfLV7000" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04068F6225010F4600B210AC /* Debug */,
+				04068F6325010F4600B210AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04068F6425010F4600B210AC /* Build configuration list for PBXNativeTarget "TheBattleOfLV7000" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04068F6525010F4600B210AC /* Debug */,
+				04068F6625010F4600B210AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 04068F4825010F3F00B210AC /* Project object */;
+}
