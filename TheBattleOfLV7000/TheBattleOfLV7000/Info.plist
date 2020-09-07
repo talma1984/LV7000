@@ -2,6 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>FirebaseScreenReportingEnabled</key>
+	<false/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>KITCHENPOLICE.TTF</string>
+		<string>sofachrome rg it.ttf</string>
+		<string>NEVERSAYDIE.ttf</string>
+		<string>divlit.ttf</string>
+		<string>Neutronium.ttf</string>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

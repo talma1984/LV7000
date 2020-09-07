@@ -12,7 +12,6 @@ import UIKit
 //let biuldNotificationKey = "biuld"
 //// send numbe of bildings to gameviewcontroller
 
-
 protocol CollectionProtocol {
      func centurdTeritorry(image: String, index: Int, x: Int, y: Int, width: Int, height: Int)
 }
@@ -29,11 +28,13 @@ class TeritorryCollectionViewCell: UICollectionViewCell {
     
     //arrange the information from items array and arrange them in collection
     func updateUi(){
+        if biuldingsOn == false{
+            setbiuldings()
+            biuldingsOn = true
+        }
         bg.image = UIImage(named: data.image)
         title = data.title
         tt.text = "\(title)"
-        NumOBildings = data.numberOfBuldings
-        // biuldings = data.
         resurseImage.image = UIImage(named: data.resurse)
         pivotX = data.x
         pivotY = data.y
@@ -42,7 +43,7 @@ class TeritorryCollectionViewCell: UICollectionViewCell {
         onerText = data.possessor
         biuldings = data.biuldings
         setProssesor()
-        setNumberOfBuldings()
+        setNumberOfBuldings(num: data.numberOfBuldings)
         setBiuldingImage(bildings: biuldings)
     }
     
@@ -71,7 +72,6 @@ class TeritorryCollectionViewCell: UICollectionViewCell {
     var pivotWidth = 1
     var pivotHeight = 1
     var biuldings = [String]()
-    var NumOBildings: Int?
     let backImage = UIImageView()
     let InformationButton = UIButton()
     let centerButton = UIButton()
@@ -85,7 +85,7 @@ class TeritorryCollectionViewCell: UICollectionViewCell {
     var title = ""
     let owner = UITextField()
     var onerText = "none"
-    
+    var biuldingsOn = false
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -170,96 +170,77 @@ class TeritorryCollectionViewCell: UICollectionViewCell {
         
     }
     
-    //check how many biuldings you can biuld in each teritorry and place it
-    func setNumberOfBuldings(){
+    func setbiuldings(){
+        NumberOfBuldingsButton1.setImage(UIImage(named:"NumberOfBuldings"), for: .normal)
+        NumberOfBuldingsButton1.contentMode = .scaleToFill
+        addSubview(NumberOfBuldingsButton1)
+        NumberOfBuldingsButton1.frame = CGRect(x: 10, y: 30, width:40, height: 20)
+        NumberOfBuldingsButton1.clipsToBounds = true
+        NumberOfBuldingsButton2.setImage(UIImage(named:"NumberOfBuldings"), for: .normal)
+        NumberOfBuldingsButton2.contentMode = .scaleToFill
+        addSubview(NumberOfBuldingsButton2)
+        NumberOfBuldingsButton2.frame = CGRect(x: 55, y: 30, width:40, height: 20)
+        NumberOfBuldingsButton2.clipsToBounds = true
+        NumberOfBuldingsButton3.setImage(UIImage(named:"NumberOfBuldings"), for: .normal)
+        NumberOfBuldingsButton3.contentMode = .scaleToFill
+        addSubview(NumberOfBuldingsButton3)
+        NumberOfBuldingsButton3.frame = CGRect(x: 100, y: 30, width:40, height: 20)
+        NumberOfBuldingsButton3.clipsToBounds = true
+        NumberOfBuldingsButton4.setImage(UIImage(named:"NumberOfBuldings"), for: .normal)
+        NumberOfBuldingsButton4.contentMode = .scaleToFill
+        addSubview(NumberOfBuldingsButton4)
+        NumberOfBuldingsButton4.frame = CGRect(x: 145, y: 30, width:40, height: 20)
+        NumberOfBuldingsButton4.clipsToBounds = true
+        NumberOfBuldingsButton5.setImage(UIImage(named:"NumberOfBuldings"), for: .normal)
+        NumberOfBuldingsButton5.contentMode = .scaleToFill
+        addSubview(NumberOfBuldingsButton5)
+        NumberOfBuldingsButton5.frame = CGRect(x: 190, y: 30, width:40, height: 20)
+        NumberOfBuldingsButton5.clipsToBounds = true
         
-        switch NumOBildings {
-        case 1:
-            NumberOfBuldingsButton1.setImage(UIImage(named:"NumberOfBuldings"), for: .normal)
-            NumberOfBuldingsButton1.contentMode = .scaleToFill
-            addSubview(NumberOfBuldingsButton1)
-            NumberOfBuldingsButton1.frame = CGRect(x: 10, y: 30, width:40, height: 20)
-            NumberOfBuldingsButton1.clipsToBounds = true
-        case 2:
-            NumberOfBuldingsButton1.setImage(UIImage(named:"NumberOfBuldings"), for: .normal)
-            NumberOfBuldingsButton1.contentMode = .scaleToFill
-            addSubview(NumberOfBuldingsButton1)
-            NumberOfBuldingsButton1.frame = CGRect(x: 10, y: 30, width:40, height: 20)
-            NumberOfBuldingsButton1.clipsToBounds = true
-            NumberOfBuldingsButton2.setImage(UIImage(named:"NumberOfBuldings"), for: .normal)
-            NumberOfBuldingsButton2.contentMode = .scaleToFill
-            addSubview(NumberOfBuldingsButton2)
-            NumberOfBuldingsButton2.frame = CGRect(x:55, y: 30, width:40, height: 20)
-            NumberOfBuldingsButton2.clipsToBounds = true
-        case 3:
-            NumberOfBuldingsButton1.setImage(UIImage(named:"NumberOfBuldings"), for: .normal)
-            NumberOfBuldingsButton1.contentMode = .scaleToFill
-            addSubview(NumberOfBuldingsButton1)
-            NumberOfBuldingsButton1.frame = CGRect(x: 10, y: 30, width:40, height: 20)
-            NumberOfBuldingsButton1.clipsToBounds = true
-            NumberOfBuldingsButton2.setImage(UIImage(named:"NumberOfBuldings"), for: .normal)
-            NumberOfBuldingsButton2.contentMode = .scaleToFill
-            addSubview(NumberOfBuldingsButton2)
-            NumberOfBuldingsButton2.frame = CGRect(x: 55, y: 30, width:40, height: 20)
-            NumberOfBuldingsButton2.clipsToBounds = true
-            NumberOfBuldingsButton3.setImage(UIImage(named:"NumberOfBuldings"), for: .normal)
-            NumberOfBuldingsButton3.contentMode = .scaleToFill
-            addSubview(NumberOfBuldingsButton3)
-            NumberOfBuldingsButton3.frame = CGRect(x: 100, y: 30, width:40, height: 20)
-            NumberOfBuldingsButton3.clipsToBounds = true
-        case 4:
-            NumberOfBuldingsButton1.setImage(UIImage(named:"NumberOfBuldings"), for: .normal)
-            NumberOfBuldingsButton1.contentMode = .scaleToFill
-            addSubview(NumberOfBuldingsButton1)
-            NumberOfBuldingsButton1.frame = CGRect(x: 10, y: 30, width:40, height: 20)
-            NumberOfBuldingsButton1.clipsToBounds = true
-            NumberOfBuldingsButton2.setImage(UIImage(named:"NumberOfBuldings"), for: .normal)
-            NumberOfBuldingsButton2.contentMode = .scaleToFill
-            addSubview(NumberOfBuldingsButton2)
-            NumberOfBuldingsButton2.frame = CGRect(x: 55, y: 30, width:40, height: 20)
-            NumberOfBuldingsButton2.clipsToBounds = true
-            NumberOfBuldingsButton3.setImage(UIImage(named:"NumberOfBuldings"), for: .normal)
-            NumberOfBuldingsButton3.contentMode = .scaleToFill
-            addSubview(NumberOfBuldingsButton3)
-            NumberOfBuldingsButton3.frame = CGRect(x: 100, y: 30, width:40, height: 20)
-            NumberOfBuldingsButton3.clipsToBounds = true
-            NumberOfBuldingsButton4.setImage(UIImage(named:"NumberOfBuldings"), for: .normal)
-            NumberOfBuldingsButton4.contentMode = .scaleToFill
-            addSubview(NumberOfBuldingsButton4)
-            NumberOfBuldingsButton4.frame = CGRect(x: 145, y: 30, width:40, height: 20)
-            NumberOfBuldingsButton4.clipsToBounds = true
-        case 5:
-            NumberOfBuldingsButton1.setImage(UIImage(named:"NumberOfBuldings"), for: .normal)
-            NumberOfBuldingsButton1.contentMode = .scaleToFill
-            addSubview(NumberOfBuldingsButton1)
-            NumberOfBuldingsButton1.frame = CGRect(x: 10, y: 30, width:40, height: 20)
-            NumberOfBuldingsButton1.clipsToBounds = true
-            NumberOfBuldingsButton2.setImage(UIImage(named:"NumberOfBuldings"), for: .normal)
-            NumberOfBuldingsButton2.contentMode = .scaleToFill
-            addSubview(NumberOfBuldingsButton2)
-            NumberOfBuldingsButton2.frame = CGRect(x: 55, y: 30, width:40, height: 20)
-            NumberOfBuldingsButton2.clipsToBounds = true
-            NumberOfBuldingsButton3.setImage(UIImage(named:"NumberOfBuldings"), for: .normal)
-            NumberOfBuldingsButton3.contentMode = .scaleToFill
-            addSubview(NumberOfBuldingsButton3)
-            NumberOfBuldingsButton3.frame = CGRect(x: 100, y: 30, width:40, height: 20)
-            NumberOfBuldingsButton3.clipsToBounds = true
-            NumberOfBuldingsButton4.setImage(UIImage(named:"NumberOfBuldings"), for: .normal)
-            NumberOfBuldingsButton4.contentMode = .scaleToFill
-            addSubview(NumberOfBuldingsButton4)
-            NumberOfBuldingsButton4.frame = CGRect(x: 145, y: 30, width:40, height: 20)
-            NumberOfBuldingsButton4.clipsToBounds = true
-            NumberOfBuldingsButton5.setImage(UIImage(named:"NumberOfBuldings"), for: .normal)
-            NumberOfBuldingsButton5.contentMode = .scaleToFill
-            addSubview(NumberOfBuldingsButton5)
-            NumberOfBuldingsButton5.frame = CGRect(x: 190, y: 30, width:40, height: 20)
-            NumberOfBuldingsButton5.clipsToBounds = true
-        default:
-            print(" ")
-        }
-        
-        NumOBildings = nil
     }
+    
+    //check how many biuldings you can biuld in each teritorry and place it
+    func setNumberOfBuldings(num: Int){
+        print(num)
+        let n = num
+        print(n)
+        switch n {
+        case 1:
+            bringSubviewToFront(NumberOfBuldingsButton1)
+            NumberOfBuldingsButton2.removeFromSuperview()
+            NumberOfBuldingsButton3.removeFromSuperview()
+            NumberOfBuldingsButton4.removeFromSuperview()
+            NumberOfBuldingsButton5.removeFromSuperview()
+        case 2:
+            bringSubviewToFront(NumberOfBuldingsButton1)
+            addSubview(NumberOfBuldingsButton2)
+            NumberOfBuldingsButton3.removeFromSuperview()
+            NumberOfBuldingsButton4.removeFromSuperview()
+            NumberOfBuldingsButton5.removeFromSuperview()
+            
+        case 3:
+            bringSubviewToFront(NumberOfBuldingsButton1)
+            addSubview(NumberOfBuldingsButton2)
+            addSubview(NumberOfBuldingsButton3)
+            NumberOfBuldingsButton4.removeFromSuperview()
+            NumberOfBuldingsButton5.removeFromSuperview()
+        case 4:
+            bringSubviewToFront(NumberOfBuldingsButton1)
+            addSubview(NumberOfBuldingsButton2)
+            addSubview(NumberOfBuldingsButton3)
+            addSubview(NumberOfBuldingsButton4)
+            NumberOfBuldingsButton5.removeFromSuperview()
+        case 5:
+            bringSubviewToFront(NumberOfBuldingsButton1)
+            addSubview(NumberOfBuldingsButton2)
+            addSubview(NumberOfBuldingsButton3)
+            addSubview(NumberOfBuldingsButton4)
+            addSubview(NumberOfBuldingsButton5)
+        default:
+            print("n")
+        }
+    }
+    
     
     @IBAction func centurdTeritorry(sender: Any){
         CollectionDelegate?.centurdTeritorry(image: title, index:(index?.row)!,x: pivotX, y: pivotY, width: pivotWidth, height: pivotHeight)
@@ -269,4 +250,3 @@ class TeritorryCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 }
-

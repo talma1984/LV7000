@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ano-lr-oQ0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ano-lr-oQ0">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -9,20 +9,20 @@
         <!--Opening View Controller-->
         <scene sceneID="417-mZ-S92">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="overCurrentContext" id="11J-1U-Xie" customClass="OpeningViewController" customModule="LV7000" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="overCurrentContext" id="11J-1U-Xie" customClass="OpeningViewController" customModule="TheBattleOfLV7000" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vf6-lc-6fF"/>
                         <viewControllerLayoutGuide type="bottom" id="ZvW-pA-lnt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fZT-gn-dvJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="stars1" translatesAutoresizingMaskIntoConstraints="NO" id="5BN-B4-hSa">
-                                <rect key="frame" x="0.0" y="44" width="424" height="808"/>
+                                <rect key="frame" x="0.0" y="0.0" width="424" height="842"/>
                             </imageView>
                             <imageView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="texture1" translatesAutoresizingMaskIntoConstraints="NO" id="CL8-Gf-dJD">
-                                <rect key="frame" x="76" y="292" width="268" height="470"/>
+                                <rect key="frame" x="76" y="238" width="268" height="470"/>
                                 <color key="backgroundColor" red="0.3333333432674408" green="0.3333333432674408" blue="0.3333333432674408" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" notEnabled="YES"/>
@@ -32,20 +32,20 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="output-onlinepngtools" translatesAutoresizingMaskIntoConstraints="NO" id="O9n-pK-ztv">
-                                <rect key="frame" x="60" y="284" width="302" height="500"/>
+                                <rect key="frame" x="60" y="230" width="302" height="500"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="500" id="1eV-Yj-ExZ"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LV7000Logo" translatesAutoresizingMaskIntoConstraints="NO" id="ecI-k5-mbp">
-                                <rect key="frame" x="0.0" y="45" width="414" height="280"/>
+                                <rect key="frame" x="0.0" y="1" width="414" height="280"/>
                                 <color key="backgroundColor" red="0.3333333432674408" green="0.3333333432674408" blue="0.3333333432674408" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="280" id="9Hj-YZ-fkr"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="userId" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oLJ-Ro-aFf">
-                                <rect key="frame" x="100" y="359.5" width="224" height="31"/>
+                                <rect key="frame" x="100" y="315.5" width="224" height="31"/>
                                 <color key="backgroundColor" red="0.34534952347048653" green="0.34534952347048653" blue="0.34534952347048653" alpha="0.40049764554794531" colorSpace="custom" customColorSpace="displayP3"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES"/>
@@ -54,7 +54,7 @@
                                 <textInputTraits key="textInputTraits" textContentType="username"/>
                             </textField>
                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="bezel" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H32-we-Vac">
-                                <rect key="frame" x="100" y="400.5" width="224" height="31"/>
+                                <rect key="frame" x="100" y="356.5" width="224" height="31"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="0.39774186643835618" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
@@ -72,7 +72,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="bezel" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B0D-nL-eWA">
-                                <rect key="frame" x="100" y="475.5" width="224" height="31"/>
+                                <rect key="frame" x="100" y="431.5" width="224" height="31"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="0.40499250856164382" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
@@ -89,7 +89,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Choose your Username:" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FsB-Rt-eQw">
-                                <rect key="frame" x="100" y="326" width="224" height="29.5"/>
+                                <rect key="frame" x="100" y="282" width="224" height="29.5"/>
                                 <color key="backgroundColor" red="0.34927560215068953" green="0.34927560215068953" blue="0.34927560215068953" alpha="0.39985552226027399" colorSpace="custom" customColorSpace="displayP3"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
@@ -99,13 +99,13 @@
                                 <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="userPassword" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q6J-DN-twj">
-                                <rect key="frame" x="100" y="435.5" width="224" height="30"/>
+                                <rect key="frame" x="100" y="391.5" width="224" height="30"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="0.53793878424657537" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="userEmail" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zzv-a0-jMm">
-                                <rect key="frame" x="100" y="510.5" width="224" height="31"/>
+                                <rect key="frame" x="100" y="466.5" width="224" height="31"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="0.4003103595890411" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <bool key="isElement" value="NO"/>
@@ -114,7 +114,7 @@
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbN-L1-ay5">
-                                <rect key="frame" x="127" y="759" width="160" height="70"/>
+                                <rect key="frame" x="127" y="705" width="160" height="70"/>
                                 <color key="backgroundColor" red="0.55072176395939088" green="0.55072176395939088" blue="0.55072176395939088" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="JhD-OC-FrC"/>
@@ -125,14 +125,14 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Our games are subject to the following:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vmT-0W-G97">
-                                <rect key="frame" x="100" y="735.5" width="221" height="13.5"/>
+                                <rect key="frame" x="100" y="681.5" width="221" height="13.5"/>
                                 <color key="backgroundColor" red="0.55072176395939088" green="0.55072176395939088" blue="0.55072176395939088" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Terms&amp; Conditions" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H54-eA-paB">
-                                <rect key="frame" x="100" y="749.5" width="84" height="12.5"/>
+                                <rect key="frame" x="100" y="695.5" width="84" height="12.5"/>
                                 <color key="backgroundColor" red="0.55072176395939088" green="0.55072176395939088" blue="0.55072176395939088" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="9"/>
@@ -143,7 +143,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Privacy Policy" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2sL-2T-gKW">
-                                <rect key="frame" x="196" y="749.5" width="62" height="12.5"/>
+                                <rect key="frame" x="196" y="695.5" width="62" height="12.5"/>
                                 <color key="backgroundColor" red="0.55072176395939088" green="0.55072176395939088" blue="0.55072176395939088" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="9"/>
@@ -154,7 +154,7 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Afx-sT-Jak">
-                                <rect key="frame" x="60" y="684" width="294" height="70"/>
+                                <rect key="frame" x="60" y="630" width="294" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="acy-Wa-8Ut"/>
                                 </constraints>
@@ -818,7 +818,7 @@ Without prejudice to any other administrative or judicial legal remedy, you have
         <!--Main View Controller-->
         <scene sceneID="94j-79-buu">
             <objects>
-                <viewController storyboardIdentifier="MainPage" automaticallyAdjustsScrollViewInsets="NO" id="0Lk-F7-ozn" customClass="MainViewController" customModule="LV7000" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainPage" automaticallyAdjustsScrollViewInsets="NO" id="0Lk-F7-ozn" customClass="MainViewController" customModule="TheBattleOfLV7000" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="43p-W6-qfq"/>
                         <viewControllerLayoutGuide type="bottom" id="Ddx-vS-3R1"/>
@@ -922,7 +922,7 @@ Without prejudice to any other administrative or judicial legal remedy, you have
         <!--Story View Controller-->
         <scene sceneID="8Lh-iS-51A">
             <objects>
-                <viewController id="IWv-b1-ui6" customClass="StoryViewController" customModule="LV7000" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="IWv-b1-ui6" customClass="StoryViewController" customModule="TheBattleOfLV7000" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hPs-8W-0bS"/>
                         <viewControllerLayoutGuide type="bottom" id="G1b-y7-Tez"/>
@@ -944,7 +944,7 @@ Without prejudice to any other administrative or judicial legal remedy, you have
         <!--Creat Game View Controller-->
         <scene sceneID="6nx-46-fkt">
             <objects>
-                <viewController id="HrY-q8-VPi" customClass="CreatGameViewController" customModule="LV7000" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HrY-q8-VPi" customClass="CreatGameViewController" customModule="TheBattleOfLV7000" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="q2e-mU-GCU"/>
                         <viewControllerLayoutGuide type="bottom" id="7hM-JV-KFL"/>
@@ -1062,7 +1062,7 @@ Without prejudice to any other administrative or judicial legal remedy, you have
         <!--Select Map View Controller-->
         <scene sceneID="2mP-qI-avd">
             <objects>
-                <viewController id="2EY-it-TWG" customClass="SelectMapViewController" customModule="LV7000" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2EY-it-TWG" customClass="SelectMapViewController" customModule="TheBattleOfLV7000" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tgq-NX-wy3"/>
                         <viewControllerLayoutGuide type="bottom" id="Zf4-bk-l7a"/>
@@ -1115,7 +1115,7 @@ Without prejudice to any other administrative or judicial legal remedy, you have
         <!--Select Players View Controller-->
         <scene sceneID="8iY-cF-BlN">
             <objects>
-                <viewController id="ZHN-Wp-w2r" customClass="SelectPlayersViewController" customModule="LV7000" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ZHN-Wp-w2r" customClass="SelectPlayersViewController" customModule="TheBattleOfLV7000" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="I1L-lC-fuQ"/>
                         <viewControllerLayoutGuide type="bottom" id="y1f-PR-iw7"/>
@@ -1187,7 +1187,7 @@ Without prejudice to any other administrative or judicial legal remedy, you have
         <!--Choose Army View Controller-->
         <scene sceneID="Ivj-1J-IdZ">
             <objects>
-                <viewController storyboardIdentifier="SelectPlayersViewController" id="jXd-bX-lYH" customClass="ChooseArmyViewController" customModule="LV7000" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectPlayersViewController" id="jXd-bX-lYH" customClass="ChooseArmyViewController" customModule="TheBattleOfLV7000" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cYh-sm-Dhn"/>
                         <viewControllerLayoutGuide type="bottom" id="gij-8e-Jtl"/>
@@ -1240,7 +1240,7 @@ Without prejudice to any other administrative or judicial legal remedy, you have
         <!--Profile View Controller-->
         <scene sceneID="3c0-wl-waM">
             <objects>
-                <viewController id="NDu-xh-fvG" customClass="ProfileViewController" customModule="LV7000" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="NDu-xh-fvG" customClass="ProfileViewController" customModule="TheBattleOfLV7000" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8DY-Sk-IWX"/>
                         <viewControllerLayoutGuide type="bottom" id="TkB-NF-cLW"/>
@@ -1263,7 +1263,7 @@ Without prejudice to any other administrative or judicial legal remedy, you have
         <!--Choose Country View Controller-->
         <scene sceneID="KOP-bq-qFH">
             <objects>
-                <viewController id="7e7-mO-yQh" customClass="ChooseCountryViewController" customModule="LV7000" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7e7-mO-yQh" customClass="ChooseCountryViewController" customModule="TheBattleOfLV7000" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zEk-xX-8Zy"/>
                         <viewControllerLayoutGuide type="bottom" id="HsY-cZ-cdN"/>
@@ -1316,7 +1316,7 @@ Without prejudice to any other administrative or judicial legal remedy, you have
         <!--Join Game View Controller-->
         <scene sceneID="6uX-Et-JEE">
             <objects>
-                <viewController id="xnN-cd-Ux8" customClass="JoinGameViewController" customModule="LV7000" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xnN-cd-Ux8" customClass="JoinGameViewController" customModule="TheBattleOfLV7000" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9T9-gU-Xrp"/>
                         <viewControllerLayoutGuide type="bottom" id="F90-aZ-heV"/>
@@ -1414,7 +1414,7 @@ Without prejudice to any other administrative or judicial legal remedy, you have
         <!--Load View Controller-->
         <scene sceneID="fHR-XD-xpT">
             <objects>
-                <viewController id="Ano-lr-oQ0" customClass="LoadViewController" customModule="LV7000" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ano-lr-oQ0" customClass="LoadViewController" customModule="TheBattleOfLV7000" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="w8h-XK-QYN"/>
                         <viewControllerLayoutGuide type="bottom" id="YWe-PV-mag"/>
@@ -1436,7 +1436,7 @@ Without prejudice to any other administrative or judicial legal remedy, you have
         <!--Game View Controler-->
         <scene sceneID="cJc-0W-GzG">
             <objects>
-                <viewController id="MHk-l7-qht" customClass="GameViewControler" customModule="LV7000" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="MHk-l7-qht" customClass="GameViewControler" customModule="TheBattleOfLV7000" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="i5W-32-L9D"/>
                         <viewControllerLayoutGuide type="bottom" id="7b6-iw-6ed"/>
@@ -1457,7 +1457,7 @@ Without prejudice to any other administrative or judicial legal remedy, you have
         <segue reference="pCZ-ds-Ifc"/>
         <segue reference="RAb-e6-hMq"/>
         <segue reference="Jm2-F7-VfH"/>
-        <segue reference="AQc-7y-KdR"/>
+        <segue reference="qqC-qk-8aM"/>
         <segue reference="3MK-AD-NkG"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
