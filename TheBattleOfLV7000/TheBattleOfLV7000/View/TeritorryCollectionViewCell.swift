@@ -13,7 +13,7 @@ import UIKit
 //// send numbe of bildings to gameviewcontroller
 
 protocol CollectionProtocol {
-     func centurdTeritorry(image: String, index: Int, x: Int, y: Int, width: Int, height: Int)
+    func centurdTeritorry(image: String, index: Int, x: Int, y: Int, width: Int, height: Int)
 }
 
 class TeritorryCollectionViewCell: UICollectionViewCell {
@@ -32,6 +32,7 @@ class TeritorryCollectionViewCell: UICollectionViewCell {
             setbiuldings()
             biuldingsOn = true
         }
+        
         bg.image = UIImage(named: data.image)
         title = data.title
         tt.text = "\(title)"
@@ -41,10 +42,9 @@ class TeritorryCollectionViewCell: UICollectionViewCell {
         pivotWidth = data.width
         pivotHeight = data.height
         onerText = data.possessor
-        biuldings = data.biuldings
         setProssesor()
         setNumberOfBuldings(num: data.numberOfBuldings)
-        setBiuldingImage(bildings: biuldings)
+        setBiuldingImage(bildings: data.biuldings)
     }
     
     //get the photo from Items array and arrange them in the collection view
@@ -71,7 +71,6 @@ class TeritorryCollectionViewCell: UICollectionViewCell {
     var pivotY = 1
     var pivotWidth = 1
     var pivotHeight = 1
-    var biuldings = [String]()
     let backImage = UIImageView()
     let InformationButton = UIButton()
     let centerButton = UIButton()
@@ -80,6 +79,11 @@ class TeritorryCollectionViewCell: UICollectionViewCell {
     let NumberOfBuldingsButton3 = UIButton()
     let NumberOfBuldingsButton4 = UIButton()
     let NumberOfBuldingsButton5 = UIButton()
+    let smallImage1 = UIImageView()
+    let smallImage2 = UIImageView()
+    let smallImage3 = UIImageView()
+    let smallImage4 = UIImageView()
+    let smallImage5 = UIImageView()
     let one = UIImageView()
     var resurseImage = UIImageView()
     var title = ""
@@ -119,32 +123,116 @@ class TeritorryCollectionViewCell: UICollectionViewCell {
     func setBiuldingImage(bildings: [String]){
         
         let bd = bildings
-        //let bd = ["Radar","Barraks" ]
-        var count = 1
-        if bd != ["None"]{
-            
-            for i in bd{
-                let smallImage = UIImageView()
-                smallImage.image = UIImage(named: i)
-                smallImage.contentMode = .scaleToFill
-                smallImage.frame = CGRect(x: 5, y: 2, width:30, height: 16)
-                smallImage.clipsToBounds = true
-                bringSubviewToFront(smallImage)
-                if count == 1{
-                    NumberOfBuldingsButton1.addSubview(smallImage)
-                } else if count == 2{
-                    NumberOfBuldingsButton2.addSubview(smallImage)
-                } else if count == 3{
-                    NumberOfBuldingsButton3.addSubview(smallImage)
-                } else if count == 4{
-                    NumberOfBuldingsButton4.addSubview(smallImage)
-                } else if count == 5{
-                    NumberOfBuldingsButton5.addSubview(smallImage)
-                }
-                count += 1
+        let count = bd.count
+        
+        if bd == ["None"]{
+            smallImage1.removeFromSuperview()
+            smallImage2.removeFromSuperview()
+            smallImage3.removeFromSuperview()
+            smallImage4.removeFromSuperview()
+            smallImage5.removeFromSuperview()
+            }else{
+            switch count {
+            case 1:
+                smallImage1.image = UIImage(named: bd[0])
+                smallImage1.contentMode = .scaleToFill
+                smallImage1.frame = CGRect(x: 5, y: 2, width:30, height: 16)
+                smallImage1.clipsToBounds = true
+                NumberOfBuldingsButton1.addSubview(smallImage1)
+                smallImage2.removeFromSuperview()
+                smallImage3.removeFromSuperview()
+                smallImage4.removeFromSuperview()
+                smallImage5.removeFromSuperview()
+               
+            case 2:
+                smallImage1.image = UIImage(named: bd[0])
+                smallImage1.contentMode = .scaleToFill
+                smallImage1.frame = CGRect(x: 5, y: 2, width:30, height: 16)
+                smallImage1.clipsToBounds = true
+                smallImage2.image = UIImage(named: bd[1])
+                smallImage2.contentMode = .scaleToFill
+                smallImage2.frame = CGRect(x: 5, y: 2, width:30, height: 16)
+                smallImage2.clipsToBounds = true
+                NumberOfBuldingsButton1.addSubview(smallImage1)
+                NumberOfBuldingsButton2.addSubview(smallImage2)
+                smallImage3.removeFromSuperview()
+                smallImage4.removeFromSuperview()
+                smallImage5.removeFromSuperview()
+            case 3:
+                smallImage1.image = UIImage(named: bd[0])
+                smallImage1.contentMode = .scaleToFill
+                smallImage1.frame = CGRect(x: 5, y: 2, width:30, height: 16)
+                smallImage1.clipsToBounds = true
+                smallImage2.image = UIImage(named: bd[1])
+                smallImage2.contentMode = .scaleToFill
+                smallImage2.frame = CGRect(x: 5, y: 2, width:30, height: 16)
+                smallImage2.clipsToBounds = true
+                smallImage3.image = UIImage(named: bd[2])
+                smallImage3.contentMode = .scaleToFill
+                smallImage3.frame = CGRect(x: 5, y: 2, width:30, height: 16)
+                smallImage3.clipsToBounds = true
+                NumberOfBuldingsButton1.addSubview(smallImage1)
+                NumberOfBuldingsButton2.addSubview(smallImage2)
+                NumberOfBuldingsButton3.addSubview(smallImage3)
+                smallImage4.removeFromSuperview()
+                smallImage5.removeFromSuperview()
+            case 4:
+                smallImage1.image = UIImage(named: bd[0])
+                smallImage1.contentMode = .scaleToFill
+                smallImage1.frame = CGRect(x: 5, y: 2, width:30, height: 16)
+                smallImage1.clipsToBounds = true
+                smallImage2.image = UIImage(named: bd[1])
+                smallImage2.contentMode = .scaleToFill
+                smallImage2.frame = CGRect(x: 5, y: 2, width:30, height: 16)
+                smallImage2.clipsToBounds = true
+                smallImage3.image = UIImage(named: bd[2])
+                smallImage3.contentMode = .scaleToFill
+                smallImage3.frame = CGRect(x: 5, y: 2, width:30, height: 16)
+                smallImage3.clipsToBounds = true
+                smallImage4.image = UIImage(named: bd[3])
+                smallImage4.contentMode = .scaleToFill
+                smallImage4.frame = CGRect(x: 5, y: 2, width:30, height: 16)
+                smallImage4.clipsToBounds = true
+                NumberOfBuldingsButton1.addSubview(smallImage1)
+                NumberOfBuldingsButton2.addSubview(smallImage2)
+                NumberOfBuldingsButton3.addSubview(smallImage3)
+                NumberOfBuldingsButton4.addSubview(smallImage4)
+                smallImage5.removeFromSuperview()
+            case 5:
+                smallImage1.image = UIImage(named: bd[0])
+                smallImage1.contentMode = .scaleToFill
+                smallImage1.frame = CGRect(x: 5, y: 2, width:30, height: 16)
+                smallImage1.clipsToBounds = true
+                smallImage2.image = UIImage(named: bd[1])
+                smallImage2.contentMode = .scaleToFill
+                smallImage2.frame = CGRect(x: 5, y: 2, width:30, height: 16)
+                smallImage2.clipsToBounds = true
+                smallImage3.image = UIImage(named: bd[2])
+                smallImage3.contentMode = .scaleToFill
+                smallImage3.frame = CGRect(x: 5, y: 2, width:30, height: 16)
+                smallImage3.clipsToBounds = true
+                smallImage4.image = UIImage(named: bd[3])
+                smallImage4.contentMode = .scaleToFill
+                smallImage4.frame = CGRect(x: 5, y: 2, width:30, height: 16)
+                smallImage4.clipsToBounds = true
+                smallImage5.image = UIImage(named: bd[4])
+                smallImage5.contentMode = .scaleToFill
+                smallImage5.frame = CGRect(x: 5, y: 2, width:30, height: 16)
+                smallImage5.clipsToBounds = true
+                NumberOfBuldingsButton1.addSubview(smallImage1)
+                NumberOfBuldingsButton2.addSubview(smallImage2)
+                NumberOfBuldingsButton3.addSubview(smallImage3)
+                NumberOfBuldingsButton4.addSubview(smallImage4)
+                NumberOfBuldingsButton5.addSubview(smallImage5)
+            default:
+                print("remuve")
+                NumberOfBuldingsButton1.willRemoveSubview(smallImage1)
+                NumberOfBuldingsButton2.willRemoveSubview(smallImage2)
+                NumberOfBuldingsButton3.willRemoveSubview(smallImage3)
+                NumberOfBuldingsButton4.willRemoveSubview(smallImage4)
+                NumberOfBuldingsButton5.willRemoveSubview(smallImage5)
             }
         }
-        biuldings.removeAll()
     }
     
     //set the information button in every biulding and the centurd button
@@ -201,9 +289,7 @@ class TeritorryCollectionViewCell: UICollectionViewCell {
     
     //check how many biuldings you can biuld in each teritorry and place it
     func setNumberOfBuldings(num: Int){
-        print(num)
         let n = num
-        print(n)
         switch n {
         case 1:
             bringSubviewToFront(NumberOfBuldingsButton1)
@@ -240,7 +326,6 @@ class TeritorryCollectionViewCell: UICollectionViewCell {
             print("n")
         }
     }
-    
     
     @IBAction func centurdTeritorry(sender: Any){
         CollectionDelegate?.centurdTeritorry(image: title, index:(index?.row)!,x: pivotX, y: pivotY, width: pivotWidth, height: pivotHeight)

@@ -120,40 +120,7 @@ class OneTeritorryCollectionViewCell: UICollectionViewCell {
     }
     
     
-    //check how many biuldings you can biuld in each teritorry and place it
-    func setBiuldingImage(images: String){
-        
-        let pic = images
-        
-        print("im here tooo")
-        print(pic)
-        
-        smallImage.image = UIImage(named: pic)
-        smallImage.contentMode = .scaleToFill
-        smallImage.frame = CGRect(x: 5, y: 2, width:30, height: 16)
-        smallImage.clipsToBounds = true
-        bringSubviewToFront(smallImage)
-        switch NumOBildings {
-        case 1:
-            print(NumOBildings)
-            NumberOfBuldingsButton1.addSubview(smallImage)
-        case 2:
-            print(NumOBildings)
-            NumberOfBuldingsButton2.addSubview(smallImage)
-        case 3:
-            print(NumOBildings)
-            NumberOfBuldingsButton3.addSubview(smallImage)
-        case 4:
-            print(NumOBildings)
-            NumberOfBuldingsButton4.addSubview(smallImage)
-        case 5:
-            print(NumOBildings)
-            NumberOfBuldingsButton5.addSubview(smallImage)
-        default:
-            print("defult num")
-        }
-    }
-    
+   
     //set the information button in every biulding and the centurd button
     func setButtons(){
         
@@ -211,9 +178,7 @@ class OneTeritorryCollectionViewCell: UICollectionViewCell {
     
     //check how many biuldings you can biuld in each teritorry and place it
     func setNumberOfBuldings(num: Int){
-        print(num)
         let n = num
-        print(n)
         switch n {
         case 1:
             bringSubviewToFront(NumberOfBuldingsButton1)
