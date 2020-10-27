@@ -36,8 +36,8 @@ class OneTeritorryCollectionViewCell: UICollectionViewCell {
         pivotY = OneData.y
         pivotWidth = OneData.width
         pivotHeight = OneData.height
-        onerText = OneData.possessor
-        setProssesor()
+        
+        setProssesor(oner: OneData.possessor, army: OneData.KindOfArmy)
     }
     
     
@@ -82,7 +82,7 @@ class OneTeritorryCollectionViewCell: UICollectionViewCell {
     var smallImage = UIImageView()
     var title = ""
     let owner = UITextField()
-    var onerText = "none"
+    
     
     
     override init(frame: CGRect) {
@@ -93,7 +93,7 @@ class OneTeritorryCollectionViewCell: UICollectionViewCell {
         setButtons()
         addSubview(bg)
         addSubview(tt)
-        bg.frame = CGRect(x: 20, y: 80, width: 175, height: 50)
+        bg.frame = CGRect(x: 22, y: 90, width: 175, height: 48)
         bg.clipsToBounds = true
         bringSubviewToFront(bg)
         tt.frame = CGRect(x: 10, y: 0, width: 225, height: 30)
@@ -105,18 +105,16 @@ class OneTeritorryCollectionViewCell: UICollectionViewCell {
     }
     //set the image behind every teritorry image
     func setImages(){
-        
         backImage.image = UIImage(named: "TerittoryRap")
         backImage.contentMode = .scaleToFill
         addSubview(backImage)
-        backImage.frame = CGRect(x: 10, y: 55, width: 225, height: 87)
+        backImage.frame = CGRect(x: 10, y: 64, width: 225, height: 85)
         backImage.clipsToBounds = true
         resurseImage.image = UIImage(named: "water")
         resurseImage.contentMode = .scaleToFill
         addSubview(resurseImage)
-        resurseImage.frame = CGRect(x: 200, y: 54, width:25, height: 25)
+        resurseImage.frame = CGRect(x: 200, y: 105, width:25, height: 25)
         resurseImage.clipsToBounds = true
-        
     }
     
     
@@ -127,53 +125,64 @@ class OneTeritorryCollectionViewCell: UICollectionViewCell {
         addSubview(centerButton)
         centerButton.setImage(UIImage(named:"Centured"), for: .normal)
         centerButton.contentMode = .scaleToFill
-        centerButton.frame = CGRect(x:12, y:126, width:13, height: 13)
+        centerButton.frame = CGRect(x:12, y:134, width:13, height: 13)
         centerButton.addTarget(self, action: #selector(centurdTeritorry), for: UIControl.Event.touchUpInside)
     }
     
     //set the oners name
-    func setProssesor(){
-        owner.textAlignment = .left
+    func setProssesor(oner:String, army: String){
+        
+        let onerText = oner
+        let armyFlag = UIImageView()
+        
+        if army == "None"{
+            armyFlag.isHidden = true
+        }else{
+            armyFlag.isHidden = false
+        }
+        
+        armyFlag.image = UIImage(named: army)
+        armyFlag.contentMode = .scaleToFill
+        addSubview(armyFlag)
+        armyFlag.frame = CGRect(x: 195, y: 70, width:32, height: 22)
+        armyFlag.clipsToBounds = true
+        addSubview(armyFlag)
+        owner.textAlignment = .center
         owner.backgroundColor = .clear
         owner.font = UIFont(name: "SofachromeRg-Italic", size: 11)
         owner.isUserInteractionEnabled = false
-        owner.text = "Oner:   \(onerText) "
-        owner.frame = CGRect(x: 24, y: 54, width:255, height: 25)
+        owner.text = "Oner:  \(onerText) "
+        owner.frame = CGRect(x: 24, y: 48, width:200, height: 20)
         addSubview(owner)
-        owner.textColor = .black
-        
+        owner.textColor = .orange
+        owner.textAlignment = .left
     }
     func setbiuldings(){
         NumberOfBuldingsButton1.setImage(UIImage(named:"NumberOfBuldings"), for: .normal)
         NumberOfBuldingsButton1.contentMode = .scaleToFill
         addSubview(NumberOfBuldingsButton1)
-        NumberOfBuldingsButton1.frame = CGRect(x: 10, y: 30, width:40, height: 20)
+        NumberOfBuldingsButton1.frame = CGRect(x: 10, y: 25, width:40, height: 24)
         NumberOfBuldingsButton1.clipsToBounds = true
         NumberOfBuldingsButton2.setImage(UIImage(named:"NumberOfBuldings"), for: .normal)
         NumberOfBuldingsButton2.contentMode = .scaleToFill
         addSubview(NumberOfBuldingsButton2)
-        NumberOfBuldingsButton2.frame = CGRect(x: 55, y: 30, width:40, height: 20)
+        NumberOfBuldingsButton2.frame = CGRect(x: 55, y: 25, width:40, height: 24)
         NumberOfBuldingsButton2.clipsToBounds = true
         NumberOfBuldingsButton3.setImage(UIImage(named:"NumberOfBuldings"), for: .normal)
         NumberOfBuldingsButton3.contentMode = .scaleToFill
         addSubview(NumberOfBuldingsButton3)
-        NumberOfBuldingsButton3.frame = CGRect(x: 100, y: 30, width:40, height: 20)
+        NumberOfBuldingsButton3.frame = CGRect(x: 100, y: 25, width:40, height: 24)
         NumberOfBuldingsButton3.clipsToBounds = true
         NumberOfBuldingsButton4.setImage(UIImage(named:"NumberOfBuldings"), for: .normal)
         NumberOfBuldingsButton4.contentMode = .scaleToFill
         addSubview(NumberOfBuldingsButton4)
-        NumberOfBuldingsButton4.frame = CGRect(x: 145, y: 30, width:40, height: 20)
+        NumberOfBuldingsButton4.frame = CGRect(x: 145, y: 25, width:40, height: 24)
         NumberOfBuldingsButton4.clipsToBounds = true
         NumberOfBuldingsButton5.setImage(UIImage(named:"NumberOfBuldings"), for: .normal)
         NumberOfBuldingsButton5.contentMode = .scaleToFill
         addSubview(NumberOfBuldingsButton5)
-        NumberOfBuldingsButton5.frame = CGRect(x: 190, y: 30, width:40, height: 20)
+        NumberOfBuldingsButton5.frame = CGRect(x: 190, y: 25, width:40, height: 24)
         NumberOfBuldingsButton5.clipsToBounds = true
-        sendSubviewToBack(NumberOfBuldingsButton1)
-        sendSubviewToBack(NumberOfBuldingsButton2)
-        sendSubviewToBack(NumberOfBuldingsButton3)
-        sendSubviewToBack(NumberOfBuldingsButton4)
-        sendSubviewToBack(NumberOfBuldingsButton5)
     }
     
     //check how many biuldings you can biuld in each teritorry and place it

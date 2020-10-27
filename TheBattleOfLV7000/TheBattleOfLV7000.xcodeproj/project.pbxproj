@@ -36,7 +36,7 @@
 		04068FAA25011F4200B210AC /* MakeGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068F9825011F4200B210AC /* MakeGameViewController.swift */; };
 		04068FB325011F7700B210AC /* BuldingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068FAB25011F6E00B210AC /* BuldingTableViewCell.swift */; };
 		04068FB425011F7700B210AC /* TeritorryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068FAC25011F6F00B210AC /* TeritorryCollectionViewCell.swift */; };
-		04068FB525011F7700B210AC /* PlayersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068FAD25011F7000B210AC /* PlayersCell.swift */; };
+		04068FB525011F7700B210AC /* ChoosePlayersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068FAD25011F7000B210AC /* ChoosePlayersCell.swift */; };
 		04068FB725011F7700B210AC /* ArmyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068FAF25011F7300B210AC /* ArmyTableViewCell.swift */; };
 		04068FB825011F7700B210AC /* SpecialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068FB025011F7500B210AC /* SpecialTableViewCell.swift */; };
 		04068FB925011F7700B210AC /* DefenceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068FB125011F7600B210AC /* DefenceTableViewCell.swift */; };
@@ -44,6 +44,9 @@
 		04068FBC2501212800B210AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04068FBB2501212600B210AC /* Assets.xcassets */; };
 		04068FBE25021A3F00B210AC /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068FBD25021A3F00B210AC /* Utilities.swift */; };
 		04068FC0250225E100B210AC /* ChooseCountryViewController copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068FBF250225E100B210AC /* ChooseCountryViewController copy.swift */; };
+		04458D17252096C000070C4D /* InfoArmyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04458D16252096C000070C4D /* InfoArmyTableViewCell.swift */; };
+		04458D322523589A00070C4D /* SendingArmyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04458D312523589A00070C4D /* SendingArmyCollectionViewCell.swift */; };
+		04C90C4A2542BAD000D46B4C /* ItemsDictunary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C90C492542BAD000D46B4C /* ItemsDictunary.swift */; };
 		8C1D4B13BEEFBA8D32F2CAAE /* Pods_TheBattleOfLV7000.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EDDE8FE4D140D147770DBCA /* Pods_TheBattleOfLV7000.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,7 +82,7 @@
 		04068F9825011F4200B210AC /* MakeGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeGameViewController.swift; sourceTree = "<group>"; };
 		04068FAB25011F6E00B210AC /* BuldingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuldingTableViewCell.swift; sourceTree = "<group>"; };
 		04068FAC25011F6F00B210AC /* TeritorryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeritorryCollectionViewCell.swift; sourceTree = "<group>"; };
-		04068FAD25011F7000B210AC /* PlayersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersCell.swift; sourceTree = "<group>"; };
+		04068FAD25011F7000B210AC /* ChoosePlayersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoosePlayersCell.swift; sourceTree = "<group>"; };
 		04068FAF25011F7300B210AC /* ArmyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArmyTableViewCell.swift; sourceTree = "<group>"; };
 		04068FB025011F7500B210AC /* SpecialTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecialTableViewCell.swift; sourceTree = "<group>"; };
 		04068FB125011F7600B210AC /* DefenceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefenceTableViewCell.swift; sourceTree = "<group>"; };
@@ -87,6 +90,9 @@
 		04068FBB2501212600B210AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../../Desktop/talhomework/aplications/Lv7001/Lv7001/Supporting Files/Assets.xcassets"; sourceTree = "<group>"; };
 		04068FBD25021A3F00B210AC /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		04068FBF250225E100B210AC /* ChooseCountryViewController copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ChooseCountryViewController copy.swift"; sourceTree = "<group>"; };
+		04458D16252096C000070C4D /* InfoArmyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoArmyTableViewCell.swift; sourceTree = "<group>"; };
+		04458D312523589A00070C4D /* SendingArmyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendingArmyCollectionViewCell.swift; sourceTree = "<group>"; };
+		04C90C492542BAD000D46B4C /* ItemsDictunary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsDictunary.swift; sourceTree = "<group>"; };
 		05A6B950D04493EFB744BF5B /* Pods-TheBattleOfLV7000.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheBattleOfLV7000.debug.xcconfig"; path = "Target Support Files/Pods-TheBattleOfLV7000/Pods-TheBattleOfLV7000.debug.xcconfig"; sourceTree = "<group>"; };
 		0EDDE8FE4D140D147770DBCA /* Pods_TheBattleOfLV7000.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheBattleOfLV7000.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA21244BF603299CC223AC11 /* Pods-TheBattleOfLV7000.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheBattleOfLV7000.release.xcconfig"; path = "Target Support Files/Pods-TheBattleOfLV7000/Pods-TheBattleOfLV7000.release.xcconfig"; sourceTree = "<group>"; };
@@ -147,13 +153,8 @@
 		04068F6B25011A3900B210AC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				04068FAF25011F7300B210AC /* ArmyTableViewCell.swift */,
-				04068FAB25011F6E00B210AC /* BuldingTableViewCell.swift */,
-				04068FB125011F7600B210AC /* DefenceTableViewCell.swift */,
-				04068FB225011F7700B210AC /* OneTeritorryCollectionViewCell.swift */,
-				04068FAD25011F7000B210AC /* PlayersCell.swift */,
-				04068FB025011F7500B210AC /* SpecialTableViewCell.swift */,
-				04068FAC25011F6F00B210AC /* TeritorryCollectionViewCell.swift */,
+				04458DFB2524DD1100070C4D /* TableView */,
+				04458DFC2524DD2D00070C4D /* CollectionView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -164,6 +165,7 @@
 				04068F7F25011F1B00B210AC /* Army.swift */,
 				04068F8125011F1E00B210AC /* Game.swift */,
 				04068FBD25021A3F00B210AC /* Utilities.swift */,
+				04C90C492542BAD000D46B4C /* ItemsDictunary.swift */,
 				04068F8025011F1D00B210AC /* ItemsArray.swift */,
 			);
 			path = Model;
@@ -225,6 +227,29 @@
 			path = "../../../../../Desktop/copi of lv700/LV7000/LV7000/Controller/BaseViewControllers";
 			sourceTree = "<group>";
 		};
+		04458DFB2524DD1100070C4D /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				04068FAD25011F7000B210AC /* ChoosePlayersCell.swift */,
+				04068FAF25011F7300B210AC /* ArmyTableViewCell.swift */,
+				04068FAB25011F6E00B210AC /* BuldingTableViewCell.swift */,
+				04068FB125011F7600B210AC /* DefenceTableViewCell.swift */,
+				04458D16252096C000070C4D /* InfoArmyTableViewCell.swift */,
+				04068FB025011F7500B210AC /* SpecialTableViewCell.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		04458DFC2524DD2D00070C4D /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				04458D312523589A00070C4D /* SendingArmyCollectionViewCell.swift */,
+				04068FB225011F7700B210AC /* OneTeritorryCollectionViewCell.swift */,
+				04068FAC25011F6F00B210AC /* TeritorryCollectionViewCell.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
 		1FF9A548AFD161EBB43D1534 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,7 +296,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1170;
-				LastUpgradeCheck = 1170;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = aurica;
 				TargetAttributes = {
 					04068F4F25010F4000B210AC = {
@@ -366,7 +391,8 @@
 				04068FAA25011F4200B210AC /* MakeGameViewController.swift in Sources */,
 				04068F9B25011F4200B210AC /* CreatGameViewController.swift in Sources */,
 				04068FBE25021A3F00B210AC /* Utilities.swift in Sources */,
-				04068FB525011F7700B210AC /* PlayersCell.swift in Sources */,
+				04C90C4A2542BAD000D46B4C /* ItemsDictunary.swift in Sources */,
+				04068FB525011F7700B210AC /* ChoosePlayersCell.swift in Sources */,
 				04068F9A25011F4200B210AC /* MainViewController.swift in Sources */,
 				04068FA825011F4200B210AC /* BaseGameViewController.swift in Sources */,
 				04068FB825011F7700B210AC /* SpecialTableViewCell.swift in Sources */,
@@ -374,6 +400,7 @@
 				04068FA725011F4200B210AC /* BaseViewController.swift in Sources */,
 				04068FB725011F7700B210AC /* ArmyTableViewCell.swift in Sources */,
 				04068FA125011F4200B210AC /* ProfileViewController.swift in Sources */,
+				04458D17252096C000070C4D /* InfoArmyTableViewCell.swift in Sources */,
 				04068FA325011F4200B210AC /* OpeningViewController.swift in Sources */,
 				04068FA225011F4200B210AC /* SelectMapViewController.swift in Sources */,
 				04068F9E25011F4200B210AC /* GameViewControler.swift in Sources */,
@@ -384,6 +411,7 @@
 				04068F9C25011F4200B210AC /* SelectPlayersViewController.swift in Sources */,
 				04068FB925011F7700B210AC /* DefenceTableViewCell.swift in Sources */,
 				04068F9925011F4200B210AC /* ChooseArmyViewController.swift in Sources */,
+				04458D322523589A00070C4D /* SendingArmyCollectionViewCell.swift in Sources */,
 				04068F8225011F1E00B210AC /* Army.swift in Sources */,
 				04068FB425011F7700B210AC /* TeritorryCollectionViewCell.swift in Sources */,
 				04068F5425010F4000B210AC /* AppDelegate.swift in Sources */,
@@ -434,6 +462,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -494,6 +523,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

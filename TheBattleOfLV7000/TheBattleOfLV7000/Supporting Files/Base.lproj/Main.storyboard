@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ano-lr-oQ0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ano-lr-oQ0">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -45,7 +47,7 @@
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="userId" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oLJ-Ro-aFf">
-                                <rect key="frame" x="100" y="315.5" width="224" height="31"/>
+                                <rect key="frame" x="100" y="319" width="224" height="31"/>
                                 <color key="backgroundColor" red="0.34534952347048653" green="0.34534952347048653" blue="0.34534952347048653" alpha="0.40049764554794531" colorSpace="custom" customColorSpace="displayP3"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES"/>
@@ -53,26 +55,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" textContentType="username"/>
                             </textField>
-                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="bezel" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H32-we-Vac">
-                                <rect key="frame" x="100" y="356.5" width="224" height="31"/>
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Choose your password:" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H32-we-Vac">
+                                <rect key="frame" x="100" y="360" width="224" height="33"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="0.39774186643835618" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                     <bool key="isElement" value="NO"/>
                                 </accessibility>
-                                <attributedString key="attributedText">
-                                    <fragment content="Choose your password:">
-                                        <attributes>
-                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <font key="NSFont" metaFont="system" size="16"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="19"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="bezel" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B0D-nL-eWA">
-                                <rect key="frame" x="100" y="431.5" width="224" height="31"/>
+                                <rect key="frame" x="100" y="437" width="224" height="34"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="0.40499250856164382" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
@@ -80,8 +74,8 @@
                                 <attributedString key="attributedText">
                                     <fragment content="Enter your email:">
                                         <attributes>
-                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <font key="NSFont" metaFont="system" size="16"/>
+                                            <color key="NSColor" systemColor="labelColor"/>
+                                            <font key="NSFont" metaFont="system" size="20"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -89,23 +83,23 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Choose your Username:" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FsB-Rt-eQw">
-                                <rect key="frame" x="100" y="282" width="224" height="29.5"/>
+                                <rect key="frame" x="100" y="282" width="224" height="33"/>
                                 <color key="backgroundColor" red="0.34927560215068953" green="0.34927560215068953" blue="0.34927560215068953" alpha="0.39985552226027399" colorSpace="custom" customColorSpace="displayP3"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
                                     <bool key="isElement" value="NO"/>
                                 </accessibility>
-                                <fontDescription key="fontDescription" name=".SFNS-Regular" family=".AppleSystemUIFont" pointSize="16"/>
+                                <fontDescription key="fontDescription" name=".SFNS-Regular" family=".AppleSystemUIFont" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="userPassword" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q6J-DN-twj">
-                                <rect key="frame" x="100" y="391.5" width="224" height="30"/>
+                                <rect key="frame" x="100" y="397" width="224" height="30"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="0.53793878424657537" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="userEmail" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zzv-a0-jMm">
-                                <rect key="frame" x="100" y="466.5" width="224" height="31"/>
+                                <rect key="frame" x="100" y="475" width="224" height="31"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="0.4003103595890411" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <bool key="isElement" value="NO"/>
@@ -127,14 +121,14 @@
                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Our games are subject to the following:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vmT-0W-G97">
                                 <rect key="frame" x="100" y="681.5" width="221" height="13.5"/>
                                 <color key="backgroundColor" red="0.55072176395939088" green="0.55072176395939088" blue="0.55072176395939088" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <color key="textColor" systemColor="scrollViewTexturedBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Terms&amp; Conditions" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H54-eA-paB">
                                 <rect key="frame" x="100" y="695.5" width="84" height="12.5"/>
                                 <color key="backgroundColor" red="0.55072176395939088" green="0.55072176395939088" blue="0.55072176395939088" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <color key="textColor" systemColor="scrollViewTexturedBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -145,7 +139,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Privacy Policy" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2sL-2T-gKW">
                                 <rect key="frame" x="196" y="695.5" width="62" height="12.5"/>
                                 <color key="backgroundColor" red="0.55072176395939088" green="0.55072176395939088" blue="0.55072176395939088" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <color key="textColor" systemColor="scrollViewTexturedBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -163,7 +157,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="tbN-L1-ay5" firstAttribute="top" secondItem="Afx-sT-Jak" secondAttribute="bottom" constant="5" id="1cm-u9-hCC"/>
                             <constraint firstItem="CL8-Gf-dJD" firstAttribute="leading" secondItem="fZT-gn-dvJ" secondAttribute="leading" constant="76" id="36f-vZ-YhN"/>
@@ -240,7 +234,7 @@
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1eM-uI-M7c">
                                 <rect key="frame" x="3" y="20" width="408" height="738"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Terms &amp; Conditions
 
 Terms of Service of Bytro Labs GmbH
@@ -449,7 +443,7 @@ Registered Office: Hamburg
 HR-No. and Commercial Register: HRB 118884, Amtsgericht Hamburg
 
 VAT ID No.: DE263701383</string>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -461,7 +455,7 @@ VAT ID No.: DE263701383</string>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="HMj-ed-x8s" firstAttribute="leading" secondItem="I3V-Ud-Ple" secondAttribute="leading" constant="15" id="0jl-91-1eO"/>
                             <constraint firstAttribute="trailing" secondItem="HMj-ed-x8s" secondAttribute="trailing" constant="180" id="2Mc-IY-U5g"/>
@@ -492,7 +486,7 @@ VAT ID No.: DE263701383</string>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gu1-XU-Uwt">
                                 <rect key="frame" x="3" y="20" width="408" height="738"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Privacy Policy
 
 Data protection policy of Bytro Labs GmbH
@@ -787,7 +781,7 @@ However, these decisions must not be based on special categories of personal dat
 10. Right to lodge a complaint with a supervisory authority
 
 Without prejudice to any other administrative or judicial legal remedy, you have the right to lodge a complaint with a supervisory authority, in particular in the member state of your place of residence or employment or the place of the alleged infringement, if you believe that the processing of the personal data concerning you violates the GDPR. The supervisory authority to which the complaint has been submitted shall inform the complainant of the status and results of the complaint, including the possibility of a judicial remedy pursuant to Article 78 of the GDPR</string>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -799,7 +793,7 @@ Without prejudice to any other administrative or judicial legal remedy, you have
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="PY4-xM-dbJ" firstAttribute="top" secondItem="gu1-XU-Uwt" secondAttribute="bottom" constant="50" id="87L-c8-8Jj"/>
                             <constraint firstItem="gu1-XU-Uwt" firstAttribute="leading" secondItem="p7g-mF-3be" secondAttribute="leading" constant="3" id="AEN-Ah-tDF"/>
@@ -841,7 +835,7 @@ Without prejudice to any other administrative or judicial legal remedy, you have
                             <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="welcomenav" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MWk-WU-o6f">
                                 <rect key="frame" x="80" y="135" width="254" height="33"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="textColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" systemColor="systemBrownColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -858,21 +852,21 @@ Without prejudice to any other administrative or judicial legal remedy, you have
                                     <action selector="StoryTupped:" destination="0Lk-F7-ozn" eventType="touchUpInside" id="Jeq-Po-7aM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aF5-Eh-Tpc">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aF5-Eh-Tpc">
                                 <rect key="frame" x="85" y="443" width="254" height="80"/>
                                 <state key="normal" backgroundImage="join game"/>
                                 <connections>
                                     <action selector="JoinGameTupped:" destination="0Lk-F7-ozn" eventType="touchUpInside" id="nfc-Jk-EVb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRB-YH-s6w">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRB-YH-s6w">
                                 <rect key="frame" x="85" y="343" width="254" height="80"/>
                                 <state key="normal" backgroundImage="create game"/>
                                 <connections>
                                     <action selector="CreateGameTupped:" destination="0Lk-F7-ozn" eventType="touchUpInside" id="DND-rM-Wfn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NyA-DJ-W6U">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NyA-DJ-W6U">
                                 <rect key="frame" x="85" y="543" width="254" height="80"/>
                                 <state key="normal" backgroundImage="profile"/>
                                 <connections>
@@ -880,7 +874,7 @@ Without prejudice to any other administrative or judicial legal remedy, you have
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="f0o-AE-PBW" secondAttribute="trailing" constant="75" id="3Hb-L7-aDk"/>
                             <constraint firstItem="MWk-WU-o6f" firstAttribute="top" secondItem="43p-W6-qfq" secondAttribute="bottom" constant="135" id="EoJ-6F-aPb"/>
@@ -930,7 +924,7 @@ Without prejudice to any other administrative or judicial legal remedy, you have
                     <view key="view" contentMode="scaleToFill" id="aBw-1K-bzn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="2DF-an-BH7"/>
                     <connections>
@@ -953,14 +947,14 @@ Without prejudice to any other administrative or judicial legal remedy, you have
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSA-Sv-1U3">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSA-Sv-1U3">
                                 <rect key="frame" x="90" y="673" width="244" height="80"/>
                                 <state key="normal" backgroundImage="launch"/>
                                 <connections>
                                     <segue destination="Ano-lr-oQ0" kind="show" identifier="loadInformationSegue" id="nbs-cz-0rL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CKZ-dr-Xfp">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CKZ-dr-Xfp">
                                 <rect key="frame" x="90" y="463" width="244" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="CRM-cD-rVZ"/>
@@ -983,7 +977,7 @@ Without prejudice to any other administrative or judicial legal remedy, you have
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7FU-LW-qHc">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7FU-LW-qHc">
                                 <rect key="frame" x="90" y="613" width="244" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="77O-I8-YGO"/>
@@ -999,7 +993,7 @@ Without prejudice to any other administrative or judicial legal remedy, you have
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oym-8l-X9r">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oym-8l-X9r">
                                 <rect key="frame" x="90" y="373" width="244" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="LD2-4J-aX1"/>
@@ -1019,7 +1013,7 @@ Without prejudice to any other administrative or judicial legal remedy, you have
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="rightMargin" secondItem="xek-wD-kF0" secondAttribute="right" constant="60" id="0L1-d2-4lf"/>
                             <constraint firstItem="CKZ-dr-Xfp" firstAttribute="top" secondItem="Frt-xP-mRu" secondAttribute="bottom" id="2kW-qb-zOy"/>
@@ -1092,7 +1086,7 @@ Without prejudice to any other administrative or judicial legal remedy, you have
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Zf4-bk-l7a" firstAttribute="top" secondItem="IMK-SR-shU" secondAttribute="bottom" constant="450" id="0TN-DF-QMm"/>
                             <constraint firstAttribute="trailing" secondItem="IMK-SR-shU" secondAttribute="trailing" constant="80" id="4WF-7B-Xwr"/>
@@ -1160,7 +1154,7 @@ Without prejudice to any other administrative or judicial legal remedy, you have
                                 </connections>
                             </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="NAl-Ck-Eea" secondAttribute="trailing" constant="80" id="BMG-Na-nGw"/>
                             <constraint firstItem="y1f-PR-iw7" firstAttribute="top" secondItem="NAl-Ck-Eea" secondAttribute="bottom" constant="460" id="IZ4-sC-kf6"/>
@@ -1217,7 +1211,7 @@ Without prejudice to any other administrative or judicial legal remedy, you have
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="mfd-bd-7uV" firstAttribute="leading" secondItem="zfU-X6-VbO" secondAttribute="leading" constant="80" id="18e-Sa-3Yi"/>
                             <constraint firstAttribute="trailing" secondItem="TdW-x1-aG2" secondAttribute="trailing" constant="80" id="4eF-Fy-vfP"/>
@@ -1248,7 +1242,7 @@ Without prejudice to any other administrative or judicial legal remedy, you have
                     <view key="view" contentMode="scaleToFill" id="cgz-cx-1uf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="gwj-wa-2nF"/>
                     <connections>
@@ -1293,7 +1287,7 @@ Without prejudice to any other administrative or judicial legal remedy, you have
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="HsY-cZ-cdN" firstAttribute="top" secondItem="0xo-An-Q31" secondAttribute="bottom" constant="450" id="Okb-Ev-dQN"/>
                             <constraint firstItem="0xo-An-Q31" firstAttribute="top" secondItem="dXQ-fW-G07" secondAttribute="bottom" constant="20" id="dkA-Cn-pNc"/>
@@ -1325,7 +1319,7 @@ Without prejudice to any other administrative or judicial legal remedy, you have
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5p-TG-ah0">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5p-TG-ah0">
                                 <rect key="frame" x="90" y="648" width="244" height="80"/>
                                 <state key="normal" backgroundImage="join"/>
                                 <connections>
@@ -1377,7 +1371,7 @@ Without prejudice to any other administrative or judicial legal remedy, you have
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="r5p-TG-ah0" firstAttribute="top" secondItem="zR0-r6-FmL" secondAttribute="bottom" constant="40" id="0fA-EM-Mo8"/>
                             <constraint firstAttribute="right" secondItem="vhJ-9J-dX0" secondAttribute="right" constant="90" id="1Rl-T8-bpI"/>
@@ -1422,7 +1416,7 @@ Without prejudice to any other administrative or judicial legal remedy, you have
                     <view key="view" contentMode="scaleToFill" id="KcZ-fQ-KWX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="Nil-2O-cMA"/>
                     <connections>
@@ -1444,7 +1438,7 @@ Without prejudice to any other administrative or judicial legal remedy, you have
                     <view key="view" contentMode="scaleToFill" id="Cus-pN-0jI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="7Ar-Ld-Pzr"/>
                 </viewController>
@@ -1454,13 +1448,13 @@ Without prejudice to any other administrative or judicial legal remedy, you have
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pCZ-ds-Ifc"/>
-        <segue reference="RAb-e6-hMq"/>
-        <segue reference="Jm2-F7-VfH"/>
-        <segue reference="qqC-qk-8aM"/>
+        <segue reference="nbs-cz-0rL"/>
+        <segue reference="nT7-jX-a1h"/>
+        <segue reference="kIY-l5-rls"/>
+        <segue reference="AQc-7y-KdR"/>
         <segue reference="3MK-AD-NkG"/>
     </inferredMetricsTieBreakers>
-    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+    <color key="tintColor" systemColor="darkTextColor"/>
     <resources>
         <image name="LV7000Logo" width="435" height="292"/>
         <image name="SelectArmy copy" width="212" height="80"/>
@@ -1478,5 +1472,26 @@ Without prejudice to any other administrative or judicial legal remedy, you have
         <image name="story" width="212" height="80"/>
         <image name="texture1" width="435" height="750"/>
         <image name="texture3" width="1920" height="2880"/>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="scrollViewTexturedBackgroundColor">
+            <color red="0.43529411764705878" green="0.44313725490196082" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="scrollViewTexturedBackgroundColor">
+            <color red="0.43529411764705878" green="0.44313725490196082" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="scrollViewTexturedBackgroundColor">
+            <color red="0.43529411764705878" green="0.44313725490196082" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

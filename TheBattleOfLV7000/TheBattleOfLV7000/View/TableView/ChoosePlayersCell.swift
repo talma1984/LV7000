@@ -9,7 +9,7 @@
 import UIKit
 
 //the table view that helps to invit frinds to play
-class PlayersCell: UITableViewCell {
+class ChoosePlayersCell: UITableViewCell {
     
     var backImage = UIImageView()
     
