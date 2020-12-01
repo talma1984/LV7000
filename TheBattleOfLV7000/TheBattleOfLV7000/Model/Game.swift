@@ -11,10 +11,10 @@ import UIKit
 var NumberOfPlayers = [String]()
 
 class Game {
-
-// take the number of players form creat game and players how choose "join" and arange them in random order ready to play
+    
+    // take the number of players form creat game and players how choose "join" and arange them in random order ready to play
     func shuffledPlayrs(armys: [String]) -> [String:String]{
-    var collors = ["red",  "white", "blue", "brown","cyan" ,"darkGray" ,"gray","green" ,"lightGray","magenta" ,"orange","purple","systemIndigo","systemPink","systemTeal","systemYellow"]
+        var collors = ["red",  "white", "blue", "brown","cyan" ,"darkGray" ,"gray","green" ,"lightGray","magenta" ,"orange","purple","systemIndigo","systemPink","systemTeal","systemYellow"]
         var players = armys
         var playersShuffled = [String:String]()
         
@@ -28,12 +28,12 @@ class Game {
         print(playersShuffled)
         return playersShuffled
     }
- 
+    
     
     // start game
     
     //player1 turn
-
+    
     //check if win?
     
     //player2  turne

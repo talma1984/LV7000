@@ -11,10 +11,10 @@ import UIKit
 //returns information and functions to base view controller
 protocol BuldingTableViewProtocol {
     func onClickCell(index: Int, title: String, massage: String, image: String)
-
+    
     func onClickBiuld(index: Int, image: String, priceLVbit: Int, priceTit: Int,title: String,massage: String)
-        
-    }
+    
+}
 
 class BuldingTableViewCell: UITableViewCell{
     
@@ -22,6 +22,7 @@ class BuldingTableViewCell: UITableViewCell{
     var AlertCellDelegate: BuldingTableViewProtocol?
     var index: IndexPath?
     
+    //pull the data frome the base view controller
     var data: UnitCusumData! {
         didSet {
             updateUi()
@@ -45,7 +46,7 @@ class BuldingTableViewCell: UITableViewCell{
         iv.contentMode = .scaleToFill
         
         iv.clipsToBounds = true
-       
+        
         return iv
     }()
     //get the biulding title and place it in the tableview
@@ -59,7 +60,7 @@ class BuldingTableViewCell: UITableViewCell{
         return gameTextField
     }()
     
-     
+    
     let moneyTextField = UITextView()
     let moneyImage = UIImageView()
     
@@ -76,8 +77,8 @@ class BuldingTableViewCell: UITableViewCell{
     var soldierPrice: Int?
     var titaniumtPrice: Int?
     lazy var backView: UIView = {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 310, height: 100 ))
-       
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 85 ))
+        
         return view
     }()
     override func awakeFromNib() {
@@ -86,7 +87,6 @@ class BuldingTableViewCell: UITableViewCell{
     override func layoutSubviews() {
         contentView.backgroundColor = UIColor.clear
         backgroundColor = UIColor.clear
-        backView.layer.cornerRadius = 5
         backView.clipsToBounds = true
     }
     
@@ -95,16 +95,17 @@ class BuldingTableViewCell: UITableViewCell{
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
-        
+        //set the biulding image
         addSubview(bg)
-        bg.frame = CGRect(x: 12, y: 40, width: 200, height: 50)
+        bg.frame = CGRect(x: 12, y: 30, width: 200, height: 50)
+        //set the biulding text
         addSubview(tt)
-        
-        tt.frame = CGRect(x: 0, y: 0, width: 220, height: 40)
+        tt.frame = CGRect(x: 0, y: 0, width: 300, height: 30)
         setButtons()
-    
+        
         bringSubviewToFront(bg)
         bringSubviewToFront(tt)
+        bringSubviewToFront(biuldButton)
     }
     
     //set the image behind every biulding image
@@ -113,35 +114,34 @@ class BuldingTableViewCell: UITableViewCell{
         backImage.image = UIImage(named: "BuldingsRap")
         backImage.contentMode = .scaleToFill
         addSubview(backImage)
-        backImage.frame = CGRect(x: 7, y: 30, width:283, height: 70)
+        backImage.frame = CGRect(x: 5, y: 25, width:290, height: 60)
         backImage.clipsToBounds = true
         moneyImage.image = UIImage(named: "Money")
-        moneyImage.contentMode = .scaleToFill
         addSubview(moneyImage)
-        moneyImage.frame = CGRect(x: 210, y: 2, width:25, height: 20)
+        moneyImage.frame = CGRect(x: 210, y: 24, width:25, height: 18)
         moneyImage.clipsToBounds = true
         bringSubviewToFront(moneyImage)
         titaniumImage.image = UIImage(named: "Titanium")
         titaniumImage.contentMode = .scaleToFill
         addSubview(titaniumImage)
-        titaniumImage.frame = CGRect(x: 210, y: 27, width:25, height: 20)
+        titaniumImage.frame = CGRect(x: 210, y: 47, width:25, height: 20)
         titaniumImage.clipsToBounds = true
         bringSubviewToFront(titaniumImage)
-       
-        titaniumTextfield.textAlignment = NSTextAlignment.left
+        
+        titaniumTextfield.textAlignment = .left
         titaniumTextfield.textColor = UIColor.systemGray3
         titaniumTextfield.font = UIFont(name: "SofachromeRg-Italic", size: 13)
         titaniumTextfield.backgroundColor = .clear
         titaniumTextfield.isUserInteractionEnabled = false
-        titaniumTextfield.frame = CGRect(x: 237, y: 22, width: 140, height: 30)
+        titaniumTextfield.frame = CGRect(x: 237, y: 42, width: 140, height: 30)
         addSubview(titaniumTextfield)
         titaniumTextfield.text = "\(titanium)"
-        moneyTextField.textAlignment = NSTextAlignment.left
+        moneyTextField.textAlignment = .left
         moneyTextField.textColor = UIColor.systemGray3
         moneyTextField.font = UIFont(name: "SofachromeRg-Italic", size: 13)
         moneyTextField.backgroundColor = .clear
         moneyTextField.isUserInteractionEnabled = false
-        moneyTextField.frame = CGRect(x: 237, y: -3, width: 140, height: 30)
+        moneyTextField.frame = CGRect(x: 235, y: 17, width: 140, height: 30)
         addSubview(moneyTextField)
         moneyTextField.text = "\(lvbit)"
     }
@@ -151,14 +151,15 @@ class BuldingTableViewCell: UITableViewCell{
     func setButtons(){
         InformationButton.setImage(UIImage(named:"Information"), for: .normal)
         InformationButton.contentMode = .scaleToFill
-        InformationButton.frame = CGRect(x:10, y:84, width:26, height: 20)
+        InformationButton.frame = CGRect(x:8, y:72, width:30, height: 20)
+        InformationButton.clipsToBounds = true
         bringSubviewToFront(InformationButton)
         InformationButton.addTarget(self, action: #selector(buldingsAlert), for: .touchUpInside)
         addSubview(InformationButton)
         biuldButton.setBackgroundImage(UIImage(named:"buttenready"), for: .normal)
         biuldButton.contentMode = .scaleToFill
-        biuldButton.frame = CGRect(x:210, y:73, width:75, height: 28)
-        bringSubviewToFront(biuldButton)
+        biuldButton.frame = CGRect(x:205, y:65, width:80, height: 26)
+        
         biuldButton.addTarget(self, action: #selector(biuld), for: .touchUpInside)
         biuldButton.setTitle("Build", for: .normal)
         biuldButton.setTitleColor(.systemGray, for: UIControl.State.normal)
@@ -168,7 +169,7 @@ class BuldingTableViewCell: UITableViewCell{
     
     //triger the biuld button in the tableview
     @IBAction func biuld(){
-
+        
         BuldingCellDelegate?.onClickBiuld(index: (index?.row)!, image: biuldinImage!, priceLVbit: lvBitPrice!, priceTit: titaniumtPrice!, title: buldingTitle!, massage: buldingMassege!)
     }
     

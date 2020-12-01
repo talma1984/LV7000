@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040046BE2567EA3800745BF2 /* Tips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040046BD2567EA3800745BF2 /* Tips.swift */; };
 		04068F5425010F4000B210AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068F5325010F4000B210AC /* AppDelegate.swift */; };
 		04068F5625010F4000B210AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068F5525010F4000B210AC /* SceneDelegate.swift */; };
 		04068F5B25010F4000B210AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04068F5925010F4000B210AC /* Main.storyboard */; };
@@ -29,7 +30,6 @@
 		04068FA125011F4200B210AC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068F8E25011F4200B210AC /* ProfileViewController.swift */; };
 		04068FA225011F4200B210AC /* SelectMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068F8F25011F4200B210AC /* SelectMapViewController.swift */; };
 		04068FA325011F4200B210AC /* OpeningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068F9025011F4200B210AC /* OpeningViewController.swift */; };
-		04068FA525011F4200B210AC /* JoinGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068F9225011F4200B210AC /* JoinGameViewController.swift */; };
 		04068FA725011F4200B210AC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068F9525011F4200B210AC /* BaseViewController.swift */; };
 		04068FA825011F4200B210AC /* BaseGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068F9625011F4200B210AC /* BaseGameViewController.swift */; };
 		04068FA925011F4200B210AC /* ChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068F9725011F4200B210AC /* ChooseViewController.swift */; };
@@ -44,6 +44,9 @@
 		04068FBC2501212800B210AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04068FBB2501212600B210AC /* Assets.xcassets */; };
 		04068FBE25021A3F00B210AC /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068FBD25021A3F00B210AC /* Utilities.swift */; };
 		04068FC0250225E100B210AC /* ChooseCountryViewController copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04068FBF250225E100B210AC /* ChooseCountryViewController copy.swift */; };
+		043ACCDB256D31CC009DCBFB /* FInishGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043ACCDA256D31CC009DCBFB /* FInishGameViewController.swift */; };
+		043ACCDE256F9327009DCBFB /* ScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043ACCDD256F9327009DCBFB /* ScoreTableViewCell.swift */; };
+		043ACD7C256FDA03009DCBFB /* ScoreWorldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043ACD7B256FDA03009DCBFB /* ScoreWorldTableViewCell.swift */; };
 		04458D17252096C000070C4D /* InfoArmyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04458D16252096C000070C4D /* InfoArmyTableViewCell.swift */; };
 		04458D322523589A00070C4D /* SendingArmyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04458D312523589A00070C4D /* SendingArmyCollectionViewCell.swift */; };
 		04C90C4A2542BAD000D46B4C /* ItemsDictunary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C90C492542BAD000D46B4C /* ItemsDictunary.swift */; };
@@ -51,6 +54,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		040046BD2567EA3800745BF2 /* Tips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tips.swift; sourceTree = "<group>"; };
 		04068F5025010F4000B210AC /* TheBattleOfLV7000.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheBattleOfLV7000.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04068F5325010F4000B210AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04068F5525010F4000B210AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,7 +79,6 @@
 		04068F8E25011F4200B210AC /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		04068F8F25011F4200B210AC /* SelectMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectMapViewController.swift; sourceTree = "<group>"; };
 		04068F9025011F4200B210AC /* OpeningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpeningViewController.swift; sourceTree = "<group>"; };
-		04068F9225011F4200B210AC /* JoinGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinGameViewController.swift; sourceTree = "<group>"; };
 		04068F9525011F4200B210AC /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		04068F9625011F4200B210AC /* BaseGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseGameViewController.swift; sourceTree = "<group>"; };
 		04068F9725011F4200B210AC /* ChooseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +93,9 @@
 		04068FBB2501212600B210AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../../Desktop/talhomework/aplications/Lv7001/Lv7001/Supporting Files/Assets.xcassets"; sourceTree = "<group>"; };
 		04068FBD25021A3F00B210AC /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		04068FBF250225E100B210AC /* ChooseCountryViewController copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ChooseCountryViewController copy.swift"; sourceTree = "<group>"; };
+		043ACCDA256D31CC009DCBFB /* FInishGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FInishGameViewController.swift; sourceTree = "<group>"; };
+		043ACCDD256F9327009DCBFB /* ScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTableViewCell.swift; sourceTree = "<group>"; };
+		043ACD7B256FDA03009DCBFB /* ScoreWorldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreWorldTableViewCell.swift; sourceTree = "<group>"; };
 		04458D16252096C000070C4D /* InfoArmyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoArmyTableViewCell.swift; sourceTree = "<group>"; };
 		04458D312523589A00070C4D /* SendingArmyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendingArmyCollectionViewCell.swift; sourceTree = "<group>"; };
 		04C90C492542BAD000D46B4C /* ItemsDictunary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsDictunary.swift; sourceTree = "<group>"; };
@@ -167,6 +173,7 @@
 				04068FBD25021A3F00B210AC /* Utilities.swift */,
 				04C90C492542BAD000D46B4C /* ItemsDictunary.swift */,
 				04068F8025011F1D00B210AC /* ItemsArray.swift */,
+				040046BD2567EA3800745BF2 /* Tips.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -201,6 +208,7 @@
 				04068F8625011F4200B210AC /* ChooseArmyViewController.swift */,
 				04068FBF250225E100B210AC /* ChooseCountryViewController copy.swift */,
 				04068F8725011F4200B210AC /* MainViewController.swift */,
+				043ACCDA256D31CC009DCBFB /* FInishGameViewController.swift */,
 				04068F8825011F4200B210AC /* CreatGameViewController.swift */,
 				04068F8925011F4200B210AC /* SelectPlayersViewController.swift */,
 				04068F8A25011F4200B210AC /* StoryViewController.swift */,
@@ -209,7 +217,6 @@
 				04068F8E25011F4200B210AC /* ProfileViewController.swift */,
 				04068F8F25011F4200B210AC /* SelectMapViewController.swift */,
 				04068F9025011F4200B210AC /* OpeningViewController.swift */,
-				04068F9225011F4200B210AC /* JoinGameViewController.swift */,
 			);
 			name = ViewControllers;
 			path = "../../../../../Desktop/copi of lv700/LV7000/LV7000/Controller/ViewControllers";
@@ -234,6 +241,8 @@
 				04068FAF25011F7300B210AC /* ArmyTableViewCell.swift */,
 				04068FAB25011F6E00B210AC /* BuldingTableViewCell.swift */,
 				04068FB125011F7600B210AC /* DefenceTableViewCell.swift */,
+				043ACD7B256FDA03009DCBFB /* ScoreWorldTableViewCell.swift */,
+				043ACCDD256F9327009DCBFB /* ScoreTableViewCell.swift */,
 				04458D16252096C000070C4D /* InfoArmyTableViewCell.swift */,
 				04068FB025011F7500B210AC /* SpecialTableViewCell.swift */,
 			);
@@ -406,10 +415,13 @@
 				04068F9E25011F4200B210AC /* GameViewControler.swift in Sources */,
 				04068F8325011F1E00B210AC /* ItemsArray.swift in Sources */,
 				04068FA925011F4200B210AC /* ChooseViewController.swift in Sources */,
+				043ACD7C256FDA03009DCBFB /* ScoreWorldTableViewCell.swift in Sources */,
 				04068F8425011F1E00B210AC /* Game.swift in Sources */,
 				04068F9F25011F4200B210AC /* LoadViewController.swift in Sources */,
 				04068F9C25011F4200B210AC /* SelectPlayersViewController.swift in Sources */,
 				04068FB925011F7700B210AC /* DefenceTableViewCell.swift in Sources */,
+				040046BE2567EA3800745BF2 /* Tips.swift in Sources */,
+				043ACCDE256F9327009DCBFB /* ScoreTableViewCell.swift in Sources */,
 				04068F9925011F4200B210AC /* ChooseArmyViewController.swift in Sources */,
 				04458D322523589A00070C4D /* SendingArmyCollectionViewCell.swift in Sources */,
 				04068F8225011F1E00B210AC /* Army.swift in Sources */,
@@ -417,7 +429,7 @@
 				04068F5425010F4000B210AC /* AppDelegate.swift in Sources */,
 				04068FBA25011F7700B210AC /* OneTeritorryCollectionViewCell.swift in Sources */,
 				04068FB325011F7700B210AC /* BuldingTableViewCell.swift in Sources */,
-				04068FA525011F4200B210AC /* JoinGameViewController.swift in Sources */,
+				043ACCDB256D31CC009DCBFB /* FInishGameViewController.swift in Sources */,
 				04068F5625010F4000B210AC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

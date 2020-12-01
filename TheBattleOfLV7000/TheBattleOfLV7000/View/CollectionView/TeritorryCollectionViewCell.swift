@@ -21,6 +21,7 @@ class TeritorryCollectionViewCell: UICollectionViewCell {
     
     var CollectionDelegate: CollectionProtocol?
     var index: IndexPath?
+    //pull the data frome the game view controller
     var data: CustumTeritorryData! {
         didSet {
             updateUi()
@@ -104,10 +105,10 @@ class TeritorryCollectionViewCell: UICollectionViewCell {
         addSubview(tt)
         addSubview(moneyText)
         addSubview(resurseText)
-        bg.frame = CGRect(x: 22, y: 90, width: 175, height: 48)
+        bg.frame = CGRect(x: 23, y: 88, width: 155, height: 40)
         bg.clipsToBounds = true
         bringSubviewToFront(bg)
-        tt.frame = CGRect(x: 10, y: 0, width: 225, height: 30)
+        tt.frame = CGRect(x: 5, y: 1, width: 245, height: 30)
         bringSubviewToFront(resurseImage)
         bringSubviewToFront(resurseText)
         bringSubviewToFront(InformationButton)
@@ -119,12 +120,12 @@ class TeritorryCollectionViewCell: UICollectionViewCell {
         backImage.image = UIImage(named: "TerittoryRap")
         backImage.contentMode = .scaleToFill
         addSubview(backImage)
-        backImage.frame = CGRect(x: 10, y: 64, width: 225, height: 85)
+        backImage.frame = CGRect(x: 5, y: 60, width: 235, height: 75)
         backImage.clipsToBounds = true
         resurseImage.image = UIImage(named: "water")
         resurseImage.contentMode = .scaleToFill
         addSubview(resurseImage)
-        resurseImage.frame = CGRect(x: 200, y: 105, width:25, height: 25)
+        resurseImage.frame = CGRect(x: 196, y: 95, width:34, height: 25)
         resurseImage.clipsToBounds = true
     }
     
@@ -144,7 +145,7 @@ class TeritorryCollectionViewCell: UICollectionViewCell {
             case 1:
                 smallImage1.image = UIImage(named: bd[0])
                 smallImage1.contentMode = .scaleToFill
-                smallImage1.frame = CGRect(x: 2, y: 2, width:36, height: 20)
+                smallImage1.frame = CGRect(x: 2, y: 2, width:40, height: 17)
                 smallImage1.clipsToBounds = true
                 NumberOfBuldingsButton1.addSubview(smallImage1)
                 smallImage2.removeFromSuperview()
@@ -155,11 +156,11 @@ class TeritorryCollectionViewCell: UICollectionViewCell {
             case 2:
                 smallImage1.image = UIImage(named: bd[0])
                 smallImage1.contentMode = .scaleToFill
-                smallImage1.frame = CGRect(x: 2, y: 2, width:36, height: 20)
+                smallImage1.frame = CGRect(x: 2, y: 2, width:40, height: 17)
                 smallImage1.clipsToBounds = true
                 smallImage2.image = UIImage(named: bd[1])
                 smallImage2.contentMode = .scaleToFill
-                smallImage2.frame = CGRect(x: 2, y: 2, width:36, height: 20)
+                smallImage2.frame = CGRect(x: 2, y: 2, width:40, height: 17)
                 smallImage2.clipsToBounds = true
                 NumberOfBuldingsButton1.addSubview(smallImage1)
                 NumberOfBuldingsButton2.addSubview(smallImage2)
@@ -169,15 +170,15 @@ class TeritorryCollectionViewCell: UICollectionViewCell {
             case 3:
                 smallImage1.image = UIImage(named: bd[0])
                 smallImage1.contentMode = .scaleToFill
-                smallImage1.frame = CGRect(x: 2, y: 2, width:36, height: 20)
+                smallImage1.frame = CGRect(x: 2, y: 2, width:40, height: 17)
                 smallImage1.clipsToBounds = true
                 smallImage2.image = UIImage(named: bd[1])
                 smallImage2.contentMode = .scaleToFill
-                smallImage2.frame = CGRect(x: 2, y: 2, width:36, height: 20)
+                smallImage2.frame = CGRect(x: 2, y: 2, width:40, height: 17)
                 smallImage2.clipsToBounds = true
                 smallImage3.image = UIImage(named: bd[2])
                 smallImage3.contentMode = .scaleToFill
-                smallImage3.frame = CGRect(x: 2, y: 2, width:36, height: 20)
+                smallImage3.frame = CGRect(x: 2, y: 2, width:40, height: 17)
                 smallImage3.clipsToBounds = true
                 NumberOfBuldingsButton1.addSubview(smallImage1)
                 NumberOfBuldingsButton2.addSubview(smallImage2)
@@ -187,19 +188,19 @@ class TeritorryCollectionViewCell: UICollectionViewCell {
             case 4:
                 smallImage1.image = UIImage(named: bd[0])
                 smallImage1.contentMode = .scaleToFill
-                smallImage1.frame = CGRect(x: 2, y: 2, width:36, height: 20)
+                smallImage1.frame = CGRect(x: 2, y: 2, width:40, height: 17)
                 smallImage1.clipsToBounds = true
                 smallImage2.image = UIImage(named: bd[1])
                 smallImage2.contentMode = .scaleToFill
-                smallImage2.frame = CGRect(x: 2, y: 2, width:36, height: 20)
+                smallImage2.frame = CGRect(x: 2, y: 2, width:40, height: 17)
                 smallImage2.clipsToBounds = true
                 smallImage3.image = UIImage(named: bd[2])
                 smallImage3.contentMode = .scaleToFill
-                smallImage3.frame = CGRect(x: 2, y: 2, width:36, height: 20)
+                smallImage3.frame = CGRect(x: 2, y: 2, width:40, height: 17)
                 smallImage3.clipsToBounds = true
                 smallImage4.image = UIImage(named: bd[3])
                 smallImage4.contentMode = .scaleToFill
-                smallImage4.frame = CGRect(x: 2, y: 2, width:36, height: 20)
+                smallImage4.frame = CGRect(x: 2, y: 2, width:40, height: 17)
                 smallImage4.clipsToBounds = true
                 NumberOfBuldingsButton1.addSubview(smallImage1)
                 NumberOfBuldingsButton2.addSubview(smallImage2)
@@ -209,23 +210,23 @@ class TeritorryCollectionViewCell: UICollectionViewCell {
             case 5:
                 smallImage1.image = UIImage(named: bd[0])
                 smallImage1.contentMode = .scaleToFill
-                smallImage1.frame = CGRect(x: 2, y: 2, width:36, height: 20)
+                smallImage1.frame = CGRect(x: 2, y: 2, width:40, height: 17)
                 smallImage1.clipsToBounds = true
                 smallImage2.image = UIImage(named: bd[1])
                 smallImage2.contentMode = .scaleToFill
-                smallImage2.frame = CGRect(x: 2, y: 2, width:36, height: 20)
+                smallImage2.frame = CGRect(x: 2, y: 2, width:40, height: 17)
                 smallImage2.clipsToBounds = true
                 smallImage3.image = UIImage(named: bd[2])
                 smallImage3.contentMode = .scaleToFill
-                smallImage3.frame = CGRect(x: 2, y: 2, width:36, height: 20)
+                smallImage3.frame = CGRect(x: 2, y: 2, width:40, height: 17)
                 smallImage3.clipsToBounds = true
                 smallImage4.image = UIImage(named: bd[3])
                 smallImage4.contentMode = .scaleToFill
-                smallImage4.frame = CGRect(x: 2, y: 2, width:36, height: 20)
+                smallImage4.frame = CGRect(x: 2, y: 2, width:40, height: 17)
                 smallImage4.clipsToBounds = true
                 smallImage5.image = UIImage(named: bd[4])
                 smallImage5.contentMode = .scaleToFill
-                smallImage5.frame = CGRect(x: 2, y: 2, width:36, height: 20)
+                smallImage5.frame = CGRect(x: 2, y: 2, width:40, height: 17)
                 smallImage5.clipsToBounds = true
                 NumberOfBuldingsButton1.addSubview(smallImage1)
                 NumberOfBuldingsButton2.addSubview(smallImage2)
@@ -248,7 +249,7 @@ class TeritorryCollectionViewCell: UICollectionViewCell {
         addSubview(centerButton)
         centerButton.setImage(UIImage(named:"Centured"), for: .normal)
         centerButton.contentMode = .scaleToFill
-        centerButton.frame = CGRect(x:12, y:134, width:13, height: 13)
+        centerButton.frame = CGRect(x:7, y:121, width:15, height: 15)
         centerButton.addTarget(self, action: #selector(centurdTeritorry), for: UIControl.Event.touchUpInside)
     }
     
@@ -264,15 +265,14 @@ class TeritorryCollectionViewCell: UICollectionViewCell {
         armyFlag.image = UIImage(named: army)
         armyFlag.contentMode = .scaleToFill
         addSubview(armyFlag)
-        armyFlag.frame = CGRect(x: 195, y: 70, width:32, height: 22)
+        armyFlag.frame = CGRect(x: 193, y: 65, width:38, height: 24)
         armyFlag.clipsToBounds = true
         addSubview(armyFlag)
-        owner.textAlignment = .center
         owner.backgroundColor = .clear
         owner.font = UIFont(name: "SofachromeRg-Italic", size: 11)
         owner.isUserInteractionEnabled = false
         owner.text = "Oner:  \(onerText) "
-        owner.frame = CGRect(x: 24, y: 48, width:200, height: 20)
+        owner.frame = CGRect(x: 20, y: 42, width:230, height: 20)
         addSubview(owner)
         owner.textColor = .orange
         owner.textAlignment = .left
@@ -296,7 +296,7 @@ class TeritorryCollectionViewCell: UICollectionViewCell {
         moneyText.font = UIFont(name: "SofachromeRg-Italic", size: 10)
         moneyText.isUserInteractionEnabled = false
         moneyText.text = "LVBit  \(size) "
-        moneyText.frame = CGRect(x: 26, y: 62, width:250, height: 20)
+        moneyText.frame = CGRect(x: 22, y: 59, width:200, height: 20)
         moneyText.textColor = .systemRed
         
         resurseText.textAlignment = .left
@@ -304,7 +304,7 @@ class TeritorryCollectionViewCell: UICollectionViewCell {
         resurseText.font = UIFont(name: "SofachromeRg-Italic", size: 10)
         resurseText.isUserInteractionEnabled = false
         resurseText.text = "\(res):   \(amount) "
-        resurseText.frame = CGRect(x: 26, y: 73, width:250, height: 20)
+        resurseText.frame = CGRect(x: 22, y: 70, width:200, height: 20)
         resurseText.textColor = .systemRed
         
     }
@@ -312,7 +312,7 @@ class TeritorryCollectionViewCell: UICollectionViewCell {
     func setbiuldings(){
         NumberOfBuldingsButton1.setImage(UIImage(named:"NumberOfBuldings"), for: .normal)
         NumberOfBuldingsButton1.contentMode = .scaleToFill
-        NumberOfBuldingsButton1.frame = CGRect(x: 10, y: 25, width:40, height: 24)
+        NumberOfBuldingsButton1.frame = CGRect(x: 10, y: 25, width:45, height: 20)
         NumberOfBuldingsButton1.clipsToBounds = true
         NumberOfBuldingsButton1.tag = 0
         addSubview(NumberOfBuldingsButton1)
@@ -320,20 +320,20 @@ class TeritorryCollectionViewCell: UICollectionViewCell {
         NumberOfBuldingsButton2.setImage(UIImage(named:"NumberOfBuldings"), for: .normal)
         NumberOfBuldingsButton2.tag = 1
         NumberOfBuldingsButton2.contentMode = .scaleToFill
-        NumberOfBuldingsButton2.frame = CGRect(x: 55, y: 25, width:40, height: 24)
+        NumberOfBuldingsButton2.frame = CGRect(x: 60, y: 25,  width:45, height: 20)
         NumberOfBuldingsButton2.clipsToBounds = true
         addSubview(NumberOfBuldingsButton2)
         NumberOfBuldingsButton2.addTarget(self, action: #selector(bildingButtonPushed), for: UIControl.Event.touchUpInside)
         NumberOfBuldingsButton3.setImage(UIImage(named:"NumberOfBuldings"), for: .normal)
         NumberOfBuldingsButton3.tag = 2
         NumberOfBuldingsButton3.contentMode = .scaleToFill
-        NumberOfBuldingsButton3.frame = CGRect(x: 100, y: 25, width:40, height: 24)
+        NumberOfBuldingsButton3.frame = CGRect(x: 110, y: 25,  width:45, height: 20)
         NumberOfBuldingsButton3.clipsToBounds = true
         addSubview(NumberOfBuldingsButton3)
         NumberOfBuldingsButton3.addTarget(self, action: #selector(bildingButtonPushed), for: UIControl.Event.touchUpInside)
         NumberOfBuldingsButton4.setImage(UIImage(named:"NumberOfBuldings"), for: .normal)
         NumberOfBuldingsButton4.contentMode = .scaleToFill
-        NumberOfBuldingsButton4.frame = CGRect(x: 145, y: 25, width:40, height: 24)
+        NumberOfBuldingsButton4.frame = CGRect(x: 160, y: 25,  width:45, height: 20)
         NumberOfBuldingsButton4.tag = 3
         NumberOfBuldingsButton4.clipsToBounds = true
         addSubview(NumberOfBuldingsButton4)
@@ -341,7 +341,7 @@ class TeritorryCollectionViewCell: UICollectionViewCell {
         NumberOfBuldingsButton5.setImage(UIImage(named:"NumberOfBuldings"), for: .normal)
         NumberOfBuldingsButton5.tag = 4
         NumberOfBuldingsButton5.contentMode = .scaleToFill
-        NumberOfBuldingsButton5.frame = CGRect(x: 190, y: 25, width:40, height: 24)
+        NumberOfBuldingsButton5.frame = CGRect(x: 210, y: 25,  width:45, height: 20)
         NumberOfBuldingsButton5.clipsToBounds = true
         addSubview(NumberOfBuldingsButton5)
         NumberOfBuldingsButton5.addTarget(self, action: #selector(bildingButtonPushed), for: UIControl.Event.touchUpInside)

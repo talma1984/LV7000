@@ -16,6 +16,7 @@ class ChoosePlayersCell: UITableViewCell {
     var inviteFriendButton = UIButton()
     var deleteButton = UIButton()
     
+    //set the view of the tableview
     lazy var backView: UIView = {
         let view = UIView(frame: CGRect(x: 10, y: 6, width: self.frame.width - 46, height: 110 ))
         return view

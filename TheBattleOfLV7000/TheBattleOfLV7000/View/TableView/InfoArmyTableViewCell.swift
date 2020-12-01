@@ -21,18 +21,18 @@ protocol InfoArmyTableViewProtocol{
 
 class InfoArmyTableViewCell: UITableViewCell {
     
-   // var armyInfoDelegate: InfoArmyTableViewProtocol?
-   // var armyInfoDelegate: InfoArmyTableViewProtocol?
+    // var armyInfoDelegate: InfoArmyTableViewProtocol?
+    // var armyInfoDelegate: InfoArmyTableViewProtocol?
     var sendUnitsDelegate:InfoArmyTableViewProtocol?
     var armyIndex: IndexPath?
-    
+    //pull the data frome the base view controller
     var armydata: unitData! {
         didSet {
             updateUi()
         }
     }
-
-    //get the biulding information to each army
+    
+    //updat the information from base game view controller
     func updateUi(){
         setUnitButton(image: armydata.name, numberOfUnits: armydata.HowMach)
         movement = armydata.movesOnLand
@@ -53,9 +53,10 @@ class InfoArmyTableViewCell: UITableViewCell {
     var numberOfUnits = 0
     let sendOne = UIButton()
     let sendAll = UIButton()
+    //set the backview of the tableview
     lazy var backView: UIView = {
         let view = UIView(frame: CGRect(x: 5, y: 5, width: 160, height: 40))
-      //  view.backgroundColor = .cyan
+        //  view.backgroundColor = .cyan
         return view
     }()
     override func awakeFromNib() {
@@ -69,16 +70,16 @@ class InfoArmyTableViewCell: UITableViewCell {
         backView.layer.cornerRadius = 5
         backView.clipsToBounds = true
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-       addSubview(bg)
+        
+        addSubview(bg)
         bg.frame = CGRect(x: 5, y:0, width: 90, height: 50)
-       
+        
     }
     
-//(x: 10, y:150, width: 170, height: 50)
+    //set view of each unit ang what happens when you pushed it
     func setUnitButton(image: String, numberOfUnits: Int){
         
         imageButton.frame = CGRect(x: 4, y:4, width: 72, height: 42)
@@ -89,18 +90,18 @@ class InfoArmyTableViewCell: UITableViewCell {
         
         addSubview(sendOne)
         sendOne.contentMode = .scaleToFill
-        sendOne.frame = CGRect(x: 92, y: 4, width: 86, height: 21)
+        sendOne.frame = CGRect(x: 92, y: 4, width: 81, height: 21)
         sendOne.setBackgroundImage(UIImage(named: "buttenready"), for: UIControl.State.normal)
         sendOne.setTitle("Send One", for: .normal)
-        sendOne.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 7)
+        sendOne.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 6)
         sendOne.addTarget(self, action: #selector(sendArmyOne), for: UIControl.Event.touchUpInside)
         
         addSubview(sendAll)
         sendAll.contentMode = .scaleToFill
-        sendAll.frame = CGRect(x: 92, y: 25, width: 86, height: 21)
+        sendAll.frame = CGRect(x: 92, y: 25, width: 81, height: 21)
         sendAll.setBackgroundImage(UIImage(named: "buttenready"), for: UIControl.State.normal)
         sendAll.setTitle("Send All", for: .normal)
-        sendAll.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 7)
+        sendAll.titleLabel!.font = UIFont(name: "SofachromeRg-Italic", size: 6)
         sendAll.addTarget(self, action: #selector(sendArmyall), for: UIControl.Event.touchUpInside)
         
         numberOfuni.text = "\(numberOfUnits)"
@@ -110,17 +111,13 @@ class InfoArmyTableViewCell: UITableViewCell {
         numberOfuni.font = UIFont(name: "SofachromeRg-Italic", size: 13)
         numberOfuni.textColor = .lightGray
     }
-    
+    //seed only one unit of that kind
     @IBAction func sendArmyOne(){
         sendUnitsDelegate?.sendOneUnit(image: armydata.name, movmentOnLand:armydata.movesOnLand)
-        
     }
+    //seed all units of that kind
     @IBAction func sendArmyall(){
         
         sendUnitsDelegate?.sendAllUnits(image: armydata.name, movmentOnLand:armydata.movesOnLand, hoeMuch: armydata.HowMach)
-        
     }
-
 }
-//func sendOneUnit(image: String, speed:Int)
-//func sendAllUnits(image: String, speed:Int, hoeMuch: Int)

@@ -21,7 +21,7 @@ class DefenceTableViewCell: UITableViewCell {
     
     var DefenceCellDelegate: DefenceTableViewProtocol?
     var index: IndexPath?
-    
+    //pull the data frome the base view controller
     var data: UnitCusumData! {
         didSet {
             updateUi()
@@ -41,7 +41,8 @@ class DefenceTableViewCell: UITableViewCell {
         
         tt.text = "\(data.title)"
         setImage(lvbit: data.priceLVBit, uranium: data.priceUranium, titanium: data.priceTitanium, soldier: data.priceMan)
-        blurImage(uranium: data.priceUranium)
+        uranium = data.priceUranium
+        
     }
     
     
@@ -49,7 +50,6 @@ class DefenceTableViewCell: UITableViewCell {
     fileprivate let bg: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleToFill
-        iv.layer.cornerRadius = 4
         iv.clipsToBounds = true
         return iv
     }()
@@ -82,11 +82,11 @@ class DefenceTableViewCell: UITableViewCell {
     var defenceTitle: String?
     var alertTechMassege: String?
     let backImage = UIImageView()
-    
+    var uranium = 0
     let InformationButton = UIButton()
     let biuldButton = UIButton()
     lazy var backView: UIView = {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 100 ))
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 85 ))
         return view
     }()
     
@@ -96,20 +96,28 @@ class DefenceTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         contentView.backgroundColor = UIColor.clear
         backgroundColor = UIColor.clear
-        backView.layer.cornerRadius = 5
         backView.clipsToBounds = true
     }
     
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
+        //set the biulding image
         addSubview(bg)
-        bg.frame = CGRect(x: 33, y: 40, width: 160, height: 50)
+        bg.frame = CGRect(x: 52, y: 30, width: 155, height: 50)
+        bringSubviewToFront(bg)
+        //set the biulding text
         addSubview(tt)
-        tt.frame = CGRect(x: 0, y: 0, width: 220, height: 40)
-        setButtons()
+        tt.frame = CGRect(x: 0, y: 0, width: 300, height: 30)
+        bringSubviewToFront(tt)
         
+        setButtons()
+        bringSubviewToFront(biuldButton)
+        bringSubviewToFront(soldierImage)
+        bringSubviewToFront(soldierTextfield)
+        bringSubviewToFront(moneyImage)
+        bringSubviewToFront(moneyTextField)
+        blurImage(uranium: uranium)
     }
     
     //set the image behind every biulding image
@@ -118,12 +126,12 @@ class DefenceTableViewCell: UITableViewCell {
         backImage.image = UIImage(named: "BuldingsRap")
         backImage.contentMode = .scaleToFill
         addSubview(backImage)
-        backImage.frame = CGRect(x: 7, y: 30, width:283, height: 70)
+        backImage.frame = CGRect(x: 5, y: 25, width:290, height: 60)
         backImage.clipsToBounds = true
         moneyImage.image = UIImage(named: "Money")
         moneyImage.contentMode = .scaleToFill
         addSubview(moneyImage)
-        moneyImage.frame = CGRect(x: 210, y: 2, width:25, height: 20)
+        moneyImage.frame = CGRect(x: 210, y: 24, width:25, height: 18)
         moneyImage.clipsToBounds = true
         bringSubviewToFront(moneyImage)
         moneyTextField.textAlignment = NSTextAlignment.left
@@ -131,13 +139,13 @@ class DefenceTableViewCell: UITableViewCell {
         moneyTextField.font = UIFont(name: "SofachromeRg-Italic", size: 13)
         moneyTextField.backgroundColor = .clear
         moneyTextField.isUserInteractionEnabled = false
-        moneyTextField.frame = CGRect(x: 237, y: -3, width: 140, height: 30)
+        moneyTextField.frame = CGRect(x: 235, y: 17, width: 140, height: 30)
         addSubview(moneyTextField)
         moneyTextField.text = "\(lvbit)"
         soldierImage.image = UIImage(named: "Soldier")
         soldierImage.contentMode = .scaleToFill
         addSubview(soldierImage)
-        soldierImage.frame = CGRect(x: 210, y: 27, width:25, height: 20)
+        soldierImage.frame = CGRect(x: 16, y: 27, width:25, height: 20)
         soldierImage.clipsToBounds = true
         bringSubviewToFront(soldierImage)
         soldierTextfield.textAlignment = NSTextAlignment.left
@@ -145,14 +153,15 @@ class DefenceTableViewCell: UITableViewCell {
         soldierTextfield.font = UIFont(name: "SofachromeRg-Italic", size: 13)
         soldierTextfield.backgroundColor = .clear
         soldierTextfield.isUserInteractionEnabled = false
-        soldierTextfield.frame = CGRect(x: 237, y: 22, width: 140, height: 30)
+        soldierTextfield.frame = CGRect(x: 43, y: 22, width: 140, height: 30)
         addSubview(soldierTextfield)
         soldierTextfield.text = "\(soldier)"
+        //if the soldier cost titanium\uranium present the coast that exist
         if titanium != 0{
             titaniumImage.image = UIImage(named: "Titanium")
             titaniumImage.contentMode = .scaleToFill
             addSubview(titaniumImage)
-            titaniumImage.frame = CGRect(x: 210, y: 52, width:25, height: 20)
+            titaniumImage.frame =  CGRect(x: 210, y: 47, width:25, height: 20)
             titaniumImage.clipsToBounds = true
             bringSubviewToFront(titaniumImage)
             titaniumTextfield.textAlignment = NSTextAlignment.left
@@ -160,7 +169,7 @@ class DefenceTableViewCell: UITableViewCell {
             titaniumTextfield.font = UIFont(name: "SofachromeRg-Italic", size: 13)
             titaniumTextfield.backgroundColor = .clear
             titaniumTextfield.isUserInteractionEnabled = false
-            titaniumTextfield.frame = CGRect(x: 237, y: 44, width: 140, height: 30)
+            titaniumTextfield.frame =  CGRect(x: 237, y: 42, width: 140, height: 30)
             addSubview(titaniumTextfield)
             titaniumTextfield.text = "\(titanium)"
             titaniumTextfield.isHidden = false
@@ -177,14 +186,14 @@ class DefenceTableViewCell: UITableViewCell {
             uraniumImage.contentMode = .scaleToFill
             addSubview(uraniumImage)
             bringSubviewToFront(uraniumImage)
-            uraniumImage.frame = CGRect(x: 210, y: 52, width:25, height: 20)
+            uraniumImage.frame = CGRect(x: 210, y: 47, width:25, height: 20)
             uraniumImage.clipsToBounds = true
             uraniumTextfield.textAlignment = NSTextAlignment.left
             uraniumTextfield.textColor = UIColor.systemGray3
             uraniumTextfield.font = UIFont(name: "SofachromeRg-Italic", size: 13)
             uraniumTextfield.backgroundColor = .clear
             uraniumTextfield.isUserInteractionEnabled = false
-            uraniumTextfield.frame = CGRect(x: 237, y: 44, width: 140, height: 30)
+            uraniumTextfield.frame = CGRect(x: 237, y: 42, width: 140, height: 30)
             addSubview(uraniumTextfield)
             uraniumTextfield.text = "\(uranium)"
             titaniumTextfield.isHidden = true
@@ -198,13 +207,13 @@ class DefenceTableViewCell: UITableViewCell {
     func setButtons(){
         InformationButton.setImage(UIImage(named:"Information"), for: .normal)
         InformationButton.contentMode = .scaleToFill
-        InformationButton.frame = CGRect(x:10, y:84, width:26, height: 20)
+        InformationButton.frame  = CGRect(x:8, y:72, width:30, height: 20)
         bringSubviewToFront(InformationButton)
         InformationButton.addTarget(self, action: #selector(techAlert), for: .touchUpInside)
         addSubview(InformationButton)
         biuldButton.setBackgroundImage(UIImage(named:"buttenready"), for: .normal)
         biuldButton.contentMode = .scaleToFill
-        biuldButton.frame = CGRect(x:210, y:73, width:75, height: 28)
+        biuldButton.frame = CGRect(x:205, y:65, width:80, height: 26)
         biuldButton.addTarget(self, action: #selector(biuld), for: .touchUpInside)
         biuldButton.setTitle("Build", for: .normal)
         biuldButton.setTitleColor(.systemGray, for: UIControl.State.normal)
@@ -212,22 +221,29 @@ class DefenceTableViewCell: UITableViewCell {
         addSubview(biuldButton)
         
     }
-    
+    //blur the soldiers that cost uranium until the player will have a resrch lab
     func blurImage(uranium: Int){
-        if uranium != 0{
-            let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.systemChromeMaterialDark)
-            let blurEffectView = UIVisualEffectView(effect: blurEffect)
-            blurEffectView.frame = CGRect(x: 7, y: 30, width:283, height: 70)
-            addSubview(blurEffectView)
-            bringSubviewToFront(blurEffectView)
-            bringSubviewToFront(tt)
-            bringSubviewToFront(biuldButton)
-            bringSubviewToFront(uraniumTextfield)
-            bringSubviewToFront(uraniumImage)
-            bringSubviewToFront(titaniumImage)
-            bringSubviewToFront(titaniumTextfield)
-            bringSubviewToFront(soldierImage)
-            bringSubviewToFront(soldierTextfield)
+        //check if player have reserch lab
+        if BaseGameViewController.reserchLab == false{
+            //if unit coast is uranium blure the unit
+            if uranium != 0{
+                let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.systemChromeMaterialDark)
+                let blurEffectView = UIVisualEffectView(effect: blurEffect)
+                blurEffectView.frame = CGRect(x: 7, y: 30, width:283, height: 70)
+                addSubview(blurEffectView)
+                
+                bringSubviewToFront(blurEffectView)
+                bringSubviewToFront(tt)
+                bringSubviewToFront(biuldButton)
+                bringSubviewToFront(uraniumTextfield)
+                bringSubviewToFront(uraniumImage)
+                bringSubviewToFront(titaniumImage)
+                bringSubviewToFront(titaniumTextfield)
+                bringSubviewToFront(soldierImage)
+                bringSubviewToFront(soldierTextfield)
+                bringSubviewToFront(moneyImage)
+                bringSubviewToFront(moneyTextField)
+            }
         }
     }
     
@@ -235,10 +251,8 @@ class DefenceTableViewCell: UITableViewCell {
     @IBAction func techAlert(){
         DefenceCellDelegate?.OnClickDefenceCell(index: (index?.row)!,title: (defenceTitle!),massage:  (alertTechMassege!),image: biuldinImage! )
     }
-//    @IBAction func biuld(){
-//        DefenceCellDelegate?.onClickDefenceBiuld(index: (index?.row)!, image:(biuldinImage)!, price: biuldigsPrice!, title: defenceTitle!, massage: alertTechMassege!)
-//    }
     
+    //biuld army in the base game view
     @IBAction func biuld(){
         DefenceCellDelegate?.onClickDefenceBiuld(index:(index?.row)!, image: biuldinImage!, priceLVbit: lvBitPrice!, priceman: soldierPrice!, priceTit: titaniumtPrice!, priceUra: uraniumPrice!, title: defenceTitle!, massage: alertTechMassege!)
     }
